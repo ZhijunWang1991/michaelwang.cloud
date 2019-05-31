@@ -34,7 +34,7 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Practice makes perfect!"
-    footer = "&copy; [Robert Ford](https://robertford.netlify.com/) 2019"
+    footer = "&copy; [Robert Ford](https://robertford.netlify.com/) 2019 | powered by Rblogdown and Hugo"
 
   highlightjsVersion = "9.12.0"
   highlightjsCDN = "//cdn.bootcss.com"
