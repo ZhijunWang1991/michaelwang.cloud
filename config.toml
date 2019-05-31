@@ -17,7 +17,7 @@ footnotereturnlinkcontents = "↩"
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "About me"
+    name = "About"
     url = "/about/"
     weight = 2
 [[menu.main]]
@@ -33,8 +33,8 @@ footnotereturnlinkcontents = "↩"
     url = "/index.xml"
 
 [params]
-    description = "A Hugo theme ported from the static site generator Ivy."
-    footer = "&copy; [Yihui Xie](https://yihui.name) 2017 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+    description = "Practice makes perfect!"
+    footer = "&copy; [Robert Ford](https://robertford.netlify.com/) 2019"
 
   highlightjsVersion = "9.12.0"
   highlightjsCDN = "//cdn.bootcss.com"
