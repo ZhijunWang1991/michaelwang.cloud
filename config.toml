@@ -1,8 +1,8 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Hugo Ivy"
+title = "Robert Ford"
 theme = "hugo-ivy"
-googleAnalytics = ""
+googleAnalytics = "UA-141182669-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
