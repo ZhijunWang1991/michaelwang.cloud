@@ -1,7 +1,7 @@
 ---
-title: About me
+title: About
 author: Robert Ford
-date: '2017-08-06'
+date: '2019-05-31'
 ---
 
-This qebsite is a practice of R markdown.
+This website is a practice of R markdown.
