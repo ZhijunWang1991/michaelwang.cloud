@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Robert Ford"
+title = "Butterfly"
 theme = "hugo-ivy"
 googleAnalytics = "UA-141182669-1"
 disqusShortname = ""
@@ -34,7 +34,7 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Practice makes perfect!"
-    footer = "&copy; [Robert Ford](https://robertford.netlify.com/) 2019 | powered by Rblogdown and Hugo"
+    footer = "&copy; [Butterfly](https://Butterflydata.netlify.com/) 2019 | powered by Rblogdown and Hugo"
 
   highlightjsVersion = "9.12.0"
   highlightjsCDN = "//cdn.bootcss.com"
