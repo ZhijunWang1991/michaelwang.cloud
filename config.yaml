@@ -1,6 +1,6 @@
 baseurl: "https://butterflydata.netlify.com/"
 languageCode: "en-us"
-title: "Butterflydata"
+title: "Butterfly"
 theme: "hugo-ivy"
 googleAnalytics: "UA-151723808-1"
 disqusShortname: "/"
