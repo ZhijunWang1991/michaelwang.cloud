@@ -1,6 +1,6 @@
-baseurl: "https://butterflydata.netlify.com/"
+baseurl: "https://butter2019.netlify.com/"
 languageCode: "en-us"
-title: "Butterfly"
+title: "Butter"
 theme: "hugo-ivy"
 googleAnalytics: "UA-151723808-1"
 disqusShortname: "/"
@@ -65,8 +65,8 @@ menu:
       weight: 6
 
 params:
-  description: "Practice makes perfect ; 胡蝶的个人网站"
-  footer: "&copy; [Butterflydata](/) 2018 - 2019"
+  description: "Practice makes perfect ; 黄油的个人网站"
+  footer: "&copy; [Butterdata|黄油数据](/) 2018 - 2019"
   disqusURL: ""
   customJS:
     - "js/fix-toc.js"
