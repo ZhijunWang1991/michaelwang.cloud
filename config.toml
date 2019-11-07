@@ -2,11 +2,14 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Butterfly"
 theme = "hugo-ivy"
-googleAnalytics = "UA-141182669-1"
+googleAnalytics = "UA-151723808-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+hasCJKLanguage: true
+enableEmoji: true
+footnotereturnlinkcontents: "↩"
+rssLimit: 100
 preserveTaxonomyNames = true
-footnotereturnlinkcontents = "↩"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
@@ -28,6 +31,10 @@ footnotereturnlinkcontents = "↩"
     name = "Tags"
     url = "/tags/"
     weight = 4
+[[menu.main]]
+    name = "中文"
+    url = "/Chinese/"
+    weight = 5
 [[menu.main]]
     name = "Subscribe"
     url = "/index.xml"
