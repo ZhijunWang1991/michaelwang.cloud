@@ -1,7 +1,8 @@
 ---
 title: About
-author: Robert Ford
+author: Jon Snow
 date: '2019-05-31'
 ---
 
-This website is a practice of R markdown.
+This website is a **notbook** of my studying experience aboout data science.
+When you find anything wrong, please leave your comments.
