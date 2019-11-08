@@ -63,7 +63,27 @@ menu:
     - name: "English"
       url: "/en/"
       weight: 6
-
+animation:
+    - name: "Home"
+      url: "/animation/"
+      weight: 1
+    - name: "Examples"
+      url: "/animation/examples/"
+      weight: 2
+    - name: "Export"
+      url: "/animation/export/"
+      weight: 3
+    - name: "Resources"
+      url: "/animation/resources/"
+      weight: 4
+    - name: "Github repo"
+      pre: "github"
+      url: ""
+      weight: 5
+    - name: "name"
+      url: "/"
+      weight: 6
+      
 params:
   description: "Practice makes perfect ; 黄油的个人网站"
   footer: "&copy; [Butterdata|黄油数据](/) 2018 - 2019"
@@ -95,7 +115,7 @@ params:
   author:
     en: "Butter"
     cn: "黄油"
-
+    animation: "Butter & milk"
   lang:
     edit:
       cn: "编辑"
