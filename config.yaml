@@ -85,9 +85,9 @@ animation:
       weight: 6
       
 params:
-  description: "Practice makes perfect ; 黄油的个人网站"
+  description: "Practice makes perfect ; 熟能生巧"
   footer: "&copy; [Butterdata|黄油数据](/) 2018 - 2019"
-  disqusURL: ""
+  disqusURL: "https://butter2019.netlify.com/"
   customJS:
     - "js/fix-toc.js"
     - "js/center-img.js"
@@ -109,7 +109,7 @@ params:
     en:
       img: "/images/logo.png"
       url: "/"
-      alt: "Yihui Xie"
+      alt: "Butter"
       tag: ""
     
   author:
