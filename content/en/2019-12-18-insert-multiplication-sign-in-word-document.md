@@ -14,4 +14,4 @@ In the scientific manuscript writing, normall we need insert Mathematical operat
 
 **Insert**-----**Symbol**----**Subset:Latin-1 supplement**
 
-Then, you can find the Multiplication sign **$\times$**.
+Then, you can find the Multiplication sign **\times**.
