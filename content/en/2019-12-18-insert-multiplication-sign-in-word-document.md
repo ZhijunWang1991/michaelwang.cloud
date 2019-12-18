@@ -9,8 +9,9 @@ tags:
   - office
   - word
 ---
+
 In the scientific manuscript writing, normall we need insert Mathematical operation symbol in word documents, following is the tips for this issue:
 
 **Insert**-----**Symbol**----**Subset:Latin-1 supplement**
 
-Then, you can find the Multiplication sign '$\times$'.
+Then, you can find the Multiplication sign **$\times$**.
