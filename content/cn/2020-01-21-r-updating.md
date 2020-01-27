@@ -1,7 +1,7 @@
 ---
 title:R学习小结（持续更新）
-author: ''
-date: '2020-01-21'
+author: 'John'
+date: '2020-01-27'
 slug: r-updating
 categories: []
 tags: []
