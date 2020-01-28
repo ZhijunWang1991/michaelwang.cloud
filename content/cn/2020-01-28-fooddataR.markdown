@@ -14,8 +14,8 @@ tags:
 2. 怎样使用R做显著性分析？
    显著性分析最直接的用处是标注显著性差异，
 比如在表格的数据中 ：
-![](/cn/2020-01-28-fooddataR_files/significant.PNG)；
+![](/cn/2020-01-28-fooddataR/significant.PNG)；
 又比如在图片中：
-![](/cn/2020-01-28-fooddataR_files/sig_picture.jpg)。
+![](/cn/2020-01-28-fooddataR/significant.PNG)。
 
 具体代码可以参考这个 网址： https://www.statmethods.net/stats/anova.html
