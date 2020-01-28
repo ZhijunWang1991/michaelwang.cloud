@@ -13,15 +13,22 @@ tags:
    数据发掘甚至机器学习也可以用到R语言，但我目前的水平还达不到。
 2. 怎样使用R做显著性分析？
    显著性分析最直接的用处是标注显著性差异，
-比如在表格的数据中 ：![](/cn/2020-01-21-Rnote_files/significant.PNG)；
-又比如在图片中：![](/cn/2020-01-21-Rnote_files/sig_picture.jpg)。
+比如在表格的数据中 ：
+![](/cn/2020-01-28-fooddataR_files/significant.PNG)；
+又比如在图片中：
+![](/cn/2020-01-28-fooddataR_files/sig_picture.jpg)。
+
    所以最好的代码就是既可以算出平均值/标准差，又可以分组标注出显著性差异，一段代码如下：
-```{r}
-#load library
+
+```{r CaroteneANOVA, echo=TRUE}
+##For significant ANOVA
+
+#library
 library(multcomp)
 
+
 ##set workspace
-basefolder <- 'C:/data_analysis/'
+basefolder <- 'C:/Users/wang298/OneDrive - WageningenUR/Banana/paper2/data_analysis/'
 setwd(paste0(basefolder,file.path('carotene')))
 
 
@@ -51,5 +58,4 @@ table <- group_by(peel, peel$Farm) %>%
     sd = sd(Carotene, na.rm = TRUE)
   )
 ```
-   
-   
+
