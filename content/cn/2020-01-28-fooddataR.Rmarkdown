@@ -18,44 +18,4 @@ tags:
 又比如在图片中：
 ![](/cn/2020-01-28-fooddataR_files/sig_picture.jpg)。
 
-   所以最好的代码就是既可以算出平均值/标准差，又可以分组标注出显著性差异，一段代码如下：
-
-```{r CaroteneANOVA, echo=TRUE}
-##For significant ANOVA
-
-#library
-library(multcomp)
-
-
-##set workspace
-basefolder <- 'C:/Users/wang298/OneDrive - WageningenUR/Banana/paper2/data_analysis/'
-setwd(paste0(basefolder,file.path('carotene')))
-
-
-##load dataset
-peel <- read.csv("carotene_peel.csv")
-View(peel)
-##ANOVA 
-Carotene <- peel$Carotene
-Farm <- peel$Farm
-
-aggregate(Carotene, by =list(Farm), FUN=mean)
-aggregate(Carotene, by =list(Farm), FUN=sd)
-
-fit <- aov(Carotene ~ Farm)
-summary(fit)
-TukeyHSD(fit)
-par(mar=c(5,4,6,2))
-tuk <- glht(fit,linfct= mcp(Farm="Tukey"))
-plot(cld(tuk,level=.05),col="lightgrey")
-
-
-library(dplyr)
-table <- group_by(peel, peel$Farm) %>%
-  summarise(
-    count = n(),
-    mean = mean(Carotene, na.rm = TRUE),
-    sd = sd(Carotene, na.rm = TRUE)
-  )
-```
-
+具体代码可以参考这个 网址： https://www.statmethods.net/stats/anova.html
