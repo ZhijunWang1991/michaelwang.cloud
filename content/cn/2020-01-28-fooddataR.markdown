@@ -19,3 +19,5 @@ tags:
 ![](/cn/2020-01-28-fooddataR/significant.PNG)。
 
 具体代码可以参考这个 网址： https://www.statmethods.net/stats/anova.html
+
+
