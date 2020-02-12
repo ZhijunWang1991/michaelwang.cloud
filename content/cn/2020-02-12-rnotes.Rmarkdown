@@ -1,5 +1,5 @@
 ---
-title: R in action
+title: R notes
 author: 'Jon'
 date: '2020-02-12'
 slug: bookdata
@@ -10,7 +10,7 @@ tags:
 ---
 
 1. Some function to manage the R workSpace
-```{r}
+```{r echo=TRUE}
 ##change the working direction
 ##setwd()
 
@@ -30,7 +30,7 @@ y
 ```
 
 3. input excel or csv files
-```{r}
+```{r echo=TRUE}
 library(readxl)
 dataset <- read_excel("direction")
 
