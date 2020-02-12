@@ -1,0 +1,35 @@
+---
+title: "Rupdating"
+author: "John"
+date: '2020-02-12'
+slug: rupdating
+tags: data science
+categories: R
+---
+1. Some function to manage the R workSpace
+```{r echo=TRUE}
+##change the working direction
+##setwd()
+
+##show the current working direction
+getwd()
+
+##save images
+save.image("myfile")
+png("filename.png")
+```
+
+2. creat a matrix
+```{r echo=TRUE}
+y <- matrix(1:20, nrow = 5, ncol = 4)
+
+y
+```
+
+3. input excel or csv files
+```{r echo=TRUE}
+library(readxl)
+dataset <- read_excel()
+
+dataset <- read.csv2()
+```
