@@ -1,5 +1,5 @@
 ---
-title: "Rupdating"
+title: "R"
 author: "John"
 date: '2020-02-12'
 slug: rupdating
@@ -29,7 +29,7 @@ y
 3. input excel or csv files
 ```{r echo=TRUE}
 library(readxl)
-dataset <- read_excel()
+dataset1 <- read_excel("direction")
 
-dataset <- read.csv2()
+dataset2 <- read.csv2("direction")
 ```
