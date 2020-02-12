@@ -8,7 +8,8 @@ categories:
 tags:
   - data science
 ---
-1. Some function to manage the R workSpace
+#1 Some function to manage the R workSpace
+
 ```r
 ##change the working direction
 setwd()
@@ -21,18 +22,16 @@ save.image("myfile")
 png("filename.png")
 ```
 
-2. creat a matrix
+#2 creat a matrix
+
 ```r
-
-
-
-
 y <- matrix(1:20, nrow = 5, ncol = 4)
 
 y
 ```
 
-3. input excel or csv files
+#3 input excel or csv files
+
 ```r
 library(readxl)
 dataset <- read_excel("direction")
