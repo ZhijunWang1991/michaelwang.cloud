@@ -70,8 +70,15 @@ par(opar)
 ```
 ![](/cn/2020-02-12-rnotebook_files/lengend.png)
 
-
-
+5 How to mark the Mathematical Annotation?
+```r
+help(plotmath)
+demo(plotmath)
+```
+Some examples:
+![](/cn/2020-02-12-rnotebook_files/math.png)
+![](/cn/2020-02-12-rnotebook_files/math2.png)
+![](/cn/2020-02-12-rnotebook_files/math3.png)
 
 
 
