@@ -26,8 +26,8 @@ This is a person blog page. Data visualization, chemomentrics and application of
 
 **Movie and TV show**
 
-## [Titanic]
+[Titanic]
 
-## [Westword]
+[Westword]
 
-## [Matrix]
+[Matrix]
