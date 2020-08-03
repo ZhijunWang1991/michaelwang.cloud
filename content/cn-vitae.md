@@ -4,4 +4,4 @@ slug: "cn/vitae"
 disable_comments: true
 ---
 
-没有漂亮的简历，就做一个小透明吧。
+Hello! I’m John. Welcome to my blog about data science life. 
