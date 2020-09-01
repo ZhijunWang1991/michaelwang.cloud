@@ -1,4 +1,4 @@
-baseurl: "https://butter2019.netlify.com/"
+baseurl: "https://butter2019.netlify.app/"
 languageCode: "en-us"
 title: "Butter"
 theme: "hugo-ivy"
