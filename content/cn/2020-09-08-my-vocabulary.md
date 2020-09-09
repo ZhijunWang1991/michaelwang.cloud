@@ -7,3 +7,5 @@ categories: []
 tags: []
 ---
 Ubbelohde viscometer 乌氏粘度计
+oscillatory strain sweep 震荡应变扫描
+parameter 参数
