@@ -6,6 +6,7 @@ slug: how-to-add-mendeley-plugin-into-word
 categories: []
 tags: []
 ---
+
 I had the same problem with Word 365 after installing Mendeley update. Here is the solution I found out, it may help other researchers.
 
 Step 1: Open Word, then go to "file"->"options", a new window pops out.
