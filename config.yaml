@@ -4,7 +4,7 @@ title: "Butter"
 theme: "hugo-ivy"
 googleAnalytics: "UA-151723808-1"
 disqusShortname: "https-butter2019-netlify-com"
-ignoreFiles: ["\\.Rmd$", "_files$", "_cache$"]
+ignoreFiles: ["\\.Rmd$", "_cache$","\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 hasCJKLanguage: true
 enableEmoji: true
 footnotereturnlinkcontents: "↩"
