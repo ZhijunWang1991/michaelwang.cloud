@@ -31,3 +31,7 @@ This is a person blog page. Data visualization, chemomentrics and application of
 [Westword]
 
 [Matrix]
+
+在茫茫的网络世界里，我找到一个安静的角落，这里没有大多数社交平台上的喧嚣，特别适合记录一个平凡人的生活，不担心围观，也不担心评价。
+
+目前的我是一名尚未毕业的在读博士生，主修食品安全。数据分析是我的个人兴趣爱好，我也希望能够将其应用在个人的学习和职业中。
