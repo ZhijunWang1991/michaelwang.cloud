@@ -11,6 +11,6 @@ slug: cn/book
 ## [西游记Journey to the West]
 ## [万历十五年 1587, a Year of No Significance]
 
-。
+
 
 
