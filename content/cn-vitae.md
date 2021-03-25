@@ -4,4 +4,4 @@ slug: "cn/vitae"
 disable_comments: true
 ---
 
-Hello! I’m John. Welcome to my blog about data science life. 
+可以在我的[Linkedin](https://www.linkedin.com/in/zhijunwang1991/)查看更多内容。
