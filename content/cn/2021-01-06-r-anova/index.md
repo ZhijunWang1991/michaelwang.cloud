@@ -1,13 +1,5 @@
 ---
-title: R_anova
-author: ''
-date: '2021-01-06'
-slug: 显著性分析
-categories:
-  - R
-tags:
-  - R
----
+![](/2021-01-06-r-anova/index_files/samples.png)---
 
 显著性分析是最常见的数据呈现方式，很多文章里往往数据分析的第一步就是给数据标星星或者加abcd。在食品科学的文章里，显著性分析的应用也有很多，比如比较不同加工方式对营养成分的变化影响；比较不同浓度下，提取到的活性成分的生物活性差异等。
 
@@ -17,7 +9,7 @@ tags:
 
 举个例子，先假设要分析一个问题“不同水果中维生素C含量的区别”。比如每种水果做了6次平行，总共3种水果。那么可以得到下面这个csv表格:
 
-![](/2021-01-06-r-anova/index_files/samples.png)
+
 
 显著性计算可以使用的R 包是 "multcomp". “dplyr"包用来生成均值和方差表格。
 代码举例：
@@ -50,7 +42,7 @@ tuk <- glht(fit,linfct= mcp(Fruits="Tukey"))
 p1 <- plot(cld(tuk,level=.05),col="lightgrey")
 p1 ##图
 ```
-![](/2021-01-06-r-anova/index_files/Sig_fruit.png)
+![](/2021-01-06-r-anova/index_files/Rplot.png)
 
 
 
