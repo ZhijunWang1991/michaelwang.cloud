@@ -2,12 +2,13 @@
 title: R_anova
 author: ''
 date: '2021-01-06'
-slug: r-anova
+slug: 显著性分析
 categories:
   - R
 tags:
   - R
 ---
+
 显著性分析是最常见的数据呈现方式，很多文章里往往数据分析的第一步就是给数据标星星或者加abcd。在食品科学的文章里，显著性分析的应用也有很多，比如比较不同加工方式对营养成分的变化影响；比较不同浓度下，提取到的活性成分的生物活性差异等。
 
 很多软件（SPSS, SAS)都有这个功能，用R做的方便之处是可以自动出图，直接帮你标注出abcd的分组，以及可以批量处理不同的表格，不需要一个一个EXCEL文件来制作。
@@ -16,29 +17,29 @@ tags:
 
 举个例子，先假设要分析一个问题“不同水果中维生素C含量的区别”。比如每种水果做了6次平行，总共3种水果。那么可以得到下面这个csv表格:
 
-![](/2021-01-06-r-anova/index_files/samples.PNG)
+![](/2021-01-06-r-anova/index_files/samples.png)
 
 显著性计算可以使用的R 包是 "multcomp". “dplyr"包用来生成均值和方差表格。
 代码举例：
-
+```js
 #加载R包
 library(multcomp)
 library(dplyr)
-​
+
 ##设置工作路径
 setwd("C:/data")
 ##加载数据集
 data <- read.csv("fruits_Vc.csv")
 View(data) ##查看数据
-​
+
 ##选择要分析的数据
 VitaminC <- data$Vitamin 
 Fruits <- data$Fruit
-​
+
 ##计算显著性差异 Tukey方法
 aggregate(VitaminC, by =list(Fruits), FUN=mean)
 aggregate(VitaminC, by =list(Fruits), FUN=sd)
-​
+
 fit <- aov(VitaminC ~ Fruits)
 summary(fit)
 TukeyHSD(fit)
@@ -48,6 +49,8 @@ par(mar=c(5,4,6,2))
 tuk <- glht(fit,linfct= mcp(Fruits="Tukey"))
 p1 <- plot(cld(tuk,level=.05),col="lightgrey")
 p1 ##图
+```
+![](/2021-01-06-r-anova/index_files/Sig_fruit.png)
 
 
 
