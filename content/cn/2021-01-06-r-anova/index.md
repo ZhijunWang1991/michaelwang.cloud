@@ -9,7 +9,7 @@
 
 举个例子，先假设要分析一个问题“不同水果中维生素C含量的区别”。比如每种水果做了6次平行，总共3种水果。那么可以得到下面这个csv表格:
 
-
+![](/2021-01-06-r-anova/index_files/samples.png)
 
 显著性计算可以使用的R 包是 "multcomp". “dplyr"包用来生成均值和方差表格。
 代码举例：
@@ -42,7 +42,8 @@ tuk <- glht(fit,linfct= mcp(Fruits="Tukey"))
 p1 <- plot(cld(tuk,level=.05),col="lightgrey")
 p1 ##图
 ```
-![](/2021-01-06-r-anova/index_files/Rplot.png)
+
+
 
 
 
