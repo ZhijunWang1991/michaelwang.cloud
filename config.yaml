@@ -98,7 +98,7 @@ animation:
       weight: 6
       
 params:
-  description: "Practice makes perfect ; 熟能生巧"
+  description: "Practice makes perfect :熟能生巧"
   footer: "&copy; [Zhijun Wang](/) 2021"
   disqusURL: "https://butter2019.netlify.com/"
   customJS:
@@ -122,7 +122,7 @@ params:
     en:
       img: "/images/logo.png"
       url: "/"
-      alt: "Butter"
+      alt: "ZhijunCV"
       tag: ""
     
   author:
