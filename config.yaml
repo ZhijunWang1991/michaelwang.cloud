@@ -1,6 +1,6 @@
 baseurl: "https://butter2019.netlify.app/"
 languageCode: "en-us"
-title: "Butter"
+title: "ZhijunCV"
 theme: "hugo-ivy"
 googleAnalytics: "UA-151723808-1"
 disqusShortname: "https-butter2019-netlify-com"
@@ -16,23 +16,27 @@ permalinks:
 
 menu:
   main:
+    - name: "Home"
+      url: "/"
+      weight: 1
     - name: "About"
       url: "/en/about/"
-      weight: 1
+      weight: 2
     - name: "Vitae"
       url: "/en/vitae/"
-      weight: 2
+      weight: 3
     - name: "Publications"
       url: "/en/Publications/"
+      weight: 4
     - name: "Blog"
       url: "/en/"
-      weight: 3
+      weight: 5
     - name: "Contact"
       url: "/en/Contact"
-      weight: 4
+      weight: 6
     - name: "中文"
       url: "/cn/"
-      weight: 5
+      weight: 7
     
   en:
     - name: "Home"
