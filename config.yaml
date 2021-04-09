@@ -60,18 +60,22 @@ menu:
     - name: "首页"
       url: "/"
       weight: 1
-    - name: "关于"
-      url: "/cn/about/"
+    - name: "简历"
+      url: "/en/vitae/"
       weight: 2
     - name: "日志"
       url: "/cn/"
       weight: 3
-    - name: "简历"
-      url: "/cn/vitae/"
+    - name: "出版物"
+      url: "/en/Publications/"
       weight: 4
+    - name: "联系"
+      url: "/cn/Contact/"
+      weight: 5   
     - name: "English"
       url: "/en/"
-      weight: 5
+      weight: 6
+      
 animation:
     - name: "Home"
       url: "/animation/"
