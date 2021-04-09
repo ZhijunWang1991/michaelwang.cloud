@@ -19,15 +19,21 @@ menu:
     - name: "About"
       url: "/en/about/"
       weight: 1
+    - name: "Vitae"
+      url: "/en/vitae/"
+      weight: 2
+    - name: "Publications"
+      url: "/en/Publications/"
     - name: "Blog"
       url: "/en/"
-      weight: 2
-    - name: "关于"
-      url: "/cn/about/"
       weight: 3
-    - name: "日志"
-      url: "/cn/"
+    - name: "Contact"
+      url: "/en/Contact"
       weight: 4
+    - name: "中文"
+      url: "/cn/"
+      weight: 5
+    
   en:
     - name: "Home"
       url: "/"
@@ -41,9 +47,15 @@ menu:
     - name: "Vitae"
       url: "/en/vitae/"
       weight: 4
+    - name: "Publications"
+      url: "/en/Publications/"
+      weight: 5
+    - name: "Contact"
+      url: "/en/Contact"
+      weight: 6
     - name: "中文"
       url: "/cn/"
-      weight: 5
+      weight: 7
   cn:
     - name: "首页"
       url: "/"
@@ -59,7 +71,7 @@ menu:
       weight: 4
     - name: "English"
       url: "/en/"
-      weight: 6
+      weight: 5
 animation:
     - name: "Home"
       url: "/animation/"
@@ -83,7 +95,7 @@ animation:
       
 params:
   description: "Practice makes perfect ; 熟能生巧"
-  footer: "&copy; [Butterdata|黄油数据](/) 2018 - 2019"
+  footer: "&copy; [Zhijun Wang](/) 2021"
   disqusURL: "https://butter2019.netlify.com/"
   customJS:
     - "js/fix-toc.js"
@@ -110,9 +122,9 @@ params:
       tag: ""
     
   author:
-    en: "Butter"
-    cn: "黄油"
-    animation: "Butter & milk"
+    en: "Zhijun"
+    cn: ""
+    animation: ""
   lang:
     edit:
       cn: "编辑"
