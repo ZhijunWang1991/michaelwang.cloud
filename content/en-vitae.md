@@ -26,7 +26,7 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 - 2014 ~ 2017, Master of Food Science, Nanchang University
 - 2010 ~ 2014, Bachelor of Food Science, Nanchang University
 
-## Research ecperience
+## Research experience
 
 - HPLC-MS, GC-MS, Hyperspectal imagings, IR-MS, ICP-MS, etc.
 - Image analysis by Matlab & R
