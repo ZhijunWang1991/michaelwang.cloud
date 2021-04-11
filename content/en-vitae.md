@@ -4,7 +4,7 @@ slug: "en/vitae"
 disable_comments: true
 ---
 # Zhijun Wang
-![](/./en-vitae_files/new.jpg)
+
 position: "PhD Candidate of Food Authenticity and Nutrition"
 
 ## Contact Information
