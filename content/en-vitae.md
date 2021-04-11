@@ -38,7 +38,7 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 
 You can check my whole Publications in [Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en):
 
-### Papers:
+### Selected Papers (as 1st author):
 
 1.  **Wang, Z. et al.**(2020). Linking growing conditions to stable isotope ratios and elemental compositions of Costa Rican bananas (*Musa* spp.). *Food Research International*, 129, 108882. https://doi.org/10.1016/j.foodres.2019.108882
 
