@@ -1,8 +1,8 @@
-baseurl: "https://butter2019.netlify.app/"
+baseurl: "https://zhijunwang.me/"
 languageCode: "en-us"
 title: "ZhijunCV"
 theme: "hugo-ivy"
-googleAnalytics: "UA-151723808-1"
+googleAnalytics: "UA-141182669-1"
 disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "_cache$","\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 hasCJKLanguage: true
