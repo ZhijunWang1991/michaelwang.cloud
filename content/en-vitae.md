@@ -36,7 +36,7 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 - Nutrition evaluation of food for Animal/Human
 - Cell culture and animal model
 
-## Publications
+## Selected Publications
 
 You can check my whole Publications in [Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en):
 

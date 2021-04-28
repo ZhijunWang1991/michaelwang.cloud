@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Selected Publications"
 slug: "en/Publications"
 disable_comments: true
 ---
