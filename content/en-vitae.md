@@ -9,9 +9,12 @@ position: "PhD Candidate of Food Authenticity and Nutrition"
 
 ## Contact Information
 
-Homepage: <https://zhijunwang.me>; Email: zhijun0916@gmail.com;
-Github: [Zhijun_Github](https://github.com/ZhijunWang1991);Researchgate:[Zhijun_Research](https://www.researchgate.net/profile/Zhijun-Wang-18);
-GoogleScholar: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en); Linkedin: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
+- Homepage: <https://zhijunwang.me>
+- Email: zhijun0916@gmail.com
+- Github: [Zhijun_Github](https://github.com/ZhijunWang1991)
+- Researchgate:[Zhijun_Research](https://www.researchgate.net/profile/Zhijun-Wang-18)
+- GoogleScholar: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en)
+- Linkedin: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
 
 ## Brief Biography
 
