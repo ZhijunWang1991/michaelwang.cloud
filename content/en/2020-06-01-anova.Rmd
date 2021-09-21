@@ -1,0 +1,77 @@
+---
+title: "ANOVA"
+author: "Zhijun"
+date: '2020-06-01'
+slug: anova
+categories: []
+tags: []
+---
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+
+# 1 Introduction
+
+This is an R Markdown document to summary the necessary Data science in food applications.
+
+The datasets were from built-in dataset in R packages, and the open-access resources from Quadram Institute. [Example Datasets for Download](https://csr.quadram.ac.uk/example-datasets-for-download/).These datasets are distributed under the terms of **the Creative Commons Attribution License**, which permits unrestricted use, distribution and reproduction in any medium, provided the original work is properly cited.
+
+# 2 Using R for maps
+
+Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can install R and R maps have no copyright issues and are easy to use. The main R packages used are **ggplot2**, **sf**, **rnaturalearth**, **rnaturalearthdata**, etc. When you need to modify the picture, you only need to modify the code, which eliminates the cumbersome modification of the picture.
+
+> To determine the origin of the sample, so samples from different countries are collected, and the location of the origin needs to be marked on the map.
+
+```{r map_library, echo=TRUE,message=FALSE}
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggspatial)
+library(sf)
+library(ggplot2)
+library(gpclib)
+library(maptools)
+library(maps)
+library(mapdata)
+library(sp)
+library(raster)
+library(RColorBrewer)
+library(rgeos)
+```
+
+The sampling sits could be created by R:
+
+```{r map}
+setwd("C:/Users/wang298/OneDrive - WageningenUR/Rworkspace/github/Data-science-with-Food/Dataset")
+XY <- read.csv('XY.csv')##坐标数据
+##世界地图
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+##主题风格
+theme_set(theme_bw())
+##开始绘图
+g1 <- ggplot(data = world)+
+  geom_sf() +
+  ##标点
+  geom_point(data=XY,aes(x=X,y=Y),pch=21,fill="yellow",col="grey40",size=5)+
+  ##坐标点命名
+  geom_text(data= XY,aes(x=Code_X, y=Y, label=Code),
+       color = "darkblue", fontface = "bold",size=5, check_overlap = FALSE)+
+  labs(title="The sampling sits created by R")+
+  xlab("Longitude") + ylab("Latitude")+
+  ##字体大小
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=16))+
+ ##插入指南针和比例尺
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(
+  location = "bl", which_north = "true", 
+  pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+  style = north_arrow_fancy_orienteering)+
+  theme(panel.grid.major = element_line(color = gray(.5), 
+  linetype = "dashed", size = 0.5), 
+  panel.background = element_rect(fill = "aliceblue"))
+
+g1
+
+```
