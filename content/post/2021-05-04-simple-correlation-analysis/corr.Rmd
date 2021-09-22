@@ -1,0 +1,49 @@
+---
+title: Simple correlation analysis
+author: ''
+date: '2021-05-04'
+slug: corr
+categories:
+  - R
+tags:
+  - Data analysis
+  - Data Visualization
+---
+## Correlation analysis
+
+The correlation **heatmap** is quite helpful to show correlations between different variables such as contents of compositions.
+
+The example of **EU Population Prospects** will be used for correlation analysis of Quality of life index.
+
+## Load data
+
+```{r corr1}
+setwd("C:/blog/Dataset")
+
+data <- read.csv("eu.csv",header = T,stringsAsFactors = T )
+dat <- data[,-1]
+head(data)
+```
+
+## Calculation significants and correlations coefficients
+
+```{r corr2, echo=TRUE, message=FALSE, warning=FALSE}
+library(Hmisc)
+
+res <- rcorr(as.matrix(dat))
+# Extract the correlation coefficients
+
+res$r
+
+# Extract p-values
+res$P
+```
+
+## Correlation plots
+
+```{r corr3, echo=TRUE, message=FALSE, warning=FALSE}
+library(corrplot)
+
+corrplot(res$r, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
+```

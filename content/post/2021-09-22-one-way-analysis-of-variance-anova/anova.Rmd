@@ -1,0 +1,64 @@
+---
+title: One-way analysis of variance (ANOVA)
+author: ''
+date: '2021-03-22'
+slug: anova
+categories:
+  - R
+tags:
+  - data science
+---
+
+## Defination of ANOVA
+
+Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study-- cited from **WILL KENTON**(https://www.investopedia.com/terms/a/anova.asp)
+
+## Load data
+
+```{r code6, message=FALSE, warning=FALSE}
+library(multcomp)
+library(dplyr)
+setwd("C:/blog/Dataset")
+data <- read.csv("fruits_Vc.csv")
+head(data)
+```
+
+To compare the vitamin C contents of different fruits
+
+```{r code7}
+data$Fruit = as.factor(data$Fruit)
+VitaminC <- data$Vitamin
+Fruits <- data$Fruit
+
+aggregate(VitaminC, by =list(Fruits), FUN=mean)
+aggregate(VitaminC, by =list(Fruits), FUN=sd)
+
+fit <- aov(VitaminC ~ Fruits)
+
+summary(fit)
+TukeyHSD(fit)
+
+par(mar=c(5,4,6,2))
+data$Fruit = as.factor(data$Fruit)
+tuk <- glht(fit,linfct= mcp(Fruits="Tukey"))
+
+p1 <- plot(cld(tuk,level=.05),col="lightgrey")
+
+
+```
+
+To save the ANOVA results after calculations
+
+```{r code8}
+table <- group_by(data, data$Fruit) %>%
+  summarise(
+    .groups = 'drop',
+    count = n(),
+    mean = mean(Vitamin, na.rm = TRUE),
+    sd = sd(Vitamin, na.rm = TRUE)
+  )
+
+View(table)
+
+print(table)
+```

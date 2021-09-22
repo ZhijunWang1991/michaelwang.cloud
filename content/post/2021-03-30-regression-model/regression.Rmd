@@ -1,0 +1,90 @@
+---
+title: Regression model
+author: ''
+date: '2021-03-30'
+slug: regression
+categories:
+  - R
+tags:
+  - data science
+---
+## Regression model for prediction
+
+In this part, the data set *Orange* is used to show how regression could be used for prediction in food science.
+
+## Load data
+
+Have a look at *dataset Orange*:
+
+```{r regression, message=FALSE, warning=FALSE}
+library(datasets)
+
+orange <- Orange
+
+head(orange)
+```
+
+## Linear regression model
+
+To establish the relationship **Linear regression model** between the *circumference* and *age*.
+
+```{r regression2, message=FALSE, warning=FALSE}
+lm_model <- lm(circumference ~ age, data = orange)
+
+summary(lm_model)
+```
+
+To plot the **Linear regression model**:
+
+```{r regression3, echo=TRUE, message=FALSE, warning=FALSE}
+
+coeff=coefficients(lm_model)
+
+coeff
+
+# Equation of the line : 
+eq = paste0("y = ", round(coeff[2],1), "*x + ", round(coeff[1],1))
+
+eq
+```
+ 
+## Linear regression model plot
+
+```{r regression4, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+# Plot
+
+ggplot(data=orange, aes(x=age, y=circumference)) + geom_point() + geom_abline(intercept = 17.39, slope = 0.11, color="red", 
+                 linetype="dashed", size=1.5)+
+                   labs(title= eq,x = "Age", y = "circumference") +
+  theme_bw()+
+  theme(
+    plot.title = element_text(color="black", size=16, face="bold.italic"),
+    axis.title.x = element_text(color="black", size=14, face="bold"),
+    axis.title.y = element_text(color="black", size=14, face="bold"))
+  
+```
+Then, you can use formulas to do some simple forecasting work, of course, you can also directly call the model for calculations. Here is an example:
+
+## the simple prediction example
+
+**To predict the weight based on time and diet types** using dataset *Chick weight*
+
+
+
+```{r code5, echo=TRUE, message=FALSE, warning=FALSE}
+library(performance)
+
+Chick_data <- ChickWeight
+
+str(Chick_data)
+
+chick_model <- glm(weight ~ Diet + Chick + Time, family = poisson, data = Chick_data)
+
+summary(chick_model)
+
+model_performance(chick_model)
+```
+
+The RMSE value of generalized linear model (GLM) model is quite high, which indicated the model should be improved using more data. We will use more suitable dataset for following examples.

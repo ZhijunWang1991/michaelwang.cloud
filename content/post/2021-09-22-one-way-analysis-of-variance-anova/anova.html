@@ -1,0 +1,91 @@
+---
+title: One-way analysis of variance (ANOVA)
+author: ''
+date: '2021-03-22'
+slug: anova
+categories:
+  - R
+tags:
+  - data science
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="defination-of-anova" class="section level2">
+<h2>Defination of ANOVA</h2>
+<p>Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study– cited from <strong>WILL KENTON</strong>(<a href="https://www.investopedia.com/terms/a/anova.asp" class="uri">https://www.investopedia.com/terms/a/anova.asp</a>)</p>
+</div>
+<div id="load-data" class="section level2">
+<h2>Load data</h2>
+<pre class="r"><code>library(multcomp)
+library(dplyr)
+setwd(&quot;C:/blog/Dataset&quot;)
+data &lt;- read.csv(&quot;fruits_Vc.csv&quot;)
+head(data)</code></pre>
+<pre><code>##   Number Fruit Repeat Vitamin
+## 1      1 Apple     A1     4.6
+## 2      2 Apple     A2     3.9
+## 3      3 Apple     A3     5.2
+## 4      4 Apple     A4     6.9
+## 5      5 Apple     A5     4.8
+## 6      6 Apple     A6     3.3</code></pre>
+<p>To compare the vitamin C contents of different fruits</p>
+<pre class="r"><code>data$Fruit = as.factor(data$Fruit)
+VitaminC &lt;- data$Vitamin
+Fruits &lt;- data$Fruit
+
+aggregate(VitaminC, by =list(Fruits), FUN=mean)</code></pre>
+<pre><code>##      Group.1         x
+## 1      Apple  4.783333
+## 2     Banana 10.266667
+## 3 Watermelon  8.683333</code></pre>
+<pre class="r"><code>aggregate(VitaminC, by =list(Fruits), FUN=sd)</code></pre>
+<pre><code>##      Group.1         x
+## 1      Apple 1.2384130
+## 2     Banana 1.5807171
+## 3 Watermelon 0.9847165</code></pre>
+<pre class="r"><code>fit &lt;- aov(VitaminC ~ Fruits)
+
+summary(fit)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Fruits       2  95.57   47.78   28.66 7.52e-06 ***
+## Residuals   15  25.01    1.67                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>TukeyHSD(fit)</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = VitaminC ~ Fruits)
+## 
+## $Fruits
+##                        diff       lwr       upr     p adj
+## Banana-Apple       5.483333  3.546906 7.4197605 0.0000068
+## Watermelon-Apple   3.900000  1.963573 5.8364272 0.0002819
+## Watermelon-Banana -1.583333 -3.519761 0.3530938 0.1184352</code></pre>
+<pre class="r"><code>par(mar=c(5,4,6,2))
+data$Fruit = as.factor(data$Fruit)
+tuk &lt;- glht(fit,linfct= mcp(Fruits=&quot;Tukey&quot;))
+
+p1 &lt;- plot(cld(tuk,level=.05),col=&quot;lightgrey&quot;)</code></pre>
+<p><img src="/post/2021-09-22-one-way-analysis-of-variance-anova/anova_files/figure-html/code7-1.png" width="672" /></p>
+<p>To save the ANOVA results after calculations</p>
+<pre class="r"><code>table &lt;- group_by(data, data$Fruit) %&gt;%
+  summarise(
+    .groups = &#39;drop&#39;,
+    count = n(),
+    mean = mean(Vitamin, na.rm = TRUE),
+    sd = sd(Vitamin, na.rm = TRUE)
+  )
+
+View(table)
+
+print(table)</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##   `data$Fruit` count  mean    sd
+##   &lt;fct&gt;        &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Apple            6  4.78 1.24 
+## 2 Banana           6 10.3  1.58 
+## 3 Watermelon       6  8.68 0.985</code></pre>
+</div>
