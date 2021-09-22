@@ -6,7 +6,7 @@ ignoreFiles = ['\.Rmd$', '\.Rmarkdown$', '_cache$', '\.knit\.md$', '\.utf8\.md$'
 languageCode = 'en-us'
 preserveTaxonomyNames = true
 theme = 'hugo-ivy'
-title = 'Food & Data '
+title = 'Food & Data'
 googlefonts = "//fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
 [markup]
 [markup.goldmark]
