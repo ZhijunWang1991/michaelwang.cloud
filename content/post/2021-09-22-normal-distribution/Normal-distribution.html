@@ -1,0 +1,62 @@
+---
+title: Normal distribution
+author: ''
+date: '2021-01-22'
+slug: Normal-distribution
+categories:
+  - R
+tags:
+  - data science
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.</p>
+<p><em>Before statistical analysis of data such as significance analysis, the data should meet normally distributed.</em>
+## load dataset</p>
+<pre class="r"><code>setwd(&quot;C:/blog/Dataset&quot;)
+
+data &lt;- read.csv(&quot;fruits_Vc.csv&quot;)
+
+head(data)</code></pre>
+<pre><code>##   Number Fruit Repeat Vitamin
+## 1      1 Apple     A1     4.6
+## 2      2 Apple     A2     3.9
+## 3      3 Apple     A3     5.2
+## 4      4 Apple     A4     6.9
+## 5      5 Apple     A5     4.8
+## 6      6 Apple     A6     3.3</code></pre>
+<div id="plot" class="section level2">
+<h2>Plot</h2>
+<pre class="r"><code>Apple &lt;- data[1:6,4]
+
+shapiro.test(Apple)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  Apple
+## W = 0.94874, p-value = 0.7301</code></pre>
+<pre class="r"><code>library(ggpubr)
+
+ggdensity(Apple, 
+          main = &quot;Density plot of apple&quot;,
+          xlab = &quot;Apple&quot;)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR2-1.png" width="672" /></p>
+<pre class="r"><code>ggqqplot(Apple)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR2-2.png" width="672" /></p>
+</div>
+<div id="shapiro-wilk-normality-test" class="section level2">
+<h2>Shapiro-Wilk normality test</h2>
+<p>dataset: data$Vitamin</p>
+<p>W = 0.96026, p-value = 0.6066
+When the P value here is greater than 0.05, it represents a normal distribution.</p>
+<p>You can also observe the normal distribution graph:</p>
+<pre class="r"><code>library(&quot;ggpubr&quot;)
+ggdensity(data$Vitamin, 
+          main = &quot;Density plot of Vitamin&quot;,
+          xlab = &quot;Vitamin&quot;)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR3-1.png" width="672" /></p>
+<pre class="r"><code>ggqqplot(data$Vitamin)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR3-2.png" width="672" /></p>
+</div>

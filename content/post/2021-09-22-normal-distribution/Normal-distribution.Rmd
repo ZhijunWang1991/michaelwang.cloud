@@ -1,0 +1,56 @@
+---
+title: Normal distribution
+author: ''
+date: '2021-01-22'
+slug: Normal-distribution
+categories:
+  - R
+tags:
+  - data science
+---
+
+The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.
+
+*Before statistical analysis of data such as significance analysis, the data should meet normally distributed.*
+## load dataset
+
+```{r NR1, message=FALSE, warning=FALSE}
+setwd("C:/blog/Dataset")
+
+data <- read.csv("fruits_Vc.csv")
+
+head(data)
+
+```
+## Plot
+
+```{r NR2, echo=TRUE, message=FALSE, warning=FALSE}
+Apple <- data[1:6,4]
+
+shapiro.test(Apple)
+
+library(ggpubr)
+
+ggdensity(Apple, 
+          main = "Density plot of apple",
+          xlab = "Apple")
+
+ggqqplot(Apple)
+```
+
+## Shapiro-Wilk normality test
+
+dataset:  data$Vitamin
+
+W = 0.96026, p-value = 0.6066
+When the P value here is greater than 0.05, it represents a normal distribution.
+
+You can also observe the normal distribution graph:
+
+```{r NR3, echo=TRUE, message=FALSE, warning=FALSE}
+library("ggpubr")
+ggdensity(data$Vitamin, 
+          main = "Density plot of Vitamin",
+          xlab = "Vitamin")
+ggqqplot(data$Vitamin)
+```
