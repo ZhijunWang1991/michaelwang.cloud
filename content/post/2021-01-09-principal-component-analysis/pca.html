@@ -1,0 +1,182 @@
+---
+title: Principal component analysis
+author: ''
+date: '2021-01-09'
+slug: pca
+categories:
+  - R
+tags:
+  - Data analysis
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="principal-component-analysispca" class="section level2">
+<h2>Principal component analysis(PCA)</h2>
+<p>From this section, the machine learning will be discussed by foods data, the data from Mid-infrared spectroscopy will be used for Geographical origin of Extra Virgin Olive Oils (Quadram open dataset,2003).</p>
+</div>
+<div id="load-dataset" class="section level2">
+<h2>Load dataset</h2>
+<pre class="r"><code>## Load date
+setwd(&quot;C:/blog/Dataset&quot;)
+
+oil &lt;- read.csv(&#39;FTIR_Spectra_olive_oils.csv&#39;,header = F, 
+                stringsAsFactors = T)
+
+print(oil[1:10,1:5])</code></pre>
+<pre><code>##                V1          V2          V3          V4          V5
+## 1  Sample Number:           1           1           2           2
+## 2     Group Code:           1           1           1           1
+## 3     Wavenumbers      Greece      Greece      Greece      Greece
+## 4         798.892 0.127523009 0.126498181 0.130411785 0.130022227
+## 5        800.8215 0.127949615 0.127130974 0.130675401 0.130406662
+## 6         802.751 0.129282219 0.128510777  0.13201661 0.132018029
+## 7        804.6805 0.131174169  0.13033991 0.133824061 0.134007275
+## 8          806.61 0.133590328 0.132527221 0.136095296 0.136270568
+## 9        808.5395 0.136425525 0.135308508 0.138943757  0.13887477
+## 10        810.469 0.139357827  0.13835292 0.141722779 0.141481132</code></pre>
+</div>
+<div id="data-wrangling" class="section level2">
+<h2>Data wrangling</h2>
+<p>The raw data form are not suitable for R programming, therefore we need to transpose it to suitable form.</p>
+<pre class="r"><code>## data transpose
+oil_transpose &lt;- as.data.frame(t(oil))
+
+print(oil_transpose[1:10,1:5])</code></pre>
+<pre><code>##                 V1          V2          V3          V4          V5
+## V1  Sample Number: Group Code: Wavenumbers     798.892    800.8215
+## V2               1           1      Greece 0.127523009 0.127949615
+## V3               1           1      Greece 0.126498181 0.127130974
+## V4               2           1      Greece 0.130411785 0.130675401
+## V5               2           1      Greece 0.130022227 0.130406662
+## V6               3           1      Greece 0.128601989 0.128789565
+## V7               3           1      Greece 0.128217254 0.128282253
+## V8               4           1      Greece 0.126174933 0.126732773
+## V9               4           1      Greece 0.126466053 0.126915413
+## V10              5           1      Greece 0.127060105 0.127551128</code></pre>
+<pre class="r"><code>## rename some col names to make data analysis easier
+
+colnames(oil_transpose)=oil_transpose[1,]
+oil_transpose &lt;- oil_transpose[-1,]
+library(dplyr)
+oil_transpose &lt;- rename(oil_transpose,c(&quot;Group&quot; =&quot;Group Code:&quot;,
+                                        &quot;Number&quot; =&quot;Sample Number:&quot;,
+                                        &quot;Countries&quot; =&quot;Wavenumbers&quot;))
+## Get transposed dataset
+
+oil.data &lt;- oil_transpose
+
+print(oil.data[1:10,1:5])</code></pre>
+<pre><code>##     Number Group Countries     798.892    800.8215
+## V2       1     1    Greece 0.127523009 0.127949615
+## V3       1     1    Greece 0.126498181 0.127130974
+## V4       2     1    Greece 0.130411785 0.130675401
+## V5       2     1    Greece 0.130022227 0.130406662
+## V6       3     1    Greece 0.128601989 0.128789565
+## V7       3     1    Greece 0.128217254 0.128282253
+## V8       4     1    Greece 0.126174933 0.126732773
+## V9       4     1    Greece 0.126466053 0.126915413
+## V10      5     1    Greece 0.127060105 0.127551128
+## V11      5     1    Greece 0.126812707 0.127460743</code></pre>
+</div>
+<div id="principal-component-analysis" class="section level2">
+<h2>Principal Component Analysis</h2>
+<p>The PCA is used to reduce the dimensionality of the spectral value, and initially explore the distribution of the sample.</p>
+<p>The original data and related transformated data (MSC, SNV and Savitzky-Golay filtering) are used to obtain the PCA plots.</p>
+<pre class="r"><code>library(factoextra)
+library(FactoMineR)
+library(ggrepel)
+library(ggplot2)
+library(prospectr)</code></pre>
+</div>
+<div id="raw-data-pca" class="section level2">
+<h2>Raw data PCA</h2>
+<p>Have a look at spectral of different pre-processing for MIR.</p>
+<pre class="r"><code>colors = c(&quot;#CD0000&quot;, &quot;#EE7600&quot;, &quot;#FFFF00&quot;, &quot;#008B45&quot;)
+col &lt;- as.factor(oil.data$Countries)
+group &lt;- c(&quot;Greece&quot;,&quot;Italy&quot;,&quot;Portuga&quot;, &quot;Spain&quot;)</code></pre>
+<p><strong>RAW spectral</strong></p>
+<pre class="r"><code>raw_spc &lt;- oil.data[,4:573]
+
+x &lt;- as.numeric(colnames(raw_spc))
+y &lt;- t(raw_spc[ , ])
+
+par(mar=(c(5,7,4,2)))
+
+matplot(x, y,col = colors,
+        type = &#39;l&#39;, lty = 1,
+        xlab = &#39;Wavelength (nm)&#39;, ylab = &#39;Absorbance&#39;,main = &quot;Raw&quot;,
+        font.lab = 1,
+        cex.main = 1, cex.axis = 1, cex.lab=2)
+legend(&quot;topleft&quot;,
+       title = &quot;Country&quot;,
+       xpd = F,ncol = 1,
+       legend = group,
+       col = col,
+       fill = colors,
+       bty = &quot;n&quot;,
+       cex = 1.5,
+       text.col = &quot;black&quot;, text.font = 1,
+       horiz = F)</code></pre>
+<p><img src="/post/2021-01-09-principal-component-analysis/pca_files/figure-html/code10-1.png" width="672" /></p>
+<pre class="r"><code>p1 &lt;- recordPlot()</code></pre>
+<pre class="r"><code>df_raw &lt;- oil.data[,4:573]
+
+df &lt;- as.data.frame(apply(df_raw, 2, as.numeric))
+print(df[1:10,1:5])</code></pre>
+<pre><code>##      798.892  800.8215   802.751  804.6805    806.61
+## 1  0.1275230 0.1279496 0.1292822 0.1311742 0.1335903
+## 2  0.1264982 0.1271310 0.1285108 0.1303399 0.1325272
+## 3  0.1304118 0.1306754 0.1320166 0.1338241 0.1360953
+## 4  0.1300222 0.1304067 0.1320180 0.1340073 0.1362706
+## 5  0.1286020 0.1287896 0.1300223 0.1320119 0.1344266
+## 6  0.1282173 0.1282823 0.1296366 0.1317986 0.1340615
+## 7  0.1261749 0.1267328 0.1282438 0.1298927 0.1317546
+## 8  0.1264661 0.1269154 0.1282541 0.1299583 0.1320672
+## 9  0.1270601 0.1275511 0.1289000 0.1306090 0.1329558
+## 10 0.1268127 0.1274607 0.1287653 0.1306390 0.1331313</code></pre>
+</div>
+<div id="standard-normal-variate" class="section level2">
+<h2>Standard Normal Variate</h2>
+<pre class="r"><code>df_snv &lt;- standardNormalVariate(df)
+
+oil.snv &lt;- cbind(oil.data[,1:3], df)</code></pre>
+<p><strong>SNV spectral</strong></p>
+<pre class="r"><code>x &lt;- as.numeric(colnames(oil.snv))
+y &lt;- t(oil.snv[ , ])
+
+par(mar=(c(5,7,4,2)))
+
+matplot(x, y,col = colors, ylim = c(0,2),
+        type = &#39;l&#39;, lty = 1,
+        xlab = &#39;Wavelength (nm)&#39;, ylab = &#39;Absorbance&#39;,main = &quot;SNV&quot;,
+        font.lab = 1,
+        cex.main = 1, cex.axis = 1, cex.lab=2)
+legend(&quot;topleft&quot;,
+       title = &quot;Country&quot;,
+       xpd = F,ncol = 1,
+       legend = group,
+       col = col,
+       fill = colors,
+       bty = &quot;n&quot;,
+       cex = 1.5,
+       text.col = &quot;black&quot;, text.font = 1,
+       horiz = F)</code></pre>
+<p><img src="/post/2021-01-09-principal-component-analysis/pca_files/figure-html/code14-1.png" width="672" /></p>
+<pre class="r"><code>p3 &lt;- recordPlot()</code></pre>
+<p>p3</p>
+</div>
+<div id="the-pca-plot-of-snv-spectral" class="section level2">
+<h2>The PCA plot of SNV Spectral</h2>
+<pre class="r"><code>oil.snv.pca &lt;- PCA(oil.snv[,4:563],scale.unit = TRUE,ncp = 5,graph = TRUE)</code></pre>
+<pre class="r"><code>g3 &lt;- fviz_pca_ind(oil.snv.pca, geom.ind = &quot;point&quot;,
+                   col.ind = oil.snv$Countries, # color by groups
+                   palette = &#39;jco&#39;,
+                   addEllipses = TRUE, ellipse.type = &quot;convex&quot;,
+                   legend.title = &quot;Groups&quot;)+
+  ggtitle(&quot;Oil - geographical-SNV&quot;)
+
+g3</code></pre>
+<p><img src="/post/2021-01-09-principal-component-analysis/pca_files/figure-html/code16-1.png" width="672" /></p>
+</div>

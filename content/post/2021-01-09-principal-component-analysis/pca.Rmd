@@ -1,0 +1,165 @@
+---
+title: Principal component analysis
+author: ''
+date: '2021-01-09'
+slug: pca
+categories:
+  - R
+tags:
+  - Data analysis
+---
+## Principal component analysis(PCA)
+From this section, the machine learning will be discussed by foods data, the data from Mid-infrared spectroscopy will be used for Geographical origin of Extra Virgin Olive Oils (Quadram open dataset,2003).
+
+## Load dataset
+
+```{r workspace}
+## Load date
+setwd("C:/blog/Dataset")
+
+oil <- read.csv('FTIR_Spectra_olive_oils.csv',header = F, 
+                stringsAsFactors = T)
+
+print(oil[1:10,1:5])
+```
+
+## Data wrangling
+
+The raw data form are not suitable for R programming, therefore we need to transpose it to suitable form.
+
+```{r data wrangling, echo=TRUE, message=FALSE, warning=FALSE}
+## data transpose
+oil_transpose <- as.data.frame(t(oil))
+
+print(oil_transpose[1:10,1:5])
+## rename some col names to make data analysis easier
+
+colnames(oil_transpose)=oil_transpose[1,]
+oil_transpose <- oil_transpose[-1,]
+library(dplyr)
+oil_transpose <- rename(oil_transpose,c("Group" ="Group Code:",
+                                        "Number" ="Sample Number:",
+                                        "Countries" ="Wavenumbers"))
+## Get transposed dataset
+
+oil.data <- oil_transpose
+
+print(oil.data[1:10,1:5])
+
+```
+
+## Principal Component Analysis
+
+The PCA is used to reduce the dimensionality of the spectral value, and initially explore the distribution of the sample.
+
+The original data and related transformated data (MSC, SNV and Savitzky-Golay filtering) are used to obtain the PCA plots.
+
+```{r code9, echo=TRUE, message=FALSE, warning=FALSE}
+library(factoextra)
+library(FactoMineR)
+library(ggrepel)
+library(ggplot2)
+library(prospectr)
+```
+
+## Raw data PCA
+
+Have a look at spectral of different pre-processing for MIR.
+
+```{r pca col, echo=TRUE}
+colors = c("#CD0000", "#EE7600", "#FFFF00", "#008B45")
+col <- as.factor(oil.data$Countries)
+group <- c("Greece","Italy","Portuga", "Spain")
+
+```
+
+**RAW spectral**
+
+```{r code10, message=FALSE, warning=FALSE}
+raw_spc <- oil.data[,4:573]
+
+x <- as.numeric(colnames(raw_spc))
+y <- t(raw_spc[ , ])
+
+par(mar=(c(5,7,4,2)))
+
+matplot(x, y,col = colors,
+        type = 'l', lty = 1,
+        xlab = 'Wavelength (nm)', ylab = 'Absorbance',main = "Raw",
+        font.lab = 1,
+        cex.main = 1, cex.axis = 1, cex.lab=2)
+legend("topleft",
+       title = "Country",
+       xpd = F,ncol = 1,
+       legend = group,
+       col = col,
+       fill = colors,
+       bty = "n",
+       cex = 1.5,
+       text.col = "black", text.font = 1,
+       horiz = F)
+
+p1 <- recordPlot()
+```
+
+
+```{r code11,echo=TRUE}
+df_raw <- oil.data[,4:573]
+
+df <- as.data.frame(apply(df_raw, 2, as.numeric))
+print(df[1:10,1:5])
+```
+
+## Standard Normal Variate
+
+```{r pca snv}
+df_snv <- standardNormalVariate(df)
+
+oil.snv <- cbind(oil.data[,1:3], df)
+```
+**SNV spectral**
+
+```{r code14, message=FALSE, warning=FALSE}
+x <- as.numeric(colnames(oil.snv))
+y <- t(oil.snv[ , ])
+
+par(mar=(c(5,7,4,2)))
+
+matplot(x, y,col = colors, ylim = c(0,2),
+        type = 'l', lty = 1,
+        xlab = 'Wavelength (nm)', ylab = 'Absorbance',main = "SNV",
+        font.lab = 1,
+        cex.main = 1, cex.axis = 1, cex.lab=2)
+legend("topleft",
+       title = "Country",
+       xpd = F,ncol = 1,
+       legend = group,
+       col = col,
+       fill = colors,
+       bty = "n",
+       cex = 1.5,
+       text.col = "black", text.font = 1,
+       horiz = F)
+
+p3 <- recordPlot()
+```
+p3
+
+## The PCA plot of SNV Spectral
+
+```{r code 15, fig.show='hide'}
+oil.snv.pca <- PCA(oil.snv[,4:563],scale.unit = TRUE,ncp = 5,graph = TRUE)
+```
+
+
+```{r code16}
+g3 <- fviz_pca_ind(oil.snv.pca, geom.ind = "point",
+                   col.ind = oil.snv$Countries, # color by groups
+                   palette = 'jco',
+                   addEllipses = TRUE, ellipse.type = "convex",
+                   legend.title = "Groups")+
+  ggtitle("Oil - geographical-SNV")
+
+g3
+```
+

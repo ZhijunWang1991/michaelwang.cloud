@@ -1,0 +1,72 @@
+---
+title: Data Visualization--Lineplot & Violinplot
+author: ''
+date: '2020-03-10'
+slug: lineplot
+categories:
+  - R
+tags:
+  - Data Visualization
+---
+Examples : **The weight of chicks from different months and feed diet**.
+   
+Firstly, have a look at dataset. The **structure of dataset** is following:
+
+```{r code1, echo=TRUE, message=FALSE, warning=FALSE}
+setwd("C:/blog/Dataset")
+# library
+library(tidyverse)
+library(ggplot2)
+library(hrbrthemes)
+Chick_data <- ChickWeight
+
+str(Chick_data)
+```
+
+Then, have a look at the first 5 lines in datasets, we could find the dataset includes **weight**, **chick numbers**, **diet** and **times** variables.
+
+```{r code2}
+head(Chick_data, n =5)
+```
+
+## Line plot
+
+**To explore the relationship between weight and time using package ggplot2**
+
+```{r code3, echo=TRUE, message=FALSE, warning=FALSE}
+g1 <- ggplot(data = Chick_data,aes(x = Time, y = weight, color = Chick)) +
+  geom_point(size = 3L)+
+  geom_line()+
+  labs(title="Plot of Chick weight and Time",
+       x = "Time", y = "Weight",color = "Chick code") +
+  theme_bw()+
+  theme(
+    plot.title = element_text(color="black", size=14, face="bold.italic"),
+    axis.title.x = element_text(color="black", size=14, face="bold"),
+    axis.title.y = element_text(color="black", size=14, face="bold")
+  )
+g1
+```
+
+The results from plot indicated that the weight incresed with the increasing times.
+
+## Violin plot
+
+**To explore the relationship between weight and time using violin plot**
+
+
+```{r code4, echo=TRUE, message=FALSE, warning=FALSE}
+g2 <- ggplot(data = Chick_data,aes(x = Diet, y = weight, fill = Diet)) +
+  geom_violin(aes(fill = factor(Diet)))+
+  geom_boxplot(width=0.1)+
+  labs(title="Plot of Chick weight and Feed diet",
+       x = "Diet", y = "Weight",color = "Feed Diet") +
+  theme_bw()+
+  theme(
+    plot.title = element_text(color="black", size=14, face="bold.italic"),
+    axis.title.x = element_text(color="black", size=14, face="bold"),
+    axis.title.y = element_text(color="black", size=14, face="bold")
+  )
+g2
+
+```

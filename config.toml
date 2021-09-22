@@ -6,7 +6,7 @@ ignoreFiles = ['\.Rmd$', '\.Rmarkdown$', '_cache$', '\.knit\.md$', '\.utf8\.md$'
 languageCode = 'en-us'
 preserveTaxonomyNames = true
 theme = 'hugo-ivy'
-title = 'Zhijun Blog'
+title = 'Food & Data '
 googlefonts = "//fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
 [markup]
 [markup.goldmark]
@@ -50,7 +50,7 @@ url = '/tags/'
 weight = 8
 
 [params]
-description = 'Practice makes perfect :熟能生巧.'
+description = 'Practice makes perfect.'
 footer = '&copy; [Zhijun Wang](https://zhijunwang.me) 2019-2021'
 highlightjsCDN = '//cdn.bootcss.com'
 highlightjsLang = ['r', 'yaml', 'tex']
