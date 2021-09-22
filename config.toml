@@ -18,7 +18,7 @@ unsafe = true
 [menu]
 [[menu.main]]
 name = 'Home'
-url = '/'
+url = '/home/'
 weight = 1
 [[menu.main]]
 name = 'About'
