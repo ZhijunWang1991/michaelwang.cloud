@@ -1,0 +1,184 @@
+---
+title: Discrimination model (PLS-DA)
+author: ''
+date: '2021-04-08'
+slug: PLSDA
+categories:
+  - R
+tags:
+  - Data analysis
+  - data science
+---
+## Discrimination analysis
+
+ Examples: **Using PLS-DA for geographical origin of oils**
+ 
+ Dataset: Mid-infrared spectroscopy of Extra Virgin Olive Oils for Geographical origin discrimination analysis (Quadram open dataset,2003).
+
+## Data preprocess
+
+```{r workspace, message=FALSE, warning=FALSE}
+## Load date
+setwd("C:/blog/Dataset")
+
+oil <- read.csv('FTIR_Spectra_olive_oils.csv',header = F, 
+                stringsAsFactors = T)
+
+print(oil[1:10,1:5])
+
+## data transpose
+oil_transpose <- as.data.frame(t(oil))
+
+print(oil_transpose[1:10,1:5])
+## rename some col names to make data analysis easier
+
+colnames(oil_transpose)=oil_transpose[1,]
+oil_transpose <- oil_transpose[-1,]
+
+library(dplyr)
+
+oil_transpose <- rename(oil_transpose,c("Group" ="Group Code:",
+                                        "Number" ="Sample Number:",
+                                        "Countries" ="Wavenumbers"))
+## Get transposed dataset
+
+oil.data <- oil_transpose
+
+print(oil.data[1:10,1:5])
+
+df_raw <- oil.data[,4:573]
+
+df <- as.data.frame(apply(df_raw, 2, as.numeric))
+str(df)
+print(df[1:10,1:5])
+
+## SNV transformation
+library(prospectr)
+df_snv <- standardNormalVariate(df)
+
+oil.snv <- cbind(oil.data[,1:3], df)
+```
+
+
+## To have a pls-da plot
+
+```{r plsda2, message=FALSE, warning=FALSE}
+
+library(mixOmics)
+## Data set
+
+oil_data <- oil.snv[,4:573]
+X <- oil_data
+
+Country <- oil.snv[,3]
+Y <- as.factor(Country)
+
+summary(Y)
+
+MyResult.splsda <- mixOmics::splsda(X,Y, keepX = c(10,15))
+
+plotIndiv(MyResult.splsda, ind.names = FALSE, legend=TRUE,
+          ellipse = TRUE, star = TRUE, title = 'sPLS-DA on geographical origin of oil',
+          X.label = 'PLS-DA 1 (44%)', Y.label = 'PLS-DA 2 (20%)')
+
+auc.plsda <- auroc(MyResult.splsda)
+
+```
+
+## Variable selection outputs
+
+The contribution of selected variables for PLS-DA model:
+
+```{r pls3, message=FALSE, warning=FALSE}
+MyResult.splsda2 <- mixOmics::splsda(X,Y, ncomp=3, keepX=c(15,10,5))
+
+plotLoadings(MyResult.splsda2, contrib = 'max', method = 'mean')
+
+```
+
+## Tuning parameters and numerical outputs
+
+```{r pls4, message=FALSE, warning=FALSE}
+MyResult.plsda2 <- mixOmics::splsda(X,Y, ncomp=10)
+set.seed(30) # for reproducbility in this vignette, otherwise increase nrepeat
+MyPerf.plsda <- perf(MyResult.plsda2, validation = "Mfold", folds = 3, 
+                  progressBar = FALSE, nrepeat = 10) # we suggest nrepeat = 50
+
+plot(MyPerf.plsda, col = color.mixo(5:7), sd = TRUE, legend.position = "horizontal")
+
+list.keepX <- c(5:10,  seq(20, 100, 10))
+
+list.keepX
+
+set.seed(123)
+
+tune.splsda.oil <- tune.splsda(X, Y, ncomp = 10,
+                                 validation = 'Mfold',
+                                 folds = 3, dist = 'max.dist', progressBar = FALSE,
+                                 measure = "BER", test.keepX = list.keepX,
+                                 nrepeat = 50)
+
+error <- tune.splsda.oil$error.rate
+
+ncomp <- tune.splsda.oil$choice.ncomp$ncomp
+
+ncomp
+
+select.keepX <- tune.splsda.oil$choice.keepX[1:ncomp]
+
+select.keepX
+
+```
+
+## The final pls-da model using tuning setting
+
+```{r pls5, message=FALSE, warning=FALSE}
+MyResult.splsda.final <- mixOmics::splsda(X, Y, ncomp = ncomp, keepX = select.keepX)
+
+plotIndiv(MyResult.splsda.final, ind.names = FALSE, legend=TRUE,
+          ellipse = TRUE, star = TRUE, title = 'sPLS-DA on geographical origin of oil',
+          X.label = 'PLS-DA 1 (30%)', Y.label = 'PLS-DA 2 (16%)')
+```
+
+## Discrimination accuracy based on traing and testing data
+
+```{r PLSDA6, echo=TRUE, message=FALSE, warning=FALSE}
+library(caret)
+oildata <- cbind(Country, oil_data)
+
+set.seed(100)
+
+# Step 1: Get row numbers for the training data
+trainRowNumbers <- createDataPartition(oildata$Country, p=0.7, list=FALSE)
+
+# Step 2: Create the training  dataset
+trainData <- oildata[trainRowNumbers,]
+
+# Step 3: Create the test dataset
+testData <- oildata[-trainRowNumbers,]
+
+plsda_model <- caret::plsda(trainData[,2:571],factor(trainData$Country), ncomp = 6, probMethod = "Bayes")
+
+
+C1 <- confusionMatrix(predict(plsda_model, trainData[,2:571]),as.factor(trainData$Country))
+
+C2 <- confusionMatrix(predict(plsda_model, testData[,2:571]),as.factor(testData$Country))
+
+```
+
+The Confusion Matrix for geographical origin using training data
+```{r plsda results_train}
+
+C1
+
+```
+
+The Confusion Matrix for geographical origin using testing data
+```{r plsda results_test}
+
+C2
+
+```
+
+The overall accuracy for training set is **96%** and for testing set is **91%**.
+
