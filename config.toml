@@ -18,7 +18,7 @@ unsafe = true
 [menu]
 [[menu.main]]
 name = 'Home'
-url = '/home/'
+url = '/'
 weight = 1
 [[menu.main]]
 name = 'About'
@@ -34,7 +34,7 @@ url = '/publications/'
 weight = 4
 [[menu.main]]
 name = 'Blog'
-url = '/post/'
+url = '/post/blog/'
 weight = 5
 [[menu.main]]
 name = 'Categories'
@@ -48,8 +48,6 @@ weight = 7
 name = 'Tags'
 url = '/tags/'
 weight = 8
-
-
 
 [params]
 description = 'Practice makes perfect :熟能生巧.'

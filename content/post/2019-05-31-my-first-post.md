@@ -1,6 +1,5 @@
 ---
 title: My first post
-author: Butter
 date: '2019-05-31'
 slug: my-first-post
 ---
