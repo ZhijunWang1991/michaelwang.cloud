@@ -1,50 +1,94 @@
 ---
 title: "Curriculum Vitae"
 slug: "vitae"
-date: '2021-08-20'
+date: '2021-09-20'
 disable_comments: true
 ---
-# Zhijun Wang
+> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<*Westworld*>>
 
-position: "PhD Candidate of Food Authenticity and Nutrition"
+### Hi there, welcome to my blog! 👋
 
-## Contact Information
+- 🌾 I’m a PhD Candidate of Food Authenticity and Nutrition at Wageningen Univeristy & Research.
 
-- Homepage: <https://zhijunwang.me>
-- Email: zhijun0916@gmail.com
-- Github: [Zhijun_Github](https://github.com/ZhijunWang1991)
-- Researchgate:[Zhijun_Research](https://www.researchgate.net/profile/Zhijun-Wang-18)
-- GoogleScholar: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en)
-- Linkedin: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
+- 👨‍💻 I have been working with the Food Science and Data Science since 2017, during this time I worked with a variety of mass spectrometry, spectral analysis techniques, regression and classification models.
 
-## Brief Biography
+- 🌏 I believe that digital transformation is one of the trends in building sustainable agricultural and food systems.
 
-Zhijun Wang is 4th year PhD candidate in Wageningen University. 
-He is currently in PhD career of food integrity and authenticity studies at Wageningen University. His research interests centre around the innovative fingerprinting technology against food fraud and effective risk mitigation strategies. His current research is correlation research into the geographical features, management system and banana compositions.His previous study is involved in structure-function relationships of plant polysaccharides.
+### Contact Information
 
-## Research Interest
+- ✏️ **Personal Homepage**: <https://zhijunwang.me>
+
+- 📧 **Email**: zhijun0916@gmail.com
+
+- ⚙️ **Github**: [ZhijunWang](https://github.com/ZhijunWang1991)
+
+- 🏰 **Google Scholar**: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en)
+
+- 🙋‍♂️ **Linkedin**: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
+
+
+### 🍌Research Interest
 
 Food fraud, food safety, data chemomentrics, big data analysis in foods
 
-## Education Background
+### 👩‍🏫Education Background
 
-- 2017 ~ now, PhD in Food Authenticity and Nutrition, Wageningen University
-- 2014 ~ 2017, Master of Food Science, Nanchang University
-- 2010 ~ 2014, Bachelor of Food Science, Nanchang University
+* 2017-Now, PhD. in Food Fraud and Authentication, Wageningen University & Research, the Netherlands
 
-## Research experience
+* 2014-2017, Msc in Food Science, Nanchang University, China
 
-- HPLC-MS, GC-MS, Hyperspectal imagings, IR-MS, ICP-MS, etc.
-- Image analysis by Matlab & R
-- Data analysis by R
-- Nutrition evaluation of food for Animal/Human
-- Cell culture and animal model
+* 2011-2013, Second Bsc in Economics, Nanchang University, China
 
-## Selected Publications
+* 2010-2014, Bsc in Food Science, Nanchang University, China
+
+### 💪Research experience
+
+* **Hyperspectral imaging (HSI)** and **Near infrared spectroscopy (NIR)** for geographical origin and organic certification of food
+
+* Multiple mass spectrometry techniques such as **GC-MS**, **ICP-MS**, **IR-MS**, **DART-HR-MS** to explore the compositional characteristics of food
+
+* Nutrition evaluation of food for Animal/Human by **Cell Culture** and **animal model**
+
+### ⚒️Data science experiences
+
+  I am writing a **Data Science Cookbook in Food Application** to summary the necessary data techniques in food science, you can find the [**digital version here**](https://github.com/ZhijunWang1991/Machine-learning-Report/blob/main/Data-Science-Cookbook-in-Food-Application.pdf). R is my main programming language. The most of experiences is to built **predicted models** for the geographical origins of my samples based on NIR spectral, chemical compositions, HSI image features using Principal component analysis (PCA), Partial Least-Squares Discriminant Analysis (PLS-DA), random forest (RF) and other Machine Learning algorithms. 
+  
+* *Data Visualization* with R: Scatter plot, boxplot, heatmap, etc.
+
+* *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
+
+* *Principal component analysis* (PCA) from computing to visualizations.
+
+* *Classification model*: PLS-DA, ANN, random forest  and other Machine learning algorithms.
+
+* I am also learning *Python* and *Matlab* for image analysis;
+
+### 📕Obtained certification in Data Science:
+
+* [**Data Scientist with R Track**](https://www.datacamp.com/statement-of-accomplishment/track/29dae208d30684b87e6071f27a9e4b2816407ba6?raw=1), DataCamp.
+* [**Data Visualization with R Track**](https://www.datacamp.com/statement-of-accomplishment/track/b1b88592910af14b2485ea9c0d4a2570cde4e234), DataCamp.
+* [**Machine Learning with *caret* in R**](https://www.datacamp.com/statement-of-accomplishment/course/904ee255e9b6a72c48006df6f3bb3a0cfdb98805), DataCamp.
+* [**Data analytics (Python)**](https://graduation.udacity.com/confirm/H9LHJ5Q7), Udacity.
+
+<br/><img src="/./vitae_files/Data Visualization.png" alt="" width="25%" height="25%"/>
+<img src="/./vitae_files/Udacity_python.png" alt="" width="25%" height="25%"/><br/>
+
+<br/><img src="/./vitae_files/Machine Learning caret.png" alt="" width="25%" height="25%"/>
+<img src="/./vitae_files/DatascientistwithR.png" alt="" width="25%" height="25%"/><br/>
+
+### 🌏 Conferences
+
+* The correlation analysis of banana composition and growing condition based on stable isotope and elemental analysis. **Oral presented** at china international food safety & quality conference 2020, Shanghai, China.
+
+* Banana provenance: Correlation of growing conditions, stable isotopes and elemental compositions of costa rican bananas. **Poster presented** at the 33rd the european federation of food science and technology (effost) international conference,2019, Rotterdam, the Netherlands.
+
+* Geographical features of bananas in costa rica and their stable isotope ratios and elemental compositions. **Oral presented** at the benelux association of stable isotope scientists (basis) meeting, 2019, Texel, the Netherlands.
+
+### 📜 Publications
 
 You can check my whole Publications in [Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en):
 
-### Selected Papers (as 1st author):
+The Selected Papers as 1st author:
 
 1.  **Wang, Z. et al.**(2021). Preliminary Study on Tracing the Origin and Exploring the Relations between Growing Conditions and Isotopic and Elemental Fingerprints of Organic and Conventional Cavendish Bananas (*Musa* spp.). *Foods*, 10, 1021.https://doi.org/10.3390/foods10051021
 
@@ -62,22 +106,10 @@ You can check my whole Publications in [Google Scholar](https://scholar.google.c
 
 8.  **Wang, Z.et al**(2015). Sulfated polysaccharides from *Cyclocarya paliurus* reduce H<sub>2</sub>O<sub>2</sub> -induced oxidative stress in RAW264.7 cells. International Journal of Biological Macromolecules, 80, 410–417. https://doi.org/10.1016/j.ijbiomac.2015.06.031
 
-### conferences
+### 👨‍🏫Teaching experiences
 
-1. The correlation analysis of banana composition and growing condition based on stable isotope and elemental analysis. **Oral presented** at china international food safety & quality conference 2020, Shanghai, China.
+* 2017-2021, as course assistance in two difference courses WUR.
 
-2. Banana provenance: Correlation of growing conditions, stable isotopes and elemental compositions of costa rican bananas. **Poster presented** at the 33rd the european federation of food science and technology (effost) international conference,2019, Rotterdam, the Netherlands.
 
-3. Geographical features of bananas in costa rica and their stable isotope ratios and elemental compositions. **Oral presented** at the benelux association of stable isotope scientists (basis) meeting, 2019, Texel, the Netherlands.
-
-## Data self-path
-
-1. Machine Learning with caret in R (Data Camp) [Certification code](Code#17,521,223)
-   Date: 2021-Jan
-   
-2. Data analytics (Udacity) [Certification code](https://confirm.udacity.com/H9LHJ5Q7)
-   Date: 2019-Oct
-   
-## Website Build
-
-[Personal websit](https://zhijunwang.me) built in [blogdown](https://github.com/rstudio/blogdown) and [hugo](https://gohugo.io/).
+### End
+> Is it possiable to decode an individual by the fewest lines? -- <<*Westworld*>>
