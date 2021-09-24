@@ -57,7 +57,6 @@ highlightjsCDN = '//cdn.bootcss.com'
 highlightjsLang = ['r', 'yaml', 'tex']
 highlightjsTheme = 'github'
 highlightjsVersion = '9.12.0'
-favicon = '/img/favicon.ico'
 
 [permalinks]
 note = '/note/:year/:month/:day/:slug/'
