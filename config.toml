@@ -58,6 +58,7 @@ highlightjsLang = ['r', 'yaml', 'tex']
 highlightjsTheme = 'github'
 highlightjsVersion = '9.12.0'
 
+
 [permalinks]
 note = '/note/:year/:month/:day/:slug/'
 post = '/post/:year/:month/:day/:slug/'
