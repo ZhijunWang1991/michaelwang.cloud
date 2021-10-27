@@ -52,7 +52,7 @@ weight = 6
 
 [params]
 description = 'Practice makes perfect.'
-footer = '&copy; [Zhijun Wang](https://zhijunwang.me) since 2019'
+footer = '&copy; [Zhijun Wang](https://zhijunwang.me) 2021'
 highlightjsCDN = '//cdn.bootcss.com'
 highlightjsLang = ['r', 'yaml', 'tex']
 highlightjsTheme = 'github'
