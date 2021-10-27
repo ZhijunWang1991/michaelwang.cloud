@@ -1,5 +1,9 @@
 ---
 title: Simple correlation analysis
+output:
+  revealjs::revealjs_presentation:
+    theme: sky
+    highlight: tango
 author: ''
 date: '2021-05-04'
 slug: corr
