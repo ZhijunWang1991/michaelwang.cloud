@@ -50,6 +50,11 @@ name = 'Tags'
 url = '/tags/'
 weight = 6
 
+[[menu.main]]
+name = 'Fun'
+url = '/fun/'
+weight = 7
+
 [params]
 description = 'Practice makes perfect.'
 footer = '&copy; [Zhijun Wang](https://zhijunwang.me) 2021'
