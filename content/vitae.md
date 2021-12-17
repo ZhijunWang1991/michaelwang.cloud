@@ -4,7 +4,8 @@ slug: "vitae"
 date: '2021-09-20'
 disable_comments: true
 ---
-> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<*Westworld*>>
+> Is it possiable to decode an individual by the fewest lines? -- <<**Westworld**>>
+
 
 ### Hi there, welcome to my blog! 👋
 
@@ -51,7 +52,13 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 
 ### ⚒️Data science experiences
 
-  I am writing a **Data Science Cookbook in Food Application** to summary the necessary data techniques in food science, you can find the [**digital version here**](https://github.com/ZhijunWang1991/Machine-learning-Report/blob/main/Data-Science-Cookbook-in-Food-Application.pdf). R is my main programming language. The most of experiences is to built **predicted models** for the geographical origins of my samples based on NIR spectral, chemical compositions, HSI image features using Principal component analysis (PCA), Partial Least-Squares Discriminant Analysis (PLS-DA), random forest (RF) and other Machine Learning algorithms. 
+#### Package development
+   developed a R package name [wagedown](https://github.com/ZhijunWang1991/wagedown) (adapted from [bookdown](https://bookdown.org) and [thesisdown](http://thesisdown.rbind.io)). **wagedown** could provide Rmarkdown template for writing PhD thesis at Wageningen university.
+
+#### Data Science Book
+   A book named **Data Science Cookbook in Food Application** to summary the necessary data techniques in food science, you can find the [**digital version here**](https://github.com/ZhijunWang1991/Machine-learning-Report/blob/main/Data-Science-Cookbook-in-Food-Application.pdf).
+   
+#### Hand-in R
   
 * *Data Visualization* with R: Scatter plot, boxplot, heatmap, etc.
 
@@ -60,8 +67,6 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 * *Principal component analysis* (PCA) from computing to visualizations.
 
 * *Classification model*: PLS-DA, ANN, random forest  and other Machine learning algorithms.
-
-* I am also learning *Python* and *Matlab* for image analysis;
 
 ### 📕Obtained certification in Data Science:
 
@@ -112,4 +117,4 @@ The Selected Papers as 1st author:
 
 
 ### End
-> Is it possiable to decode an individual by the fewest lines? -- <<*Westworld*>>
+> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<**Westworld**>>
