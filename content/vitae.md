@@ -21,8 +21,6 @@ disable_comments: true
 
 - 📧 **Email**: zhijun0916@gmail.com
 
-- ⚙️ **Github**: [ZhijunWang](https://github.com/ZhijunWang1991)
-
 - 🏰 **Google Scholar**: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en)
 
 - 🙋‍♂️ **Linkedin**: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
@@ -30,7 +28,7 @@ disable_comments: true
 
 ### 🍌Research Interest
 
-Food fraud, food safety, data chemomentrics, big data analysis in foods
+Food fraud, food safety, data science, chemomentrics
 
 ### 👩‍🏫Education Background
 
@@ -50,15 +48,7 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 
 * Nutrition evaluation of food for Animal/Human by **Cell Culture** and **animal model**
 
-### ⚒️Data science experiences
-
-#### Package development
-   developed a R package name [wagedown](https://github.com/ZhijunWang1991/wagedown) (adapted from [bookdown](https://bookdown.org) and [thesisdown](http://thesisdown.rbind.io)). **wagedown** could provide Rmarkdown template for writing PhD thesis at Wageningen university.
-
-#### Data Science Book
-   A book named **Data Science Cookbook in Food Application** to summary the necessary data techniques in food science, you can find the [**digital version here**](https://github.com/ZhijunWang1991/Machine-learning-Report/blob/main/Data-Science-Cookbook-in-Food-Application.pdf).
-   
-#### Hand-in R
+#### ⚒️Hand-in R
   
 * *Data Visualization* with R: Scatter plot, boxplot, heatmap, etc.
 
@@ -74,12 +64,6 @@ Food fraud, food safety, data chemomentrics, big data analysis in foods
 * [**Data Visualization with R Track**](https://www.datacamp.com/statement-of-accomplishment/track/b1b88592910af14b2485ea9c0d4a2570cde4e234), DataCamp.
 * [**Machine Learning with *caret* in R**](https://www.datacamp.com/statement-of-accomplishment/course/904ee255e9b6a72c48006df6f3bb3a0cfdb98805), DataCamp.
 * [**Data analytics (Python)**](https://graduation.udacity.com/confirm/H9LHJ5Q7), Udacity.
-
-<br/><img src="/./vitae_files/Data Visualization.png" alt="" width="25%" height="25%"/>
-<img src="/./vitae_files/Udacity_python.png" alt="" width="25%" height="25%"/><br/>
-
-<br/><img src="/./vitae_files/Machine Learning caret.png" alt="" width="25%" height="25%"/>
-<img src="/./vitae_files/DatascientistwithR.png" alt="" width="25%" height="25%"/><br/>
 
 ### 🌏 Conferences
 
