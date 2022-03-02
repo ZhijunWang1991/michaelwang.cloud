@@ -49,7 +49,9 @@ Food fraud, food safety, data science, chemomentrics
 * Nutrition evaluation of food for Animal/Human by **Cell Culture** and **animal model**
 
 #### ⚒️Hand-in R
-  
+
+* Developed a *R package* named [**wagedown**](https://github.com/ZhijunWang1991/wagedown), which is adapted from bookdown package. The wagedown package provides a handy template for writing a PhD thesis at Wageningen University and rendering those files in a PDF format. 
+
 * *Data Visualization* with R: Scatter plot, boxplot, heatmap, etc.
 
 * *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
