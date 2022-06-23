@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 slug: "vitae"
-date: '2021-09-20'
+date: '2022-06-20'
 disable_comments: true
 ---
 > Is it possiable to decode an individual by the fewest lines? -- <<**Westworld**>>
@@ -9,7 +9,7 @@ disable_comments: true
 
 ### Hi there, welcome to my blog! 👋
 
-- 🌾 I’m a PhD Candidate of Food Authenticity and Nutrition at Wageningen Univeristy & Research.
+- 🌾 I’m a fresh PhD of Food Authenticity & Nutrition.
 
 - 👨‍💻 I have been working with the Food Science and Data Science since 2017, during this time I worked with a variety of mass spectrometry, spectral analysis techniques, regression and classification models.
 
@@ -28,11 +28,11 @@ disable_comments: true
 
 ### 🍌Research Interest
 
-Food fraud, food safety, data science, chemomentrics
+Food fraud, food safety, nutrition, data science, chemomentrics
 
 ### 👩‍🏫Education Background
 
-* 2017-Now, PhD. in Food Fraud and Authentication, Wageningen University & Research, the Netherlands
+* 2017-2022, PhD. in Food Fraud and Authentication, Wageningen University & Research, the Netherlands
 
 * 2014-2017, Msc in Food Science, Nanchang University, China
 
