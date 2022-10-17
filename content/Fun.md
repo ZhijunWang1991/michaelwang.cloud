@@ -1,7 +1,7 @@
 ---
 title: "Travel adventure"
 slug: "fun"
-date: `r Sys.Date()`
+date: "2022-10-17"
 disable_comments: true
 ---
 
