@@ -7,3 +7,4 @@ disable_comments: true
 
 ### Hi there, this page is to record the food I like and my travel history! 👋
 
+<img src="/./Fun_files/1.jpg" alt="" width="30%"/>
