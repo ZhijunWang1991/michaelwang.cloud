@@ -5,4 +5,4 @@ date: "2022-10-17"
 disable_comments: true
 ---
 
-![](/./gallery_files/Violin_plot.png)
+<img src="/./gallery_files/line_plot.png" alt="Line_plot" width="60%"/>
