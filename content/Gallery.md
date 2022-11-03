@@ -4,7 +4,7 @@ slug: "gallery"
 date: "2022-10-17"
 disable_comments: true
 ---
-![](/./gallery_files/line_plot.png){width=50%} ![](/./gallery_files/Violin_plot.png){width=50%}
+![](/./gallery_files/line_plot.png){width=50%}![](/./gallery_files/Violin_plot.png){width=50%}
 <img src="/./gallery_files/line_plot.png" alt="Line_plot" width="60%"/><img src="/./gallery_files/Violin_plot.png" alt="" width="60%"/>
 <img src="/./gallery_files/Box_plots.png" alt="" width="60%"/><img src="/./gallery_files/Histogram.png" alt="" width="60%"/>
 <img src="/./gallery_files/Density_chart.png" alt="" width="60%"/><img src="/./gallery_files/Scatter_plot.png" alt="" width="60%"/>
