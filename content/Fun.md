@@ -1,6 +1,6 @@
 ---
-title: "Travel adventure"
-slug: "fun"
+title: "Gallery"
+slug: "Data visulization and modelling"
 date: "2022-10-17"
 disable_comments: true
 ---

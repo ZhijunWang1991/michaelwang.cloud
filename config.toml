@@ -51,8 +51,8 @@ url = '/tags/'
 weight = 6
 
 [[menu.main]]
-name = 'Fun'
-url = '/fun/'
+name = 'Gallery'
+url = '/gallery/'
 weight = 7
 
 [params]
