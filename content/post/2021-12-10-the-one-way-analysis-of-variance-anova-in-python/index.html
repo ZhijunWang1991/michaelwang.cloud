@@ -85,11 +85,12 @@ print(w, pvalue)</code></pre>
 <p>As the p value is non significant, we fail to reject null hypothesis and conclude that data is drawn from normal distribution.</p>
 <p>perform multiple pairwise comparison (Tukey’s HSD)</p>
 <pre class="python"><code># unequal sample size data, tukey_hsd uses Tukey-Kramer test
+import warnings
+warnings.filterwarnings(&#39;ignore&#39;)
+
 res = stat()
-res.tukey_hsd(df=df, res_var=&#39;Vitamin&#39;, xfac_var=&#39;Fruit&#39;, anova_model=&#39;Vitamin~ C(Fruit)&#39;)</code></pre>
-<pre><code>## C:\Users\maxzh\AppData\Roaming\Python\Python310\site-packages\bioinfokit\analys.py:402: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying &#39;numeric_only=None&#39; is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
-##   mult_group[ele] = df[df[xfac_var] == ele].mean().loc[res_var]</code></pre>
-<pre class="python"><code>res.tukey_summary</code></pre>
+res.tukey_hsd(df=df, res_var=&#39;Vitamin&#39;, xfac_var=&#39;Fruit&#39;, anova_model=&#39;Vitamin~ C(Fruit)&#39;)
+res.tukey_summary</code></pre>
 <pre><code>##    group1      group2      Diff     Lower     Upper    q-value   p-value
 ## 0   Apple      Banana  5.483333  3.547664  7.419003  10.401813  0.001000
 ## 1   Apple  Watermelon  3.900000  1.964331  5.835669   7.398250  0.001000

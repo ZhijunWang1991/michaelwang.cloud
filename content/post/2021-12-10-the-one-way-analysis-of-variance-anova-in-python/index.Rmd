@@ -77,6 +77,9 @@ perform multiple pairwise comparison (Tukey's HSD)
 
 ```{python tukey_hsd, echo=TRUE}
 # unequal sample size data, tukey_hsd uses Tukey-Kramer test
+import warnings
+warnings.filterwarnings('ignore')
+
 res = stat()
 res.tukey_hsd(df=df, res_var='Vitamin', xfac_var='Fruit', anova_model='Vitamin~ C(Fruit)')
 res.tukey_summary
