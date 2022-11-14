@@ -76,12 +76,12 @@ plt.show()
 
 ```{python echo=TRUE}
 plt.figure(figsize=(12,9))
-sns.lmplot( data = Fruits, x="Glucose", y="Fiber", fit_reg=False, hue='Group', legend=False, palette="Set2")
+sns.lmplot(data = Fruits, x="Glucose", y="Fiber", fit_reg=False, hue='Group', legend=False, palette="Set2")
 plt.xlabel('Glucose', fontsize=20);
 plt.ylabel('Fiber', fontsize=20);
-plt.title('Scatter plot of fruits composition', fontsize=26) 
+plt.title('Scatter plot of fruits composition', fontsize=20) 
 plt.legend(loc='best')
-
+plt.tight_layout()
 plt.show()
 ```
 
@@ -100,7 +100,7 @@ plt.ylabel('Numbers', fontsize=20)
 plt.title('Histogram of fruits composition', fontsize=26)
 
 plt.legend(loc='best', fontsize=18)
-
+plt.tight_layout()
 plt.show()
 ```
 
@@ -116,6 +116,7 @@ plt.xlabel('Group', fontsize=20);
 plt.ylabel('Glucose', fontsize=20);
 plt.title('Box plot of fruits composition', fontsize=26) 
 plt.legend(loc='best', fontsize=18)
+plt.tight_layout()
 plt.show()
 ```
 

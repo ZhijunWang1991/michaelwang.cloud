@@ -76,13 +76,13 @@ plt.show()</code></pre>
 <div id="scatter-plot" class="section level1">
 <h1>Scatter plot</h1>
 <pre class="python"><code>plt.figure(figsize=(12,9))
-sns.lmplot( data = Fruits, x=&quot;Glucose&quot;, y=&quot;Fiber&quot;, fit_reg=False, hue=&#39;Group&#39;, legend=False, palette=&quot;Set2&quot;)</code></pre>
+sns.lmplot(data = Fruits, x=&quot;Glucose&quot;, y=&quot;Fiber&quot;, fit_reg=False, hue=&#39;Group&#39;, legend=False, palette=&quot;Set2&quot;)</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-7.png" width="242" /></p>
 <pre class="python"><code>plt.xlabel(&#39;Glucose&#39;, fontsize=20);
 plt.ylabel(&#39;Fiber&#39;, fontsize=20);
-plt.title(&#39;Scatter plot of fruits composition&#39;, fontsize=26) 
+plt.title(&#39;Scatter plot of fruits composition&#39;, fontsize=20) 
 plt.legend(loc=&#39;best&#39;)
-
+plt.tight_layout()
 plt.show()</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-8.png" width="480" /></p>
 </div>
@@ -98,7 +98,7 @@ plt.ylabel(&#39;Numbers&#39;, fontsize=20)
 plt.title(&#39;Histogram of fruits composition&#39;, fontsize=26)
 
 plt.legend(loc=&#39;best&#39;, fontsize=18)
-
+plt.tight_layout()
 plt.show()</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-11.png" width="1152" /></p>
 </div>
@@ -112,6 +112,7 @@ plt.xlabel(&#39;Group&#39;, fontsize=20);
 plt.ylabel(&#39;Glucose&#39;, fontsize=20);
 plt.title(&#39;Box plot of fruits composition&#39;, fontsize=26) 
 plt.legend(loc=&#39;best&#39;, fontsize=18)
+plt.tight_layout()
 plt.show()</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-13.png" width="1152" /></p>
 </div>
