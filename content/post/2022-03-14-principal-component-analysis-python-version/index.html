@@ -1,0 +1,250 @@
+---
+title: Principal component analysis (Python version)
+author: Zhijun
+date: '2022-03-14'
+slug: principal-component-analysis-python-version
+categories:
+  - Python
+tags:
+  - PCA
+  - Data analysis
+---
+
+
+
+<div id="principal-component-analysispca" class="section level1">
+<h1>Principal component analysis(PCA)</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="python"><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import savgol_filter
+from sklearn.decomposition import PCA as sk_pca
+from sklearn.preprocessing import StandardScaler
+from scipy.signal import savgol_filter, general_gaussian
+from sklearn.decomposition import PCA</code></pre>
+</div>
+<div id="load-data-the-nir-spectral-of-oil-samples" class="section level2">
+<h2>Load data (The NIR spectral of oil samples)</h2>
+<pre class="python"><code>oil_data.head()</code></pre>
+<pre><code>##    Number  Group Countries  808.5395  ...  1881.3715  1883.301  1885.2305   1887.16
+## 0       1      1    Greece  0.103753  ...   0.003744  0.003461   0.002774  0.002253
+## 1       1      1    Greece  0.100083  ...   0.004165  0.002345   0.000598 -0.000700
+## 2       2      1    Greece  0.098488  ...   0.003454  0.003874   0.003860  0.002053
+## 3       2      1    Greece  0.097094  ...   0.004128  0.002877   0.001644  0.000653
+## 4       3      1    Greece  0.098733  ...   0.002996  0.001952   0.001568  0.001747
+## 
+## [5 rows x 563 columns]</code></pre>
+<pre class="python"><code>oil = oil_data.values[:,4:].astype(str).astype(float)</code></pre>
+</div>
+<div id="raw-spectralof-oil-samples" class="section level2">
+<h2>RAW spectralof oil samples</h2>
+<pre class="python"><code>plt.figure(figsize=(8,6))
+with plt.style.context((&#39;ggplot&#39;)):
+    
+    plt.plot(wl, oil.T)
+    plt.title(&#39;Raw-oil&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="768" /></p>
+</div>
+<div id="defind-some-functions" class="section level2">
+<h2>Defind some functions</h2>
+<div id="msc-function" class="section level3">
+<h3>MSC function</h3>
+<pre class="python"><code># https://nirpyresearch.com/two-scatter-correction-techniques-nir-spectroscopy-python/
+def msc(input_data, reference=None):
+    &#39;&#39;&#39; Perform Multiplicative scatter correction&#39;&#39;&#39;
+ 
+    # mean centre correction
+    for i in range(input_data.shape[0]):
+        input_data[i,:] -= input_data[i,:].mean()
+ 
+    # Get the reference spectrum. If not given, estimate it from the mean    
+    if reference is None:    
+        # Calculate mean
+        ref = np.mean(input_data, axis=0)
+    else:
+        ref = reference
+ 
+    # Define a new array and populate it with the corrected data    
+    data_msc = np.zeros_like(input_data)
+    for i in range(input_data.shape[0]):
+        # Run regression
+        fit = np.polyfit(ref, input_data[i,:], 1, full=True)
+        # Apply correction
+        data_msc[i,:] = (input_data[i,:] - fit[0][1]) / fit[0][0] 
+ 
+    return (data_msc, ref)</code></pre>
+</div>
+<div id="snv-function" class="section level3">
+<h3>SNV function</h3>
+<pre class="python"><code>def snv(input_data):
+  
+    # Define a new array and populate it with the corrected data  
+    output_data = np.zeros_like(input_data)
+    for i in range(input_data.shape[0]):
+ 
+        # Apply correction
+        output_data[i,:] = (input_data[i,:] - np.mean(input_data[i,:])) / np.std(input_data[i,:])
+ 
+    return output_data</code></pre>
+</div>
+</div>
+<div id="data-pre-processing" class="section level2">
+<h2>Data pre-processing</h2>
+<pre class="python"><code>oil_msc = msc(oil)[0]
+oil_snv = snv(oil)
+
+w = 5
+p = 2
+oil_sg = savgol_filter(oil, w, polyorder = p, deriv=1)</code></pre>
+</div>
+<div id="the-msc-transformated-nir-spectral-of-oil-samples" class="section level2">
+<h2>The MSC-transformated NIR spectral of oil samples</h2>
+<pre class="python"><code>plt.figure(figsize=(8,6))
+with plt.style.context((&#39;ggplot&#39;)):
+    
+    plt.plot(wl, oil_msc.T)
+    plt.title(&#39;MSC-oil&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-3.png" width="768" /></p>
+</div>
+<div id="the-snv--transformated-nir-spectral-of-oil-samples" class="section level2">
+<h2>The SNV- transformated NIR spectral of oil samples</h2>
+<pre class="python"><code>plt.figure(figsize=(8,6))
+with plt.style.context((&#39;ggplot&#39;)):
+    
+    plt.plot(wl, oil_snv.T)
+    plt.title(&#39;SNV-oil&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-5.png" width="768" /></p>
+</div>
+<div id="the-sg-processed-nir-spectral-of-oil-samples" class="section level2">
+<h2>The SG-processed NIR spectral of oil samples</h2>
+<pre class="python"><code>plt.figure(figsize=(8,6))
+with plt.style.context((&#39;ggplot&#39;)):
+    
+    plt.plot(wl, oil_sg.T)
+    plt.title(&#39;SG-oil&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-7.png" width="768" /></p>
+</div>
+<div id="pca-plots-using-different-pre-treatments" class="section level2">
+<h2>PCA plots using different pre-treatments</h2>
+<div id="pca-plots-with-raw-data" class="section level3">
+<h3>PCA plots with raw data</h3>
+<pre class="python"><code>pca_oil_raw = PCA(n_components=3)
+principalComponents_oil = pca_oil_raw.fit_transform(oil)
+
+principal_oil_Df = pd.DataFrame(data = principalComponents_oil, columns = [&#39;principal component 1&#39;,&#39;principal component 2&#39;, &#39;principal component 3&#39;])
+
+principal_oil_Df.tail()</code></pre>
+<pre><code>##      principal component 1  principal component 2  principal component 3
+## 115              -0.296913               0.050949              -0.111565
+## 116               0.118397              -0.395352               0.041215
+## 117               0.133961              -0.378638               0.053863
+## 118               0.009523              -0.204413               0.054615
+## 119               0.032706              -0.263974               0.034556</code></pre>
+<pre class="python"><code>print(&#39;Explained variation per principal component: {}&#39;.format(pca_oil_raw.explained_variance_ratio_))</code></pre>
+<pre><code>## Explained variation per principal component: [0.46126247 0.25206043 0.05789436]</code></pre>
+<pre class="python"><code>plt.figure()
+plt.figure(figsize=(8,6))
+plt.xticks(fontsize=12)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0.0, 0, &#39;0.0&#39;), Text(0.2, 0, &#39;0.2&#39;), Text(0.4, 0, &#39;0.4&#39;), Text(0.6000000000000001, 0, &#39;0.6&#39;), Text(0.8, 0, &#39;0.8&#39;), Text(1.0, 0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.yticks(fontsize=14)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0, 0.0, &#39;0.0&#39;), Text(0, 0.2, &#39;0.2&#39;), Text(0, 0.4, &#39;0.4&#39;), Text(0, 0.6000000000000001, &#39;0.6&#39;), Text(0, 0.8, &#39;0.8&#39;), Text(0, 1.0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.xlabel(&#39;PC1 30.6%&#39;,fontsize=20)
+plt.ylabel(&#39;PC2 21.1%&#39;,fontsize=20)
+plt.title(&quot;Principal Component Analysis of raw oil&quot;,fontsize=26)
+
+targets = [&quot;Greece&quot;,&quot;Italy&quot;,&quot;Portugal&quot;, &quot;Spain&quot;]
+colors = [&quot;#CD0000&quot;, &quot;#008B45&quot;, &quot;#000000&quot;, &quot;#FF1493&quot;]
+for target, color in zip(targets,colors):
+    indicesToKeep = oil_data[&#39;Countries&#39;] == target
+    plt.scatter(principal_oil_Df.loc[indicesToKeep, &#39;principal component 1&#39;]
+               , principal_oil_Df.loc[indicesToKeep, &#39;principal component 2&#39;], c = color, s = 50)
+
+plt.legend(targets,prop={&#39;size&#39;: 15})
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-9.png" width="768" /></p>
+</div>
+<div id="pca-plots-with-snv-data" class="section level3">
+<h3>PCA plots with SNV data</h3>
+<pre class="python"><code>pca_oil_snv = PCA(n_components=3)
+principalComponents_oil_snv = pca_oil_snv.fit_transform(oil_snv)
+
+principal_oil_Df = pd.DataFrame(data = principalComponents_oil_snv, columns = [&#39;principal component 1&#39;,&#39;principal component 2&#39;, &#39;principal component 3&#39;])
+
+principal_oil_Df.tail()</code></pre>
+<pre><code>##      principal component 1  principal component 2  principal component 3
+## 115              -0.296916               0.050949              -0.111566
+## 116               0.118399              -0.395355               0.041214
+## 117               0.133963              -0.378641               0.053862
+## 118               0.009524              -0.204415               0.054616
+## 119               0.032707              -0.263976               0.034556</code></pre>
+<pre class="python"><code>print(&#39;Explained variation per principal component: {}&#39;.format(pca_oil_snv.explained_variance_ratio_))</code></pre>
+<pre><code>## Explained variation per principal component: [0.46126252 0.25206018 0.05789437]</code></pre>
+<pre class="python"><code>plt.figure()
+plt.figure(figsize=(8,6))
+plt.xticks(fontsize=12)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0.0, 0, &#39;0.0&#39;), Text(0.2, 0, &#39;0.2&#39;), Text(0.4, 0, &#39;0.4&#39;), Text(0.6000000000000001, 0, &#39;0.6&#39;), Text(0.8, 0, &#39;0.8&#39;), Text(1.0, 0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.yticks(fontsize=14)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0, 0.0, &#39;0.0&#39;), Text(0, 0.2, &#39;0.2&#39;), Text(0, 0.4, &#39;0.4&#39;), Text(0, 0.6000000000000001, &#39;0.6&#39;), Text(0, 0.8, &#39;0.8&#39;), Text(0, 1.0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.xlabel(&#39;PC1 46.1%&#39;,fontsize=20)
+plt.ylabel(&#39;PC2 25.2%&#39;,fontsize=20)
+plt.title(&quot;Principal Component Analysis of SNV oil&quot;,fontsize=26)
+
+targets = [&quot;Greece&quot;,&quot;Italy&quot;,&quot;Portugal&quot;, &quot;Spain&quot;]
+colors = [&quot;#CD0000&quot;, &quot;#008B45&quot;, &quot;#000000&quot;, &quot;#FF1493&quot;]
+for target, color in zip(targets,colors):
+    indicesToKeep = oil_data[&#39;Countries&#39;] == target
+    plt.scatter(principal_oil_Df.loc[indicesToKeep, &#39;principal component 1&#39;]
+               , principal_oil_Df.loc[indicesToKeep, &#39;principal component 2&#39;], c = color, s = 50)
+
+plt.legend(targets,prop={&#39;size&#39;: 15})
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-11.png" width="768" /></p>
+</div>
+<div id="pca-plots-with-sg-data" class="section level3">
+<h3>PCA plots with SG data</h3>
+<pre class="python"><code>pca_oil = PCA(n_components=3)
+principalComponents_oil_sg = pca_oil.fit_transform(oil_sg)
+
+principal_oil_Df = pd.DataFrame(data = principalComponents_oil_sg, columns = [&#39;principal component 1&#39;,&#39;principal component 2&#39;, &#39;principal component 3&#39;])
+
+principal_oil_Df.tail()</code></pre>
+<pre><code>##      principal component 1  principal component 2  principal component 3
+## 115              -0.069488              -0.045126               0.023853
+## 116              -0.054010               0.119382              -0.013546
+## 117              -0.048952               0.113395              -0.023043
+## 118              -0.018831               0.045615              -0.044294
+## 119              -0.028277               0.068972              -0.001258</code></pre>
+<pre class="python"><code>print(&#39;Explained variation per principal component: {}&#39;.format(pca_oil.explained_variance_ratio_))</code></pre>
+<pre><code>## Explained variation per principal component: [0.30679875 0.21167453 0.08481524]</code></pre>
+<pre class="python"><code>plt.figure()
+plt.figure(figsize=(8,6))
+plt.xticks(fontsize=12)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0.0, 0, &#39;0.0&#39;), Text(0.2, 0, &#39;0.2&#39;), Text(0.4, 0, &#39;0.4&#39;), Text(0.6000000000000001, 0, &#39;0.6&#39;), Text(0.8, 0, &#39;0.8&#39;), Text(1.0, 0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.yticks(fontsize=14)</code></pre>
+<pre><code>## (array([0. , 0.2, 0.4, 0.6, 0.8, 1. ]), [Text(0, 0.0, &#39;0.0&#39;), Text(0, 0.2, &#39;0.2&#39;), Text(0, 0.4, &#39;0.4&#39;), Text(0, 0.6000000000000001, &#39;0.6&#39;), Text(0, 0.8, &#39;0.8&#39;), Text(0, 1.0, &#39;1.0&#39;)])</code></pre>
+<pre class="python"><code>plt.xlabel(&#39;PC1 30.6%&#39;,fontsize=20)
+plt.ylabel(&#39;PC2 21.1%&#39;,fontsize=20)
+plt.title(&quot;Principal Component Analysis of SG oil&quot;,fontsize=26)
+
+targets = [&quot;Greece&quot;,&quot;Italy&quot;,&quot;Portugal&quot;, &quot;Spain&quot;]
+colors = [&quot;#CD0000&quot;, &quot;#008B45&quot;, &quot;#000000&quot;, &quot;#FF1493&quot;]
+for target, color in zip(targets,colors):
+    indicesToKeep = oil_data[&#39;Countries&#39;] == target
+    plt.scatter(principal_oil_Df.loc[indicesToKeep, &#39;principal component 1&#39;]
+               , principal_oil_Df.loc[indicesToKeep, &#39;principal component 2&#39;], c = color, s = 50)
+
+plt.legend(targets,prop={&#39;size&#39;: 15})
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-13.png" width="768" /></p>
+</div>
+</div>
+</div>
