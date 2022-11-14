@@ -1,0 +1,84 @@
+---
+title: Linear Discriminant Analysis in Python
+author: Zhijun
+date: '2022-11-07'
+slug: linear-discriminant-analysis-in-python
+categories:
+  - Python
+tags:
+  - Data analysis
+---
+# Load library
+```{python}
+from turtle import shape
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import RepeatedStratifiedKFold
+from sklearn.model_selection import cross_val_score
+from sklearn.datasets import make_classification
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis 
+import matplotlib.pyplot as plt
+from numpy import mean, unicode_
+from numpy import std
+```
+
+## Load the data
+
+```{python include=FALSE}
+oil_data = pd.read_csv("C:/Users/maxzh/OneDrive/Python_workspace/Data_analysis_using_Python/Dataset/oil_dataset.csv")
+```
+
+```{python}
+oil_data.head()
+```
+
+## define dataset
+
+```{python}
+X = oil_data.values[:,3:]
+y = oil_data.values[:,2]
+```
+
+## Summarize the dataset
+
+```{python}
+print(X.shape, y.shape)
+```
+
+## LDA model
+
+```{python}
+model = LinearDiscriminantAnalysis()
+# define model evaluation method
+cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+# evaluate model
+scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv)
+# summarize result
+print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
+```
+
+We can see that the model performed a mean accuracy of 97.50%.
+
+
+## Define data to plot
+```{python}
+lda = LinearDiscriminantAnalysis()
+data_plot = lda.fit(X, y).transform(X)
+target_names = oil_data['Countries'].astype(str).unique()
+
+# Plot
+plt.figure()
+colors = ['red', 'green', 'blue', 'orange']
+lw = 3
+for color, i, target_name in zip(colors, ['Greece', 'Italy', 'Portugal', 'Spain'], target_names):
+    plt.scatter(
+        data_plot[y == i, 0], data_plot[y == i, 1], alpha=0.8, color=color, label=target_name
+    )
+plt.legend(loc="best", shadow=False, scatterpoints=1)
+plt.title("LDA of oil dataset")
+
+plt.show()
+```
+
+
+
