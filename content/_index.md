@@ -3,11 +3,11 @@ title: Home
 ---
 ### Hi there, welcome to my blog! 👋
 
-This is the person blog of Zhijun. I am a food science PhD graduated from [Wageningen University](https://www.wur.nl).
+This is the personal blog of Zhijun. I am a food science PhD graduated from [Wageningen University](https://www.wur.nl).
 
-My research interest is Food authenticity & data science. The combination of Analysis technology (hyperspectral imaging, isotope analysis, gas mass spectrometry) and Machine learning based on R/Python/Matlab are used to evaluate the linkage of growing conditions and food quality. Meanwhile, functional ingredients of nature plants are also one of my interests such as Structural characteristics, Antioxidant, Immune activity of foods. Here you can find my research [papers](https://www.researchgate.net/profile/Zhijun-Wang-18).
+My research interest is Food authenticity & data science. I explored different analysis technologies (Near infrared sensor, Hyperspectral imaging, Isotope analysis, Mass spectrometry) and machine learning algorithm based on R/Python/Matlab to evaluate the linkage of growing conditions and food quality. Meanwhile, functional ingredients of nature plants are also one of my interests such as Structural characteristics, Antioxidant, Immune activity of foods. Here you can find my [research papers](https://www.researchgate.net/profile/Zhijun-Wang-18).
 
-Data visualization, chemomentrics and application of R/Pthon are my inspiration and nice tool helpful for my PhD.
+Data visualization, chemomentrics and application of R/Pthon are my inspiration and nice tool helpful for my future research.
 
 Besides of research work, I also enjoyed in education activities for Undergraduate and master courses.
 
