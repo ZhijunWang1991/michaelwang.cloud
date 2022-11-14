@@ -1,0 +1,117 @@
+---
+title: "Data visualization with seaborn matplotlib in Python"
+author: "Zhijun"
+date: "2022-11-05"
+slug: "data-visualization-with-seaborn-matplotlib-in-python"
+categories: Python
+tags: Data Visualization
+---
+
+
+
+<p>Data visualization
+Examples : The weight of chicks from different months and feed diet</p>
+<div id="import-packages" class="section level1">
+<h1>import packages</h1>
+<pre class="python"><code>import os as os
+from stat import FILE_ATTRIBUTE_SPARSE_FILE
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt</code></pre>
+</div>
+<div id="line-plot" class="section level1">
+<h1>line plot</h1>
+<pre class="python"><code>Chick_data.head()</code></pre>
+<pre><code>##    Unnamed: 0  weight  Time  Chick  Diet
+## 0           1      42     0      1     1
+## 1           2      51     2      1     1
+## 2           3      59     4      1     1
+## 3           4      64     6      1     1
+## 4           5      76     8      1     1</code></pre>
+<pre class="python"><code>Chick_data = Chick_data.iloc[: , 1:]
+Chick_data.head()</code></pre>
+<pre><code>##    weight  Time  Chick  Diet
+## 0      42     0      1     1
+## 1      51     2      1     1
+## 2      59     4      1     1
+## 3      64     6      1     1
+## 4      76     8      1     1</code></pre>
+<pre class="python"><code>plt.figure(figsize=(12,9))
+sns.lineplot(data=Chick_data, x=&quot;Time&quot;, y=&quot;weight&quot;, hue=&quot;Diet&quot;, style=&quot;Diet&quot;)
+plt.legend(title=&#39;Diet&#39;, fontsize=18)
+plt.xlabel(&#39;Time&#39;, fontsize=18);
+plt.ylabel(&#39;Weight&#39;, fontsize=18);
+plt.title(&#39;Plot of Chick weight and Time&#39;, fontsize=24)
+
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
+</div>
+<div id="violin-plot" class="section level1">
+<h1>Violin plot</h1>
+<pre class="python"><code># set a grey background
+plt.figure(figsize=(12,9))
+sns.set(style=&quot;darkgrid&quot;)
+sns.violinplot( x=Chick_data[&quot;Diet&quot;], y=Chick_data[&quot;weight&quot;])
+plt.xlabel(&#39;Diet&#39;, fontsize=20);
+plt.ylabel(&#39;Weight&#39;, fontsize=20);
+plt.title(&#39;Violin plot of Chick weight and Diet&#39;, fontsize=28)
+
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-3.png" width="1152" /></p>
+</div>
+<div id="density-chart" class="section level1">
+<h1>Density chart</h1>
+<pre class="python"><code># set a grey background
+plt.figure(figsize=(12,9))
+sns.set(style=&quot;darkgrid&quot;)
+sns.kdeplot(data=Chick_data, x=&quot;weight&quot;, hue=&quot;Diet&quot;, cut=0, fill=True, common_norm=False, alpha=1)
+plt.xlabel(&#39;Weight&#39;, fontsize=20);
+plt.ylabel(&#39;Density&#39;, fontsize=20);
+plt.title(&#39;Density chart of Chick weight and Diet&#39;, fontsize=28)
+
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-5.png" width="1152" /></p>
+</div>
+<div id="scatter-plot" class="section level1">
+<h1>Scatter plot</h1>
+<pre class="python"><code>plt.figure(figsize=(12,9))
+sns.lmplot( data = Fruits, x=&quot;Glucose&quot;, y=&quot;Fiber&quot;, fit_reg=False, hue=&#39;Group&#39;, legend=False, palette=&quot;Set2&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-7.png" width="242" /></p>
+<pre class="python"><code>plt.xlabel(&#39;Glucose&#39;, fontsize=20);
+plt.ylabel(&#39;Fiber&#39;, fontsize=20);
+plt.title(&#39;Scatter plot of fruits composition&#39;, fontsize=26) 
+plt.legend(loc=&#39;best&#39;)
+
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-8.png" width="480" /></p>
+</div>
+<div id="histogram" class="section level1">
+<h1>Histogram</h1>
+<pre class="python"><code>sns.set_theme(context=&#39;notebook&#39;, style=&#39;darkgrid&#39;, palette=&#39;deep&#39;, font=&#39;sans-serif&#39;, font_scale=1, color_codes=True)
+plt.figure(figsize=(12,9))
+sns.histplot(data=Fruits, x=&quot;Vitamin&quot;, color=&quot;skyblue&quot;, label=&quot;Vitamin&quot;, kde=True)
+sns.histplot(data=Fruits, x=&quot;Glucose&quot;, color=&quot;red&quot;, label=&quot;Glucose&quot;, kde=True)
+sns.histplot(data=Fruits, x=&quot;Fiber&quot;, color=&quot;yellow&quot;, label=&quot;Fiber&quot;, kde=True).set(title=&#39;Histogram of fruits composition&#39;)
+plt.xlabel(&#39;Fruits compositions&#39;, fontsize=20)
+plt.ylabel(&#39;Numbers&#39;, fontsize=20)
+plt.title(&#39;Histogram of fruits composition&#39;, fontsize=26)
+
+plt.legend(loc=&#39;best&#39;, fontsize=18)
+
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-11.png" width="1152" /></p>
+</div>
+<div id="box-plot" class="section level1">
+<h1>Box plot</h1>
+<pre class="python"><code>sns.set(style=&quot;darkgrid&quot;)
+sns.set_theme(context=&#39;notebook&#39;, style=&#39;darkgrid&#39;, palette=&#39;deep&#39;, font=&#39;sans-serif&#39;, font_scale=1, color_codes=True)
+plt.figure(figsize=(12,9))
+sns.boxplot(x=Fruits[&quot;Group&quot;], y=Fruits[&quot;Glucose&quot;]).set(title=&#39;Box plot of fruits composition&#39;)
+plt.xlabel(&#39;Group&#39;, fontsize=20);
+plt.ylabel(&#39;Glucose&#39;, fontsize=20);
+plt.title(&#39;Box plot of fruits composition&#39;, fontsize=26) 
+plt.legend(loc=&#39;best&#39;, fontsize=18)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-13.png" width="1152" /></p>
+</div>

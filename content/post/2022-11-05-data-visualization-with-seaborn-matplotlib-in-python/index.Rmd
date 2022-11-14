@@ -1,0 +1,121 @@
+---
+title: "Data visualization with seaborn matplotlib in Python"
+author: "Zhijun"
+date: "2022-11-05"
+slug: "data-visualization-with-seaborn-matplotlib-in-python"
+categories: Python
+tags: Data Visualization
+---
+
+Data visualization
+Examples : The weight of chicks from different months and feed diet
+
+# import packages
+```{python}
+import os as os
+from stat import FILE_ATTRIBUTE_SPARSE_FILE
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+```{python include=FALSE}
+# Set workspace
+Chick_data = pd.read_csv("C:/Users/maxzh/OneDrive/Python_workspace/Data_analysis_using_Python/Dataset/ChickWeight.csv")
+Fruits = pd.read_csv("C:/Users/maxzh/OneDrive/Python_workspace/Data_analysis_using_Python/Dataset/fruits_compositions.csv")
+```
+
+
+
+# line plot
+```{python echo=TRUE}
+Chick_data.head()
+Chick_data = Chick_data.iloc[: , 1:]
+Chick_data.head()
+plt.figure(figsize=(12,9))
+sns.lineplot(data=Chick_data, x="Time", y="weight", hue="Diet", style="Diet")
+plt.legend(title='Diet', fontsize=18)
+plt.xlabel('Time', fontsize=18);
+plt.ylabel('Weight', fontsize=18);
+plt.title('Plot of Chick weight and Time', fontsize=24)
+
+plt.show()
+```
+
+
+# Violin plot
+
+```{python echo=TRUE}
+# set a grey background
+plt.figure(figsize=(12,9))
+sns.set(style="darkgrid")
+sns.violinplot( x=Chick_data["Diet"], y=Chick_data["weight"])
+plt.xlabel('Diet', fontsize=20);
+plt.ylabel('Weight', fontsize=20);
+plt.title('Violin plot of Chick weight and Diet', fontsize=28)
+
+plt.show()
+```
+
+# Density chart
+```{python echo=TRUE}
+# set a grey background
+plt.figure(figsize=(12,9))
+sns.set(style="darkgrid")
+sns.kdeplot(data=Chick_data, x="weight", hue="Diet", cut=0, fill=True, common_norm=False, alpha=1)
+plt.xlabel('Weight', fontsize=20);
+plt.ylabel('Density', fontsize=20);
+plt.title('Density chart of Chick weight and Diet', fontsize=28)
+
+plt.show()
+```
+
+
+# Scatter plot
+
+```{python echo=TRUE}
+plt.figure(figsize=(12,9))
+sns.lmplot( data = Fruits, x="Glucose", y="Fiber", fit_reg=False, hue='Group', legend=False, palette="Set2")
+plt.xlabel('Glucose', fontsize=20);
+plt.ylabel('Fiber', fontsize=20);
+plt.title('Scatter plot of fruits composition', fontsize=26) 
+plt.legend(loc='best')
+
+plt.show()
+```
+
+
+
+# Histogram
+
+```{python echo=TRUE}
+sns.set_theme(context='notebook', style='darkgrid', palette='deep', font='sans-serif', font_scale=1, color_codes=True)
+plt.figure(figsize=(12,9))
+sns.histplot(data=Fruits, x="Vitamin", color="skyblue", label="Vitamin", kde=True)
+sns.histplot(data=Fruits, x="Glucose", color="red", label="Glucose", kde=True)
+sns.histplot(data=Fruits, x="Fiber", color="yellow", label="Fiber", kde=True).set(title='Histogram of fruits composition')
+plt.xlabel('Fruits compositions', fontsize=20)
+plt.ylabel('Numbers', fontsize=20)
+plt.title('Histogram of fruits composition', fontsize=26)
+
+plt.legend(loc='best', fontsize=18)
+
+plt.show()
+```
+
+
+# Box plot
+
+```{python echo=TRUE}
+sns.set(style="darkgrid")
+sns.set_theme(context='notebook', style='darkgrid', palette='deep', font='sans-serif', font_scale=1, color_codes=True)
+plt.figure(figsize=(12,9))
+sns.boxplot(x=Fruits["Group"], y=Fruits["Glucose"]).set(title='Box plot of fruits composition')
+plt.xlabel('Group', fontsize=20);
+plt.ylabel('Glucose', fontsize=20);
+plt.title('Box plot of fruits composition', fontsize=26) 
+plt.legend(loc='best', fontsize=18)
+plt.show()
+```
+
