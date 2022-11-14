@@ -1,15 +1,15 @@
 ---
 title: "Curriculum Vitae"
 slug: "vitae"
-date: '2022-06-20'
+date: '2022-11-12'
 disable_comments: true
 ---
-> Is it possiable to decode an individual by the fewest lines? -- <<**Westworld**>>
+> Is it possiable to decode an individual by the fewest lines? -- <<Westworld>>
 
 
 ### Hi there, welcome to my blog! 👋
 
-- 🌾 I’m a fresh PhD of Food Authenticity & Nutrition.
+- 🌾 I’m a PhD in Food Authenticity & Nutrition.
 
 - 👨‍💻 I have been working with the Food Science and Data Science since 2017, during this time I worked with a variety of mass spectrometry, spectral analysis techniques, regression and classification models.
 
@@ -25,10 +25,14 @@ disable_comments: true
 
 - 🙋‍♂️ **Linkedin**: [Zhijun_Linkedin](https://www.linkedin.com/in/zhijunwang1991/)
 
+- 📝 **Github** [ZhijunWang](https://github.com/ZhijunWang1991)
 
 ### 🍌Research Interest
 
-Food fraud, food safety, nutrition, data science, chemomentrics
+- The application of data science in agriculture;
+- Food safety;
+- Nutrition;
+- chemomentrics
 
 ### 👩‍🏫Education Background
 
@@ -36,7 +40,7 @@ Food fraud, food safety, nutrition, data science, chemomentrics
 
 * 2014-2017, Msc in Food Science, Nanchang University, China
 
-* 2011-2013, Second Bsc in Economics, Nanchang University, China
+* 2011-2013, Bsc minor in Economics, Nanchang University, China
 
 * 2010-2014, Bsc in Food Science, Nanchang University, China
 
@@ -48,24 +52,29 @@ Food fraud, food safety, nutrition, data science, chemomentrics
 
 * Nutrition evaluation of food for Animal/Human by **Cell Culture** and **animal model**
 
-#### ⚒️Hand-in R
+#### ⚒️Hand-in Data Science
 
-* Developed a *R package* named [**wagedown**](https://github.com/ZhijunWang1991/wagedown), which is adapted from bookdown package. The wagedown package provides a handy template for writing a PhD thesis at Wageningen University and rendering those files in a PDF format. 
-
-* *Data Visualization* with R: Scatter plot, boxplot, heatmap, etc.
-
+* Familiar with Microsoft office, easy to make presentations;
+* Preliminary experience with SQL, good at Power BI;
+* Statistical analysis based on SAS and SPSS;
+* Code management using Git. (https://github.com/ZhijunWang1991)
+* *Data Visualization* with R/Python: Scatter plot, boxplot, heatmap, etc.
 * *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
-
 * *Principal component analysis* (PCA) from computing to visualizations.
-
 * *Classification model*: PLS-DA, ANN, random forest  and other Machine learning algorithms.
+* Developed a **R package** named *wagedown* (https://github.com/ZhijunWang1991/wagedown), which helps PhD candidates to focus on writing good content instead of formate. The *wagedown* package provides a handy template for writing a PhD thesis at Wageningen University and rendering those files in a PDF format.
+* Website design (https://zhijunwang.me/);
+* I am writing a Data science manual based on Python/R. (https://bookdown.org/zhijun0916/r-cookbook-in-food-science/)
 
 ### 📕Obtained certification in Data Science:
 
-* [**Data Scientist with R Track**](https://www.datacamp.com/statement-of-accomplishment/track/29dae208d30684b87e6071f27a9e4b2816407ba6?raw=1), DataCamp.
-* [**Data Visualization with R Track**](https://www.datacamp.com/statement-of-accomplishment/track/b1b88592910af14b2485ea9c0d4a2570cde4e234), DataCamp.
-* [**Machine Learning with *caret* in R**](https://www.datacamp.com/statement-of-accomplishment/course/904ee255e9b6a72c48006df6f3bb3a0cfdb98805), DataCamp.
-* [**Data analytics (Python)**](https://graduation.udacity.com/confirm/H9LHJ5Q7), Udacity.
+* [**Data analytics Nanodegree program  (Python)**](https://graduation.udacity.com/confirm/H9LHJ5Q7), Udacity.
+
+* [**Data Scientist with R  Track**](https://www.datacamp.com/statement-of-accomplishment/track/29dae208d30684b87e6071f27a9e4b2816407ba6?raw=1), DataCamp.
+
+* [**Machine Learning Scientist with R  Track**](https://www.datacamp.com/statement-of-accomplishment/track/298f9dd658b9ce4016e66cd5a11865f6e656d9ac), DataCamp.
+
+* [**Data Visualization with R  Track**](https://www.datacamp.com/statement-of-accomplishment/track/b1b88592910af14b2485ea9c0d4a2570cde4e234), DataCamp.
 
 ### 🌏 Conferences
 
@@ -101,6 +110,12 @@ The Selected Papers as 1st author:
 
 * 2017-2021, as course assistance in two difference courses WUR.
 
+# Organisization experiences
+
+* The **organising committee** for *Meat Science & Technology Inspiration Symposium 2022* in Wageningen, the Netherlands
+
+* The **Course Assistant** for Virtual training course *Comprehension of food fraud vulnerability 2022* in Wageningen, the Netherlands
 
 ### End
-> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<**Westworld**>>
+
+> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<Westworld>>
