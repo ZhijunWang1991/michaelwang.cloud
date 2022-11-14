@@ -10,7 +10,7 @@ tags: Data Visualization
 Data visualization
 Examples : The weight of chicks from different months and feed diet
 
-# import packages
+# Import packages
 ```{python}
 import os as os
 from stat import FILE_ATTRIBUTE_SPARSE_FILE
@@ -28,7 +28,7 @@ Fruits = pd.read_csv("C:/Users/maxzh/OneDrive/Python_workspace/Data_analysis_usi
 
 
 
-# line plot
+# Line plot
 ```{python echo=TRUE}
 Chick_data.head()
 Chick_data = Chick_data.iloc[: , 1:]
