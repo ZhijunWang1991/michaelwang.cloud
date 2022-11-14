@@ -29,10 +29,10 @@ disable_comments: true
 
 ### 🍌Research Interest
 
-- The application of data science in agriculture;
-- Food safety;
-- Nutrition;
-- chemomentrics
+* The application of data science in agriculture;
+* Food safety
+* Nutrition
+* chemomentrics
 
 ### 👩‍🏫Education Background
 
@@ -110,7 +110,7 @@ The Selected Papers as 1st author:
 
 * 2017-2021, as course assistance in two difference courses WUR.
 
-# Organisization experiences
+### ⌚O ganisization experiences
 
 * The **organising committee** for *Meat Science & Technology Inspiration Symposium 2022* in Wageningen, the Netherlands
 
