@@ -63,6 +63,17 @@ highlightjsLang = ['r', 'yaml', 'tex']
 highlightjsTheme = 'github'
 highlightjsVersion = '9.12.0'
 
+[params.giscus]
+  # repo = "github-user/github-repo" # Entering repo will enable giscus
+  repo = "ZhijunWang1991/zhijunwang.me"
+  repo_id = "MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+  category = "Announcements"
+  category_id = "DIC_kwDOC0zEoc4CS1ka"
+  mapping = "pathname"
+  reactions-enabled = "1"
+  emit-metadata = "0"
+  theme = "preferred_color_scheme"
+  lang = "en"
 
 [permalinks]
 note = '/note/:year/:month/:day/:slug/'
