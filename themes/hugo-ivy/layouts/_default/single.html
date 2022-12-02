@@ -6,6 +6,7 @@
 {{ (index (split .Content "<!--# ON_HOLD -->") 0) | safeHTML }}
 {{ else }}
 {{ .Content }}
+{{ partial "comments.html" . }}
 {{ end }}
 
 {{ partial "footer.html" . }}
