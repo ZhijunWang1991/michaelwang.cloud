@@ -1,5 +1,5 @@
 baseurl = 'https://butter2019.netlify.app/'
-disqusShortname = ''
+
 footnotereturnlinkcontents = '↩'
 googleAnalytics = 'UA-151723808-1'
 ignoreFiles = ['\.Rmd$', '\.Rmarkdown$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
