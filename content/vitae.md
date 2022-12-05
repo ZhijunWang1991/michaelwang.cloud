@@ -55,16 +55,27 @@ disable_comments: true
 #### ⚒️Hand-in Data Science
 
 * Familiar with Microsoft office, easy to make presentations;
+
 * Preliminary experience with SQL, good at Power BI;
+
 * Statistical analysis based on SAS and SPSS;
+
 * Data visualization and modeling using Python and R;
+
 * Version control using Git. (https://github.com/ZhijunWang1991)
+
 * *Data Visualization* with R/Python: Scatter plot, boxplot, heatmap, etc.
+
 * *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
+
 * *Principal component analysis* (PCA) from computing to visualizations.
+
 * *Classification model*: PLS-DA, ANN, random forest  and other Machine learning algorithms.
-* Developed a **R package** named *wagedown* (https://github.com/ZhijunWang1991/wagedown), which helps PhD candidates to focus on writing good content instead of formate. The *wagedown* package provides a handy template for writing a PhD thesis at Wageningen University and rendering those files in a PDF format.
-* Website design (https://zhijunwang.me/);
+
+* Developed a **R package** named *wagedown*, for writing a PhD thesis at Wageningen University and rendering those files in a PDF format.
+
+* Website design (https://zhijunwang.me/).
+
 * I am writing a Data science manual based on Python/R. (https://bookdown.org/zhijun0916/r-cookbook-in-food-science/)
 
 ### 📕Obtained certification in Data Science:
