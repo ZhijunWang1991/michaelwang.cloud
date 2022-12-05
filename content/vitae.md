@@ -7,13 +7,13 @@ disable_comments: true
 > Is it possiable to decode an individual by the fewest lines? -- <<Westworld>>
 
 
-### Hi there, welcome to my blog! 👋
+### Summary
 
-- 🌾 I’m a PhD in Food Authenticity & Nutrition.
+- 🌾 PhD in Food Fraud and Authenticity.
 
-- 👨‍💻 I have been working with the Food Science and Data Science since 2017, during this time I worked with a variety of mass spectrometry, spectral analysis techniques, regression and classification models.
+- 👨‍💻 Experiences in lab work such as: mass spectrometry, spectral and data analysis such as regression and classification models.
 
-- 🌏 I believe that digital transformation is one of the trends in building sustainable agricultural and food systems.
+- 🌏 I believe that digital transformation is one of the trends in building sustainable agricultural systems.
 
 ### Contact Information
 
@@ -50,14 +50,15 @@ disable_comments: true
 
 * Multiple mass spectrometry techniques such as **GC-MS**, **ICP-MS**, **IR-MS**, **DART-HR-MS** to explore the compositional characteristics of food
 
-* Nutrition evaluation of food for Animal/Human by **Cell Culture** and **animal model**
+* Nutrition evaluation of food compounds by **Cell Culture** and **animal model**
 
 #### ⚒️Hand-in Data Science
 
 * Familiar with Microsoft office, easy to make presentations;
 * Preliminary experience with SQL, good at Power BI;
 * Statistical analysis based on SAS and SPSS;
-* Code management using Git. (https://github.com/ZhijunWang1991)
+* Data visualization and modeling using Python and R;
+* Version control using Git. (https://github.com/ZhijunWang1991)
 * *Data Visualization* with R/Python: Scatter plot, boxplot, heatmap, etc.
 * *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
 * *Principal component analysis* (PCA) from computing to visualizations.
@@ -110,7 +111,7 @@ The Selected Papers as 1st author:
 
 * 2017-2021, as course assistance in two difference courses WUR.
 
-### ⌚O ganisization experiences
+### 📅 Organization experiences
 
 * The **organising committee** for *Meat Science & Technology Inspiration Symposium 2022* in Wageningen, the Netherlands
 
