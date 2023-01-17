@@ -29,9 +29,8 @@ disable_comments: true
 
 ### 🍌Research Interest
 
-* The application of data science in agriculture;
-* Food safety
-* Nutrition
+* Food fraud, food authenticity and safety
+* Food quality and instrument analysis
 * chemomentrics
 
 ### 👩‍🏫Education Background
@@ -48,15 +47,11 @@ disable_comments: true
 
 * **Hyperspectral imaging (HSI)** and **Near infrared spectroscopy (NIR)** for geographical origin and organic certification of food
 
-* Multiple mass spectrometry techniques such as **GC-MS**, **ICP-MS**, **IR-MS**, **DART-HR-MS** to explore the compositional characteristics of food
+* Multiple mass spectrometry techniques such as **GC-MS**, **ICP-MS**, **IR-MS**, **DART-HR-MS** to explore the compositional characteristics of agricultural products
 
 * Nutrition evaluation of food compounds by **Cell Culture** and **animal model**
 
 #### ⚒️Hand-in Data Science
-
-* Familiar with Microsoft office, easy to make presentations;
-
-* Preliminary experience with SQL, good at Power BI;
 
 * Statistical analysis based on SAS and SPSS;
 
@@ -75,8 +70,6 @@ disable_comments: true
 * Developed a **R package** named *wagedown*, for writing a PhD thesis at Wageningen University and rendering those files in a PDF format.
 
 * Website design (https://zhijunwang.me/).
-
-* I am writing a Data science manual based on Python/R. (https://bookdown.org/zhijun0916/r-cookbook-in-food-science/)
 
 ### 📕Obtained certification in Data Science:
 
