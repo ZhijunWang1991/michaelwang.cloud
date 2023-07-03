@@ -1,7 +1,7 @@
 baseurl = 'https://butter2019.netlify.app/'
 
 footnotereturnlinkcontents = '↩'
-googleAnalytics = 'UA-151723808-1'
+googleAnalytics = 'G-KHC13EJ3VB'
 ignoreFiles = ['\.Rmd$', '\.Rmarkdown$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
 languageCode = 'en-us'
 hasCJKLanguage = true
