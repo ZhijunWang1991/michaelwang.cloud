@@ -7,7 +7,7 @@ languageCode = 'en-us'
 hasCJKLanguage = true
 preserveTaxonomyNames = true
 theme = 'hugo-ivy'
-title = 'Food Fraud and Authenticity'
+title = 'Blog'
 
 googlefonts = "//fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
 
