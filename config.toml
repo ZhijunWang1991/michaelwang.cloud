@@ -1,7 +1,7 @@
 baseurl = 'https://zhijunwang.me/'
 
 footnotereturnlinkcontents = '↩'
-googleAnalytics = 'G-FSHYMLEBYR'
+googleAnalytics = 'G-XEQWJYE7S4'
 ignoreFiles = ['\.Rmd$', '\.Rmarkdown$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
 languageCode = 'en-us'
 hasCJKLanguage = true
