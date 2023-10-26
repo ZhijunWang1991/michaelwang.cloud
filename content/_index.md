@@ -1,7 +1,7 @@
 ---
 title: Home
 ---
-### Hi there, welcome to my blog! 👋
+### Hi there, welcome to my personal website! 👋
 
 This is the personal blog of Zhijun. I am a postdoctoral researcher in food science at [University College Dublin](https://www.ucd.ie).
 
