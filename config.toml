@@ -1,4 +1,4 @@
-baseurl = 'https://zhijunwang.me/'
+baseurl = 'https://michaelwang.cloud/'
 
 footnotereturnlinkcontents = '↩'
 googleAnalytics = 'G-XEQWJYE7S4'
@@ -57,7 +57,7 @@ weight = 7
 
 [params]
 description = 'Practice makes perfect.'
-footer = '&copy; [Zhijun Wang](https://zhijunwang.me) 2019-2024'
+footer = '&copy; [Zhijun Wang](https://michaelwang.cloud) 2019-2024'
 highlightjsCDN = '//cdn.bootcss.com'
 highlightjsLang = ['r', 'yaml', 'tex']
 highlightjsTheme = 'github'
