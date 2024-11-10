@@ -1,7 +1,7 @@
 ---
 title: "Data visualization work by Zhijun Wang (Michael)"
 slug: "gallery"
-date: "2024"
+date: "2024-10-Nov"
 disable_comments: true
 ---
 <img src="/./gallery_files/line_plot.png" alt="Line_plot" width="80%"/>

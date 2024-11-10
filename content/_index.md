@@ -3,9 +3,21 @@ title: Home
 ---
 ### Hi there, welcome to my personal website! 👋
 
-This is the personal blog of Zhijun. I am a postdoctoral researcher in food science at [University College Dublin](https://www.ucd.ie).
+My name is ZHijun, you could also call me Michael!
 
-My research interest is Food fraud and authenticity. I explored different analysis technologies (Near infrared sensor, Hyperspectral imaging, Isotope analysis, Mass spectrometry, etc) and machine learning algorithm to evaluate the food quality and food supply chain. 
+Now I am a postdoctoral researcher in food science at [University College Dublin](https://www.ucd.ie).
+
+I am looking for work opportunity in the Netherlands due to the family commitment.
+
+My research interest is Food Science, food fraud, data science. 
+
+- **Lab work**: Near infrared spectroscopy, Hyperspectral imaging, Isotope analysis, high performance liquid chromatography，Mass spectrometry, etc
+- **Data visualization**: bar chart, heatmap, scatter plot, etc using R, PowerBI
+- **Data analysis**: data cleaning, data preprocessing
+- **Machine learning**: PCA, Random Forest, SVM, Neural Network, etc using Python, R
+- **Project management**: meeting, report, presentation, teamplayer
+
+Looking for: Data cisulization, analyst, research scientist, etc
 
 Here you can find my [research papers](https://www.researchgate.net/profile/Zhijun-Wang-18).
 
