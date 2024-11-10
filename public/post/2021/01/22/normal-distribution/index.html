@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Normal distribution - Blog</title>
+    <meta property="og:title" content="Normal distribution - Blog">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than &amp;hellip;">
+      <meta property="og:description" content="The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+ 
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Blog</a></h1>
+
+<p class="tagline">Practice makes perfect.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/vitae/">Vitae</a></li>
+  
+  <li><a href="/publications/">Publications</a></li>
+  
+  <li><a href="/post/">Blog</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/gallery/">Gallery</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Normal distribution</h1>
+
+<h3>
+  2021-01-22</h3>
+<hr>
+
+
+      </header>
+    
+    <header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2128669665967347"
+     crossorigin="anonymous"></script>
+     </header>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEQWJYE7S4');
+</script>
+
+
+
+
+
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.</p>
+<p><em>Before statistical analysis of data such as significance analysis, the data should meet normally distributed.</em>
+## load dataset</p>
+<pre class="r"><code>setwd(&quot;C:/blog/Dataset&quot;)
+
+data &lt;- read.csv(&quot;fruits_Vc.csv&quot;)
+
+head(data)</code></pre>
+<pre><code>##   Number Fruit Repeat Vitamin
+## 1      1 Apple     A1     4.6
+## 2      2 Apple     A2     3.9
+## 3      3 Apple     A3     5.2
+## 4      4 Apple     A4     6.9
+## 5      5 Apple     A5     4.8
+## 6      6 Apple     A6     3.3</code></pre>
+<div id="plot" class="section level2">
+<h2>Plot</h2>
+<pre class="r"><code>Apple &lt;- data[1:6,4]
+
+shapiro.test(Apple)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  Apple
+## W = 0.94874, p-value = 0.7301</code></pre>
+<pre class="r"><code>library(ggpubr)
+
+ggdensity(Apple, 
+          main = &quot;Density plot of apple&quot;,
+          xlab = &quot;Apple&quot;)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR2-1.png" width="672" /></p>
+<pre class="r"><code>ggqqplot(Apple)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR2-2.png" width="672" /></p>
+</div>
+<div id="shapiro-wilk-normality-test" class="section level2">
+<h2>Shapiro-Wilk normality test</h2>
+<p>dataset: data$Vitamin</p>
+<p>W = 0.96026, p-value = 0.6066
+When the P value here is greater than 0.05, it represents a normal distribution.</p>
+<p>You can also observe the normal distribution graph:</p>
+<pre class="r"><code>library(&quot;ggpubr&quot;)
+ggdensity(data$Vitamin, 
+          main = &quot;Density plot of Vitamin&quot;,
+          xlab = &quot;Vitamin&quot;)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR3-1.png" width="672" /></p>
+<pre class="r"><code>ggqqplot(data$Vitamin)</code></pre>
+<p><img src="/post/2021-09-22-normal-distribution/Normal-distribution_files/figure-html/NR3-2.png" width="672" /></p>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="ZhijunWang1991/zhijunwang.me"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOC0zEoc4CS1ka"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/01/09/pca/">Principal component analysis</a></span>
+  <span class="nav-next"><a href="/post/2021/03/22/anova/">One-way analysis of variance (ANOVA)</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+
+  <div class="copyright">© <a href="https://michaelwang.cloud">Zhijun Wang</a> 2019-2024</div>
+  
+  </footer>
+  </article>
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XEQWJYE7S4');
+        }
+      </script>
+    
+  
+
+
+  </body>
+</html>
+
+
+
+
+

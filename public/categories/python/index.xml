@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Blog</title>
+    <link>http://localhost:4321/categories/python/</link>
+    <description>Recent content in Python on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear Discriminant Analysis in Python</title>
+      <link>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</guid>
+      <description>Load library&#xD;from turtle import shape&#xD;import pandas as pd&#xD;import numpy as np&#xD;from sklearn.model_selection import RepeatedStratifiedKFold&#xD;from sklearn.model_selection import cross_val_score&#xD;from sklearn.datasets import make_classification&#xD;from sklearn.discriminant_analysis import LinearDiscriminantAnalysis import matplotlib.pyplot as plt&#xD;from numpy import mean, unicode_&#xD;from numpy import std&#xD;Load the data&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.002253&#xD;## 1 1 1 Greece 0.</description>
+    </item>
+    <item>
+      <title>Data visualization with seaborn matplotlib in Python</title>
+      <link>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</guid>
+      <description>Data visualization&#xD;Examples : The weight of chicks from different months and feed diet&#xA;Import packages&#xD;import os as os&#xD;from stat import FILE_ATTRIBUTE_SPARSE_FILE&#xD;import pandas as pd&#xD;import numpy as np&#xD;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;Line plot&#xD;Chick_data.head()&#xD;## Unnamed: 0 weight Time Chick Diet&#xD;## 0 1 42 0 1 1&#xD;## 1 2 51 2 1 1&#xD;## 2 3 59 4 1 1&#xD;## 3 4 64 6 1 1&#xD;## 4 5 76 8 1 1&#xD;Chick_data = Chick_data.</description>
+    </item>
+    <item>
+      <title>Principal component analysis (Python version)</title>
+      <link>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</guid>
+      <description>Principal component analysis(PCA)&#xD;Load packages&#xD;import pandas as pd&#xD;import numpy as np&#xD;import matplotlib.pyplot as plt&#xD;from scipy.signal import savgol_filter&#xD;from sklearn.decomposition import PCA as sk_pca&#xD;from sklearn.preprocessing import StandardScaler&#xD;from scipy.signal import savgol_filter, general_gaussian&#xD;from sklearn.decomposition import PCA&#xD;Load data (The NIR spectral of oil samples)&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.</description>
+    </item>
+    <item>
+      <title>The one-way analysis of variance (ANOVA) in Python</title>
+      <link>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</guid>
+      <description>The date from Vc contents of different fruits were used to perform ANOVA.&#xA;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;df.head(n=20)&#xD;## Number Fruit Repeat Vitamin&#xD;## 0 1 Apple A1 4.6&#xD;## 1 2 Apple A2 3.9&#xD;## 2 3 Apple A3 5.2&#xD;## 3 4 Apple A4 6.9&#xD;## 4 5 Apple A5 4.8&#xD;## 5 6 Apple A6 3.3&#xD;## 6 7 Banana A1 8.7&#xD;## 7 8 Banana A2 8.</description>
+    </item>
+    <item>
+      <title>Data manipulation with padas</title>
+      <link>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</guid>
+      <description>##Inspecting a DataFrame import pandas as pd ## Load dataset homelessness homelessness = pd.read_csv(&amp;#39;homelessness.csv&amp;#39;) # Print the head of the homelessness data print(homelessness.head()) Unnamed: 0 region state individuals family_members \&#xD;0 0 East South Central Alabama 2570.0 864.0 1 1 Pacific Alaska 1434.0 582.0 2 2 Mountain Arizona 7259.0 2606.0 3 3 West South Central Arkansas 2280.0 432.0 4 4 Pacific California 109008.0 20964.0 state_pop 0 4887681 1 735139 2 7158024 3 3009733 4 39461588 # Print information about homelessness print(homelessness.</description>
+    </item>
+  </channel>
+</rss>

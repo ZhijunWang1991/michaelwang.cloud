@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Map on Blog</title>
+    <link>http://localhost:4321/categories/map/</link>
+    <description>Recent content in Map on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/categories/map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>To draw map using R</title>
+      <link>http://localhost:4321/post/2019/12/01/rmap/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/12/01/rmap/</guid>
+      <description>Background&#xD;Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can install R and R maps have no copyright issues and are easy to use. The main R packages used are ggplot2, sf, rnaturalearth, rnaturalearthdata, etc. When you need to modify the picture, you only need to modify the code, which eliminates the cumbersome modification of the picture.</description>
+    </item>
+  </channel>
+</rss>

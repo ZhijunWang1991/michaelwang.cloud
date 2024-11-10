@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Linear Discriminant Analysis in Python - Blog</title>
+    <meta property="og:title" content="Linear Discriminant Analysis in Python - Blog">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="from turtle import shapeimport pandas as pdimport numpy as npfrom sklearn.model_selection import RepeatedStratifiedKFoldfrom sklearn.model_selection import cross_val_scorefrom sklearn.datasets &amp;hellip;">
+      <meta property="og:description" content="from turtle import shapeimport pandas as pdimport numpy as npfrom sklearn.model_selection import RepeatedStratifiedKFoldfrom sklearn.model_selection import cross_val_scorefrom sklearn.datasets &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+ 
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Blog</a></h1>
+
+<p class="tagline">Practice makes perfect.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/vitae/">Vitae</a></li>
+  
+  <li><a href="/publications/">Publications</a></li>
+  
+  <li><a href="/post/">Blog</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/gallery/">Gallery</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Linear Discriminant Analysis in Python</h1>
+
+<h3>Zhijun
+  /  2022-11-07</h3>
+<hr>
+
+
+      </header>
+    
+    <header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2128669665967347"
+     crossorigin="anonymous"></script>
+     </header>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEQWJYE7S4');
+</script>
+
+
+
+
+
+
+
+
+<div id="load-library" class="section level1">
+<h1>Load library</h1>
+<pre class="python"><code>from turtle import shape
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import RepeatedStratifiedKFold
+from sklearn.model_selection import cross_val_score
+from sklearn.datasets import make_classification
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis 
+import matplotlib.pyplot as plt
+from numpy import mean, unicode_
+from numpy import std</code></pre>
+<div id="load-the-data" class="section level2">
+<h2>Load the data</h2>
+<pre class="python"><code>oil_data.head()</code></pre>
+<pre><code>##    Number  Group Countries  808.5395  ...  1881.3715  1883.301  1885.2305   1887.16
+## 0       1      1    Greece  0.103753  ...   0.003744  0.003461   0.002774  0.002253
+## 1       1      1    Greece  0.100083  ...   0.004165  0.002345   0.000598 -0.000700
+## 2       2      1    Greece  0.098488  ...   0.003454  0.003874   0.003860  0.002053
+## 3       2      1    Greece  0.097094  ...   0.004128  0.002877   0.001644  0.000653
+## 4       3      1    Greece  0.098733  ...   0.002996  0.001952   0.001568  0.001747
+## 
+## [5 rows x 563 columns]</code></pre>
+</div>
+<div id="define-dataset" class="section level2">
+<h2>define dataset</h2>
+<pre class="python"><code>X = oil_data.values[:,3:]
+y = oil_data.values[:,2]</code></pre>
+</div>
+<div id="summarize-the-dataset" class="section level2">
+<h2>Summarize the dataset</h2>
+<pre class="python"><code>print(X.shape, y.shape)</code></pre>
+<pre><code>## (120, 560) (120,)</code></pre>
+</div>
+<div id="lda-model" class="section level2">
+<h2>LDA model</h2>
+<pre class="python"><code>model = LinearDiscriminantAnalysis()
+# define model evaluation method
+cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+# evaluate model
+scores = cross_val_score(model, X, y, scoring=&#39;accuracy&#39;, cv=cv)
+# summarize result
+print(&#39;Mean Accuracy: %.3f (%.3f)&#39; % (mean(scores), std(scores)))</code></pre>
+<pre><code>## Mean Accuracy: 0.975 (0.049)</code></pre>
+<p>We can see that the model performed a mean accuracy of 97.50%.</p>
+</div>
+<div id="define-data-to-plot" class="section level2">
+<h2>Define data to plot</h2>
+<pre class="python"><code>lda = LinearDiscriminantAnalysis()
+data_plot = lda.fit(X, y).transform(X)
+target_names = oil_data[&#39;Countries&#39;].astype(str).unique()
+
+# Plot
+plt.figure()
+colors = [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;, &#39;orange&#39;]
+lw = 3
+for color, i, target_name in zip(colors, [&#39;Greece&#39;, &#39;Italy&#39;, &#39;Portugal&#39;, &#39;Spain&#39;], target_names):
+    plt.scatter(
+        data_plot[y == i, 0], data_plot[y == i, 1], alpha=0.8, color=color, label=target_name
+    )
+plt.legend(loc=&quot;best&quot;, shadow=False, scatterpoints=1)
+plt.title(&quot;LDA of oil dataset&quot;)
+
+plt.show()</code></pre>
+<p><img src="/post/2022/11/07/linear-discriminant-analysis-in-python/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="ZhijunWang1991/zhijunwang.me"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOC0zEoc4CS1ka"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/">Data visualization with seaborn matplotlib in Python</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+
+  <div class="copyright">© <a href="https://michaelwang.cloud">Zhijun Wang</a> 2019-2024</div>
+  
+  </footer>
+  </article>
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XEQWJYE7S4');
+        }
+      </script>
+    
+  
+
+
+  </body>
+</html>
+
+
+
+
+

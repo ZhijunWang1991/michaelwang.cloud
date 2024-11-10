@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Blog</title>
+    <link>http://localhost:4321/tags/python/</link>
+    <description>Recent content in Python on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic course needed for data science</title>
+      <link>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</guid>
+      <description>All the course suggestion come from blog http://www.juyang.co/phd%e8%bd%ac%e8%a1%8c%e4%b9%8b%e8%b7%af/&#xA;Beginner: Intro to Computer Science Free&#xA;(https://www.udacity.com/course/intro-to-computer-science–cs101)&#xA;Programming Foundations with Python Free&#xA;(https://www.udacity.com/course/programming-foundations-with-python–ud036)&#xA;Design of Computer Programs&#xA;(https://www.udacity.com/course/design-of-computer-programs–cs212)&#xA;Essential Data Structures in C/C++&#xA;(http://www.cs.columbia.edu/~jae/3136/)&#xA;Introduction to Algorithms&#xA;(https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)&#xA;Data Analyst Nanodegree&#xA;(https://www.udacity.com/course/data-analyst-nanodegree–nd002)&#xA;Intro to Statistics&#xA;(https://www.udacity.com/course/intro-to-statistics–st101)&#xA;Intro to Descriptive Statistics&#xA;https://www.udacity.com/course/intro-to-descriptive-statistics–ud827&#xA;Intro to Inferential Statistics&#xA;https://www.udacity.com/course/intro-to-inferential-statistics–ud201&#xA;Time Series Forecasting&#xA;https://www.udacity.com/course/time-series-forecasting–ud980&#xA;https://www.udacity.com/course/intro-to-data-analysis–ud170&#xA;https://www.udacity.com/course/data-wrangling-with-mongodb–ud032&#xA;Intro to Machine Learning&#xA;https://www.udacity.com/course/intro-to-machine-learning–ud120&#xA;Machine Learning&#xA;https://www.coursera.org/learn/machine-learning</description>
+    </item>
+  </channel>
+</rss>

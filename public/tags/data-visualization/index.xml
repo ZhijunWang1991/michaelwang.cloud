@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Visualization on Blog</title>
+    <link>http://localhost:4321/tags/data-visualization/</link>
+    <description>Recent content in Data Visualization on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data visualization with seaborn matplotlib in Python</title>
+      <link>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</guid>
+      <description>Data visualization&#xD;Examples : The weight of chicks from different months and feed diet&#xA;Import packages&#xD;import os as os&#xD;from stat import FILE_ATTRIBUTE_SPARSE_FILE&#xD;import pandas as pd&#xD;import numpy as np&#xD;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;Line plot&#xD;Chick_data.head()&#xD;## Unnamed: 0 weight Time Chick Diet&#xD;## 0 1 42 0 1 1&#xD;## 1 2 51 2 1 1&#xD;## 2 3 59 4 1 1&#xD;## 3 4 64 6 1 1&#xD;## 4 5 76 8 1 1&#xD;Chick_data = Chick_data.</description>
+    </item>
+    <item>
+      <title>Simple correlation analysis</title>
+      <link>http://localhost:4321/post/2021/05/04/corr/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/05/04/corr/</guid>
+      <description>Correlation analysis&#xD;The correlation heatmap is quite helpful to show correlations between different variables such as contents of compositions.&#xA;The example of EU Population Prospects will be used for correlation analysis of Quality of life index.&#xA;Load data&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;data &amp;lt;- read.csv(&amp;quot;eu.csv&amp;quot;,header = T,stringsAsFactors = T )&#xD;dat &amp;lt;- data[,-1]&#xD;head(data)&#xD;## Countries Total.population..thousands. Birth.rate Mortality.rate&#xD;## 1 Austria 9043.070 9.999 9.972&#xD;## 2 Belgium 11632.300 10.659 9.775&#xD;## 3 France 65426.</description>
+    </item>
+    <item>
+      <title>Data Visualization--Lineplot &amp; Violinplot</title>
+      <link>http://localhost:4321/post/2020/03/10/lineplot/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2020/03/10/lineplot/</guid>
+      <description>Examples : The weight of chicks from different months and feed diet.&#xA;Firstly, have a look at dataset. The structure of dataset is following:&#xA;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;# library&#xD;library(tidyverse)&#xD;library(ggplot2)&#xD;library(hrbrthemes)&#xD;Chick_data &amp;lt;- ChickWeight&#xD;str(Chick_data)&#xD;## Classes &amp;#39;nfnGroupedData&amp;#39;, &amp;#39;nfGroupedData&amp;#39;, &amp;#39;groupedData&amp;#39; and &amp;#39;data.frame&amp;#39;: 578 obs. of 4 variables:&#xD;## $ weight: num 42 51 59 64 76 93 106 125 149 171 ...&#xD;## $ Time : num 0 2 4 6 8 10 12 14 16 18 .</description>
+    </item>
+  </channel>
+</rss>

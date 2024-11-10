@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Analysis on Blog</title>
+    <link>http://localhost:4321/tags/data-analysis/</link>
+    <description>Recent content in Data Analysis on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear Discriminant Analysis in Python</title>
+      <link>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</guid>
+      <description>Load library&#xD;from turtle import shape&#xD;import pandas as pd&#xD;import numpy as np&#xD;from sklearn.model_selection import RepeatedStratifiedKFold&#xD;from sklearn.model_selection import cross_val_score&#xD;from sklearn.datasets import make_classification&#xD;from sklearn.discriminant_analysis import LinearDiscriminantAnalysis import matplotlib.pyplot as plt&#xD;from numpy import mean, unicode_&#xD;from numpy import std&#xD;Load the data&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.002253&#xD;## 1 1 1 Greece 0.</description>
+    </item>
+    <item>
+      <title>Principal component analysis (Python version)</title>
+      <link>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</guid>
+      <description>Principal component analysis(PCA)&#xD;Load packages&#xD;import pandas as pd&#xD;import numpy as np&#xD;import matplotlib.pyplot as plt&#xD;from scipy.signal import savgol_filter&#xD;from sklearn.decomposition import PCA as sk_pca&#xD;from sklearn.preprocessing import StandardScaler&#xD;from scipy.signal import savgol_filter, general_gaussian&#xD;from sklearn.decomposition import PCA&#xD;Load data (The NIR spectral of oil samples)&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.</description>
+    </item>
+    <item>
+      <title>The one-way analysis of variance (ANOVA) in Python</title>
+      <link>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</guid>
+      <description>The date from Vc contents of different fruits were used to perform ANOVA.&#xA;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;df.head(n=20)&#xD;## Number Fruit Repeat Vitamin&#xD;## 0 1 Apple A1 4.6&#xD;## 1 2 Apple A2 3.9&#xD;## 2 3 Apple A3 5.2&#xD;## 3 4 Apple A4 6.9&#xD;## 4 5 Apple A5 4.8&#xD;## 5 6 Apple A6 3.3&#xD;## 6 7 Banana A1 8.7&#xD;## 7 8 Banana A2 8.</description>
+    </item>
+    <item>
+      <title>Simple correlation analysis</title>
+      <link>http://localhost:4321/post/2021/05/04/corr/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/05/04/corr/</guid>
+      <description>Correlation analysis&#xD;The correlation heatmap is quite helpful to show correlations between different variables such as contents of compositions.&#xA;The example of EU Population Prospects will be used for correlation analysis of Quality of life index.&#xA;Load data&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;data &amp;lt;- read.csv(&amp;quot;eu.csv&amp;quot;,header = T,stringsAsFactors = T )&#xD;dat &amp;lt;- data[,-1]&#xD;head(data)&#xD;## Countries Total.population..thousands. Birth.rate Mortality.rate&#xD;## 1 Austria 9043.070 9.999 9.972&#xD;## 2 Belgium 11632.300 10.659 9.775&#xD;## 3 France 65426.</description>
+    </item>
+    <item>
+      <title>Discrimination model (PLS-DA)</title>
+      <link>http://localhost:4321/post/2021/04/08/plsda/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/04/08/plsda/</guid>
+      <description>Discrimination analysis&#xD;Examples: Using PLS-DA for geographical origin of oils&#xA;Dataset: Mid-infrared spectroscopy of Extra Virgin Olive Oils for Geographical origin discrimination analysis (Quadram open dataset,2003).&#xA;Data preprocess&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>Principal component analysis</title>
+      <link>http://localhost:4321/post/2021/01/09/pca/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/09/pca/</guid>
+      <description>Principal component analysis(PCA)&#xD;From this section, the machine learning will be discussed by foods data, the data from Mid-infrared spectroscopy will be used for Geographical origin of Extra Virgin Olive Oils (Quadram open dataset,2003).&#xA;Load dataset&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+  </channel>
+</rss>

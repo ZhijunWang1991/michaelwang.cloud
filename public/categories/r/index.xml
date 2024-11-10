@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Blog</title>
+    <link>http://localhost:4321/categories/r/</link>
+    <description>Recent content in R on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple correlation analysis</title>
+      <link>http://localhost:4321/post/2021/05/04/corr/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/05/04/corr/</guid>
+      <description>Correlation analysis&#xD;The correlation heatmap is quite helpful to show correlations between different variables such as contents of compositions.&#xA;The example of EU Population Prospects will be used for correlation analysis of Quality of life index.&#xA;Load data&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;data &amp;lt;- read.csv(&amp;quot;eu.csv&amp;quot;,header = T,stringsAsFactors = T )&#xD;dat &amp;lt;- data[,-1]&#xD;head(data)&#xD;## Countries Total.population..thousands. Birth.rate Mortality.rate&#xD;## 1 Austria 9043.070 9.999 9.972&#xD;## 2 Belgium 11632.300 10.659 9.775&#xD;## 3 France 65426.</description>
+    </item>
+    <item>
+      <title>Discrimination model (PLS-DA)</title>
+      <link>http://localhost:4321/post/2021/04/08/plsda/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/04/08/plsda/</guid>
+      <description>Discrimination analysis&#xD;Examples: Using PLS-DA for geographical origin of oils&#xA;Dataset: Mid-infrared spectroscopy of Extra Virgin Olive Oils for Geographical origin discrimination analysis (Quadram open dataset,2003).&#xA;Data preprocess&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>Regression model</title>
+      <link>http://localhost:4321/post/2021/03/30/regression/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/30/regression/</guid>
+      <description>Regression model for prediction&#xD;In this part, the data set Orange is used to show how regression could be used for prediction in food science.&#xA;Load data&#xD;Have a look at dataset Orange:&#xA;library(datasets)&#xD;orange &amp;lt;- Orange&#xD;head(orange)&#xD;## Tree age circumference&#xD;## 1 1 118 30&#xD;## 2 1 484 58&#xD;## 3 1 664 87&#xD;## 4 1 1004 115&#xD;## 5 1 1231 120&#xD;## 6 1 1372 142&#xD;Linear regression model&#xD;To establish the relationship Linear regression model between the circumference and age.</description>
+    </item>
+    <item>
+      <title>One-way analysis of variance (ANOVA)</title>
+      <link>http://localhost:4321/post/2021/03/22/anova/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/22/anova/</guid>
+      <description>Defination of ANOVA&#xD;Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study– cited from WILL KENTON(https://www.</description>
+    </item>
+    <item>
+      <title>Normal distribution</title>
+      <link>http://localhost:4321/post/2021/01/22/normal-distribution/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/22/normal-distribution/</guid>
+      <description>The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.</description>
+    </item>
+    <item>
+      <title>Principal component analysis</title>
+      <link>http://localhost:4321/post/2021/01/09/pca/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/09/pca/</guid>
+      <description>Principal component analysis(PCA)&#xD;From this section, the machine learning will be discussed by foods data, the data from Mid-infrared spectroscopy will be used for Geographical origin of Extra Virgin Olive Oils (Quadram open dataset,2003).&#xA;Load dataset&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>Data Visualization--Lineplot &amp; Violinplot</title>
+      <link>http://localhost:4321/post/2020/03/10/lineplot/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2020/03/10/lineplot/</guid>
+      <description>Examples : The weight of chicks from different months and feed diet.&#xA;Firstly, have a look at dataset. The structure of dataset is following:&#xA;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;# library&#xD;library(tidyverse)&#xD;library(ggplot2)&#xD;library(hrbrthemes)&#xD;Chick_data &amp;lt;- ChickWeight&#xD;str(Chick_data)&#xD;## Classes &amp;#39;nfnGroupedData&amp;#39;, &amp;#39;nfGroupedData&amp;#39;, &amp;#39;groupedData&amp;#39; and &amp;#39;data.frame&amp;#39;: 578 obs. of 4 variables:&#xD;## $ weight: num 42 51 59 64 76 93 106 125 149 171 ...&#xD;## $ Time : num 0 2 4 6 8 10 12 14 16 18 .</description>
+    </item>
+  </channel>
+</rss>

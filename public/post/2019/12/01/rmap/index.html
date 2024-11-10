@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>To draw map using R - Blog</title>
+    <meta property="og:title" content="To draw map using R - Blog">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can &amp;hellip;">
+      <meta property="og:description" content="Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+ 
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Blog</a></h1>
+
+<p class="tagline">Practice makes perfect.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/vitae/">Vitae</a></li>
+  
+  <li><a href="/publications/">Publications</a></li>
+  
+  <li><a href="/post/">Blog</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/gallery/">Gallery</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>To draw map using R</h1>
+
+<h3>
+  2019-12-01</h3>
+<hr>
+
+
+      </header>
+    
+    <header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2128669665967347"
+     crossorigin="anonymous"></script>
+     </header>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEQWJYE7S4');
+</script>
+
+
+
+
+
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p>Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can install R and R maps have no copyright issues and are easy to use. The main R packages used are <strong>ggplot2</strong>, <strong>sf</strong>, <strong>rnaturalearth</strong>, <strong>rnaturalearthdata</strong>, etc. When you need to modify the picture, you only need to modify the code, which eliminates the cumbersome modification of the picture.</p>
+<blockquote>
+<p>To determine the origin of the sample, so samples from different countries are collected, and the location of the origin needs to be marked on the map.</p>
+</blockquote>
+</div>
+<div id="r-packages" class="section level1">
+<h1>R packages</h1>
+<pre class="r"><code>library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggspatial)
+library(sf)
+library(ggplot2)
+library(gpclib)
+library(maptools)
+library(maps)
+library(mapdata)
+library(sp)
+library(raster)
+library(RColorBrewer)
+library(rgeos)</code></pre>
+</div>
+<div id="code-and-results" class="section level1">
+<h1>Code and results</h1>
+<p>The sampling sits could be created by R:</p>
+<pre class="r"><code>setwd(&quot;C:/blog/Dataset&quot;)
+##load dataset within Latitude and longitude
+
+XY &lt;- read.csv(&#39;XY.csv&#39;)
+## Have a look at dataset
+
+head(XY)</code></pre>
+<pre><code>##   Code        X         Y   Code_X
+## 1    A 109.5812  31.30150 116.5812
+## 2    B 136.5353 -22.05232 143.5353
+## 3    C -47.5500 -15.47000 -40.5500
+## 4    D -75.4200  45.27000 -68.4200
+## 5    E 116.2000  39.55000 123.2000
+## 6    F -78.3500  -0.15000 -71.3500</code></pre>
+<pre class="r"><code>##choose word map
+world &lt;- ne_countries(scale = &quot;medium&quot;, returnclass = &quot;sf&quot;)
+
+##set theme
+theme_set(theme_bw())
+## plot
+g1 &lt;- ggplot(data = world)+
+  geom_sf() +
+  ##set points of positions
+  geom_point(data=XY,aes(x=X,y=Y),pch=21,fill=&quot;yellow&quot;,col=&quot;grey40&quot;,size=5)+
+  ##name points
+  geom_text(data= XY,aes(x=Code_X, y=Y, label=Code),
+       color = &quot;darkblue&quot;, fontface = &quot;bold&quot;,size=5, check_overlap = FALSE)+
+  labs(title=&quot;The sampling sits created by R&quot;)+
+  xlab(&quot;Longitude&quot;) + ylab(&quot;Latitude&quot;)+
+  ##set font size
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=16))+
+ ##Insert compass and scale
+  annotation_scale(location = &quot;bl&quot;, width_hint = 0.5) +
+  annotation_north_arrow(
+  location = &quot;bl&quot;, which_north = &quot;true&quot;, 
+  pad_x = unit(0.75, &quot;in&quot;), pad_y = unit(0.5, &quot;in&quot;),
+  style = north_arrow_fancy_orienteering)+
+  theme(panel.grid.major = element_line(color = gray(.5), 
+  linetype = &quot;dashed&quot;, size = 0.5), 
+  panel.background = element_rect(fill = &quot;aliceblue&quot;))
+
+g1</code></pre>
+<pre><code>## Scale on map varies by more than 10%, scale bar may be inaccurate</code></pre>
+<p><img src="/post/2019-12-01-map-r/Rmap_files/figure-html/map-1.png" width="672" /></p>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ol style="list-style-type: decimal">
+<li>R-spatital,<a href="https://r-spatial.org/" class="uri">https://r-spatial.org/</a>.</li>
+</ol>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="ZhijunWang1991/zhijunwang.me"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOC0zEoc4CS1ka"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/11/07/basic-course-needed-for-data-science/">Basic course needed for data science</a></span>
+  <span class="nav-next"><a href="/post/2019/12/18/insert-multiplication-sign-in-word-document/">Insert Multiplication sign in word document</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+
+  <div class="copyright">© <a href="https://michaelwang.cloud">Zhijun Wang</a> 2019-2024</div>
+  
+  </footer>
+  </article>
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XEQWJYE7S4');
+        }
+      </script>
+    
+  
+
+
+  </body>
+</html>
+
+
+
+
+

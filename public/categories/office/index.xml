@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Office on Blog</title>
+    <link>http://localhost:4321/categories/office/</link>
+    <description>Recent content in Office on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/categories/office/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Insert Multiplication sign in word document</title>
+      <link>http://localhost:4321/post/2019/12/18/insert-multiplication-sign-in-word-document/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/12/18/insert-multiplication-sign-in-word-document/</guid>
+      <description>In the scientific manuscript writing, normall we need insert Mathematical operation symbol in word documents, following is the tips for this issue:&#xA;Insert&amp;mdash;&amp;ndash;Symbol&amp;mdash;-Subset:Latin-1 supplement&#xA;Then, you can find the Multiplication sign $$\times$$.</description>
+    </item>
+  </channel>
+</rss>

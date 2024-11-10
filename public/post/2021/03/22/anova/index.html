@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>One-way analysis of variance (ANOVA) - Blog</title>
+    <meta property="og:title" content="One-way analysis of variance (ANOVA) - Blog">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The &amp;hellip;">
+      <meta property="og:description" content="Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+ 
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Blog</a></h1>
+
+<p class="tagline">Practice makes perfect.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/vitae/">Vitae</a></li>
+  
+  <li><a href="/publications/">Publications</a></li>
+  
+  <li><a href="/post/">Blog</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/gallery/">Gallery</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>One-way analysis of variance (ANOVA)</h1>
+
+<h3>
+  2021-03-22</h3>
+<hr>
+
+
+      </header>
+    
+    <header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2128669665967347"
+     crossorigin="anonymous"></script>
+     </header>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEQWJYE7S4');
+</script>
+
+
+
+
+
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="defination-of-anova" class="section level2">
+<h2>Defination of ANOVA</h2>
+<p>Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study– cited from <strong>WILL KENTON</strong>(<a href="https://www.investopedia.com/terms/a/anova.asp" class="uri">https://www.investopedia.com/terms/a/anova.asp</a>)</p>
+</div>
+<div id="load-data" class="section level2">
+<h2>Load data</h2>
+<pre class="r"><code>library(multcomp)
+library(dplyr)
+setwd(&quot;C:/blog/Dataset&quot;)
+data &lt;- read.csv(&quot;fruits_Vc.csv&quot;)
+head(data)</code></pre>
+<pre><code>##   Number Fruit Repeat Vitamin
+## 1      1 Apple     A1     4.6
+## 2      2 Apple     A2     3.9
+## 3      3 Apple     A3     5.2
+## 4      4 Apple     A4     6.9
+## 5      5 Apple     A5     4.8
+## 6      6 Apple     A6     3.3</code></pre>
+<p>To compare the vitamin C contents of different fruits</p>
+<pre class="r"><code>data$Fruit = as.factor(data$Fruit)
+VitaminC &lt;- data$Vitamin
+Fruits &lt;- data$Fruit
+
+aggregate(VitaminC, by =list(Fruits), FUN=mean)</code></pre>
+<pre><code>##      Group.1         x
+## 1      Apple  4.783333
+## 2     Banana 10.266667
+## 3 Watermelon  8.683333</code></pre>
+<pre class="r"><code>aggregate(VitaminC, by =list(Fruits), FUN=sd)</code></pre>
+<pre><code>##      Group.1         x
+## 1      Apple 1.2384130
+## 2     Banana 1.5807171
+## 3 Watermelon 0.9847165</code></pre>
+<pre class="r"><code>fit &lt;- aov(VitaminC ~ Fruits)
+
+summary(fit)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Fruits       2  95.57   47.78   28.66 7.52e-06 ***
+## Residuals   15  25.01    1.67                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>TukeyHSD(fit)</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = VitaminC ~ Fruits)
+## 
+## $Fruits
+##                        diff       lwr       upr     p adj
+## Banana-Apple       5.483333  3.546906 7.4197605 0.0000068
+## Watermelon-Apple   3.900000  1.963573 5.8364272 0.0002819
+## Watermelon-Banana -1.583333 -3.519761 0.3530938 0.1184352</code></pre>
+<pre class="r"><code>par(mar=c(5,4,6,2))
+data$Fruit = as.factor(data$Fruit)
+tuk &lt;- glht(fit,linfct= mcp(Fruits=&quot;Tukey&quot;))
+
+p1 &lt;- plot(cld(tuk,level=.05),col=&quot;lightgrey&quot;)</code></pre>
+<p><img src="/post/2021-09-22-one-way-analysis-of-variance-anova/anova_files/figure-html/code7-1.png" width="672" /></p>
+<p>To save the ANOVA results after calculations</p>
+<pre class="r"><code>table &lt;- group_by(data, data$Fruit) %&gt;%
+  summarise(
+    .groups = &#39;drop&#39;,
+    count = n(),
+    mean = mean(Vitamin, na.rm = TRUE),
+    sd = sd(Vitamin, na.rm = TRUE)
+  )
+
+View(table)
+
+print(table)</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##   `data$Fruit` count  mean    sd
+##   &lt;fct&gt;        &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Apple            6  4.78 1.24 
+## 2 Banana           6 10.3  1.58 
+## 3 Watermelon       6  8.68 0.985</code></pre>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="ZhijunWang1991/zhijunwang.me"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOC0zEoc4CS1ka"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/01/22/normal-distribution/">Normal distribution</a></span>
+  <span class="nav-next"><a href="/post/2021/03/30/regression/">Regression model</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+
+  <div class="copyright">© <a href="https://michaelwang.cloud">Zhijun Wang</a> 2019-2024</div>
+  
+  </footer>
+  </article>
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XEQWJYE7S4');
+        }
+      </script>
+    
+  
+
+
+  </body>
+</html>
+
+
+
+
+

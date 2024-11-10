@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Data Visualization--Lineplot &amp; Violinplot - Blog</title>
+    <meta property="og:title" content="Data Visualization--Lineplot &amp; Violinplot - Blog">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Examples : The weight of chicks from different months and feed diet.
+Firstly, have a look at dataset. The structure of dataset is following:
+setwd(&quot;C:/blog/Dataset&quot;)# library &amp;hellip;">
+      <meta property="og:description" content="Examples : The weight of chicks from different months and feed diet.
+Firstly, have a look at dataset. The structure of dataset is following:
+setwd(&quot;C:/blog/Dataset&quot;)# library &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+ 
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Blog</a></h1>
+
+<p class="tagline">Practice makes perfect.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/vitae/">Vitae</a></li>
+  
+  <li><a href="/publications/">Publications</a></li>
+  
+  <li><a href="/post/">Blog</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/gallery/">Gallery</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Data Visualization--Lineplot &amp; Violinplot</h1>
+
+<h3>
+  2020-03-10</h3>
+<hr>
+
+
+      </header>
+    
+    <header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2128669665967347"
+     crossorigin="anonymous"></script>
+     </header>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEQWJYE7S4');
+</script>
+
+
+
+
+
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Examples : <strong>The weight of chicks from different months and feed diet</strong>.</p>
+<p>Firstly, have a look at dataset. The <strong>structure of dataset</strong> is following:</p>
+<pre class="r"><code>setwd(&quot;C:/blog/Dataset&quot;)
+# library
+library(tidyverse)
+library(ggplot2)
+library(hrbrthemes)
+Chick_data &lt;- ChickWeight
+
+str(Chick_data)</code></pre>
+<pre><code>## Classes &#39;nfnGroupedData&#39;, &#39;nfGroupedData&#39;, &#39;groupedData&#39; and &#39;data.frame&#39;:   578 obs. of  4 variables:
+##  $ weight: num  42 51 59 64 76 93 106 125 149 171 ...
+##  $ Time  : num  0 2 4 6 8 10 12 14 16 18 ...
+##  $ Chick : Ord.factor w/ 50 levels &quot;18&quot;&lt;&quot;16&quot;&lt;&quot;15&quot;&lt;..: 15 15 15 15 15 15 15 15 15 15 ...
+##  $ Diet  : Factor w/ 4 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  - attr(*, &quot;formula&quot;)=Class &#39;formula&#39;  language weight ~ Time | Chick
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_EmptyEnv&gt; 
+##  - attr(*, &quot;outer&quot;)=Class &#39;formula&#39;  language ~Diet
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_EmptyEnv&gt; 
+##  - attr(*, &quot;labels&quot;)=List of 2
+##   ..$ x: chr &quot;Time&quot;
+##   ..$ y: chr &quot;Body weight&quot;
+##  - attr(*, &quot;units&quot;)=List of 2
+##   ..$ x: chr &quot;(days)&quot;
+##   ..$ y: chr &quot;(gm)&quot;</code></pre>
+<p>Then, have a look at the first 5 lines in datasets, we could find the dataset includes <strong>weight</strong>, <strong>chick numbers</strong>, <strong>diet</strong> and <strong>times</strong> variables.</p>
+<pre class="r"><code>head(Chick_data, n =5)</code></pre>
+<pre><code>##   weight Time Chick Diet
+## 1     42    0     1    1
+## 2     51    2     1    1
+## 3     59    4     1    1
+## 4     64    6     1    1
+## 5     76    8     1    1</code></pre>
+<div id="line-plot" class="section level2">
+<h2>Line plot</h2>
+<p><strong>To explore the relationship between weight and time using package ggplot2</strong></p>
+<pre class="r"><code>g1 &lt;- ggplot(data = Chick_data,aes(x = Time, y = weight, color = Chick)) +
+  geom_point(size = 3L)+
+  geom_line()+
+  labs(title=&quot;Plot of Chick weight and Time&quot;,
+       x = &quot;Time&quot;, y = &quot;Weight&quot;,color = &quot;Chick code&quot;) +
+  theme_bw()+
+  theme(
+    plot.title = element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;),
+    axis.title.x = element_text(color=&quot;black&quot;, size=14, face=&quot;bold&quot;),
+    axis.title.y = element_text(color=&quot;black&quot;, size=14, face=&quot;bold&quot;)
+  )
+g1</code></pre>
+<p><img src="/post/2020-03-10-data-visualization-lineplot-violinplot/lineplot_files/figure-html/code3-1.png" width="672" /></p>
+<p>The results from plot indicated that the weight incresed with the increasing times.</p>
+</div>
+<div id="violin-plot" class="section level2">
+<h2>Violin plot</h2>
+<p><strong>To explore the relationship between weight and time using violin plot</strong></p>
+<pre class="r"><code>g2 &lt;- ggplot(data = Chick_data,aes(x = Diet, y = weight, fill = Diet)) +
+  geom_violin(aes(fill = factor(Diet)))+
+  geom_boxplot(width=0.1)+
+  labs(title=&quot;Plot of Chick weight and Feed diet&quot;,
+       x = &quot;Diet&quot;, y = &quot;Weight&quot;,color = &quot;Feed Diet&quot;) +
+  theme_bw()+
+  theme(
+    plot.title = element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;),
+    axis.title.x = element_text(color=&quot;black&quot;, size=14, face=&quot;bold&quot;),
+    axis.title.y = element_text(color=&quot;black&quot;, size=14, face=&quot;bold&quot;)
+  )
+g2</code></pre>
+<p><img src="/post/2020-03-10-data-visualization-lineplot-violinplot/lineplot_files/figure-html/code4-1.png" width="672" /></p>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="ZhijunWang1991/zhijunwang.me"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxODk1ODA0NDk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOC0zEoc4CS1ka"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/12/18/insert-multiplication-sign-in-word-document/">Insert Multiplication sign in word document</a></span>
+  <span class="nav-next"><a href="/post/2020/12/14/how-to-add-mendeley-plugin-into-word/">How to add Mendeley plugin into word</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+
+  <div class="copyright">© <a href="https://michaelwang.cloud">Zhijun Wang</a> 2019-2024</div>
+  
+  </footer>
+  </article>
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEQWJYE7S4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XEQWJYE7S4');
+        }
+      </script>
+    
+  
+
+
+  </body>
+</html>
+
+
+
+
+

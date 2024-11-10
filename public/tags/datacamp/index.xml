@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DataCamp on Blog</title>
+    <link>http://localhost:4321/tags/datacamp/</link>
+    <description>Recent content in DataCamp on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/tags/datacamp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data manipulation with padas</title>
+      <link>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</guid>
+      <description>##Inspecting a DataFrame import pandas as pd ## Load dataset homelessness homelessness = pd.read_csv(&amp;#39;homelessness.csv&amp;#39;) # Print the head of the homelessness data print(homelessness.head()) Unnamed: 0 region state individuals family_members \&#xD;0 0 East South Central Alabama 2570.0 864.0 1 1 Pacific Alaska 1434.0 582.0 2 2 Mountain Arizona 7259.0 2606.0 3 3 West South Central Arkansas 2280.0 432.0 4 4 Pacific California 109008.0 20964.0 state_pop 0 4887681 1 735139 2 7158024 3 3009733 4 39461588 # Print information about homelessness print(homelessness.</description>
+    </item>
+  </channel>
+</rss>

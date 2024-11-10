@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Blog</title>
+    <link>http://localhost:4321/</link>
+    <description>Recent content in Home on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear Discriminant Analysis in Python</title>
+      <link>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/07/linear-discriminant-analysis-in-python/</guid>
+      <description>Load library&#xD;from turtle import shape&#xD;import pandas as pd&#xD;import numpy as np&#xD;from sklearn.model_selection import RepeatedStratifiedKFold&#xD;from sklearn.model_selection import cross_val_score&#xD;from sklearn.datasets import make_classification&#xD;from sklearn.discriminant_analysis import LinearDiscriminantAnalysis import matplotlib.pyplot as plt&#xD;from numpy import mean, unicode_&#xD;from numpy import std&#xD;Load the data&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.002253&#xD;## 1 1 1 Greece 0.</description>
+    </item>
+    <item>
+      <title>Data visualization with seaborn matplotlib in Python</title>
+      <link>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</guid>
+      <description>Data visualization&#xD;Examples : The weight of chicks from different months and feed diet&#xA;Import packages&#xD;import os as os&#xD;from stat import FILE_ATTRIBUTE_SPARSE_FILE&#xD;import pandas as pd&#xD;import numpy as np&#xD;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;Line plot&#xD;Chick_data.head()&#xD;## Unnamed: 0 weight Time Chick Diet&#xD;## 0 1 42 0 1 1&#xD;## 1 2 51 2 1 1&#xD;## 2 3 59 4 1 1&#xD;## 3 4 64 6 1 1&#xD;## 4 5 76 8 1 1&#xD;Chick_data = Chick_data.</description>
+    </item>
+    <item>
+      <title>Data visualization and modelling</title>
+      <link>http://localhost:4321/gallery/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/gallery/</guid>
+      <description>&#xD;</description>
+    </item>
+    <item>
+      <title>Principal component analysis (Python version)</title>
+      <link>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</guid>
+      <description>Principal component analysis(PCA)&#xD;Load packages&#xD;import pandas as pd&#xD;import numpy as np&#xD;import matplotlib.pyplot as plt&#xD;from scipy.signal import savgol_filter&#xD;from sklearn.decomposition import PCA as sk_pca&#xD;from sklearn.preprocessing import StandardScaler&#xD;from scipy.signal import savgol_filter, general_gaussian&#xD;from sklearn.decomposition import PCA&#xD;Load data (The NIR spectral of oil samples)&#xD;oil_data.head()&#xD;## Number Group Countries 808.5395 ... 1881.3715 1883.301 1885.2305 1887.16&#xD;## 0 1 1 Greece 0.103753 ... 0.003744 0.003461 0.002774 0.</description>
+    </item>
+    <item>
+      <title>The one-way analysis of variance (ANOVA) in Python</title>
+      <link>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/12/10/the-one-way-analysis-of-variance-anova-in-python/</guid>
+      <description>The date from Vc contents of different fruits were used to perform ANOVA.&#xA;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;df.head(n=20)&#xD;## Number Fruit Repeat Vitamin&#xD;## 0 1 Apple A1 4.6&#xD;## 1 2 Apple A2 3.9&#xD;## 2 3 Apple A3 5.2&#xD;## 3 4 Apple A4 6.9&#xD;## 4 5 Apple A5 4.8&#xD;## 5 6 Apple A6 3.3&#xD;## 6 7 Banana A1 8.7&#xD;## 7 8 Banana A2 8.</description>
+    </item>
+    <item>
+      <title>Data manipulation with padas</title>
+      <link>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/10/27/data-manipulation-with-padas/</guid>
+      <description>##Inspecting a DataFrame import pandas as pd ## Load dataset homelessness homelessness = pd.read_csv(&amp;#39;homelessness.csv&amp;#39;) # Print the head of the homelessness data print(homelessness.head()) Unnamed: 0 region state individuals family_members \&#xD;0 0 East South Central Alabama 2570.0 864.0 1 1 Pacific Alaska 1434.0 582.0 2 2 Mountain Arizona 7259.0 2606.0 3 3 West South Central Arkansas 2280.0 432.0 4 4 Pacific California 109008.0 20964.0 state_pop 0 4887681 1 735139 2 7158024 3 3009733 4 39461588 # Print information about homelessness print(homelessness.</description>
+    </item>
+    <item>
+      <title>Simple correlation analysis</title>
+      <link>http://localhost:4321/post/2021/05/04/corr/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/05/04/corr/</guid>
+      <description>Correlation analysis&#xD;The correlation heatmap is quite helpful to show correlations between different variables such as contents of compositions.&#xA;The example of EU Population Prospects will be used for correlation analysis of Quality of life index.&#xA;Load data&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;data &amp;lt;- read.csv(&amp;quot;eu.csv&amp;quot;,header = T,stringsAsFactors = T )&#xD;dat &amp;lt;- data[,-1]&#xD;head(data)&#xD;## Countries Total.population..thousands. Birth.rate Mortality.rate&#xD;## 1 Austria 9043.070 9.999 9.972&#xD;## 2 Belgium 11632.300 10.659 9.775&#xD;## 3 France 65426.</description>
+    </item>
+    <item>
+      <title>Discrimination model (PLS-DA)</title>
+      <link>http://localhost:4321/post/2021/04/08/plsda/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/04/08/plsda/</guid>
+      <description>Discrimination analysis&#xD;Examples: Using PLS-DA for geographical origin of oils&#xA;Dataset: Mid-infrared spectroscopy of Extra Virgin Olive Oils for Geographical origin discrimination analysis (Quadram open dataset,2003).&#xA;Data preprocess&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>Regression model</title>
+      <link>http://localhost:4321/post/2021/03/30/regression/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/30/regression/</guid>
+      <description>Regression model for prediction&#xD;In this part, the data set Orange is used to show how regression could be used for prediction in food science.&#xA;Load data&#xD;Have a look at dataset Orange:&#xA;library(datasets)&#xD;orange &amp;lt;- Orange&#xD;head(orange)&#xD;## Tree age circumference&#xD;## 1 1 118 30&#xD;## 2 1 484 58&#xD;## 3 1 664 87&#xD;## 4 1 1004 115&#xD;## 5 1 1231 120&#xD;## 6 1 1372 142&#xD;Linear regression model&#xD;To establish the relationship Linear regression model between the circumference and age.</description>
+    </item>
+    <item>
+      <title>One-way analysis of variance (ANOVA)</title>
+      <link>http://localhost:4321/post/2021/03/22/anova/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/22/anova/</guid>
+      <description>Defination of ANOVA&#xD;Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study– cited from WILL KENTON(https://www.</description>
+    </item>
+    <item>
+      <title>Normal distribution</title>
+      <link>http://localhost:4321/post/2021/01/22/normal-distribution/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/22/normal-distribution/</guid>
+      <description>The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.</description>
+    </item>
+    <item>
+      <title>Principal component analysis</title>
+      <link>http://localhost:4321/post/2021/01/09/pca/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/09/pca/</guid>
+      <description>Principal component analysis(PCA)&#xD;From this section, the machine learning will be discussed by foods data, the data from Mid-infrared spectroscopy will be used for Geographical origin of Extra Virgin Olive Oils (Quadram open dataset,2003).&#xA;Load dataset&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>How to add Mendeley plugin into word</title>
+      <link>http://localhost:4321/post/2020/12/14/how-to-add-mendeley-plugin-into-word/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2020/12/14/how-to-add-mendeley-plugin-into-word/</guid>
+      <description>I had the same problem with Word 365 after installing Mendeley update. Here is the solution I found out, it may help other researchers.&#xA;Step 1: Open Word, then go to &amp;ldquo;file&amp;rdquo;-&amp;gt;&amp;ldquo;options&amp;rdquo;, a new window pops out.&#xA;Step 2: Select &amp;ldquo;Add-ins&amp;rdquo; in the left, then select &amp;ldquo;word add-ins&amp;rdquo; in &amp;ldquo;manage&amp;rdquo; (at the bottom), and click on &amp;ldquo;Go&amp;rdquo;&#xA;Step 3: Click &amp;ldquo;add&amp;rdquo;, then select &amp;ldquo;Mendeley 1.19.4.dotm&amp;rdquo; from the Mendeley installation file, it may be in &amp;ldquo;C:\Program Files (x86)\Mendeley Desktop\wordPlugin&amp;rdquo;</description>
+    </item>
+    <item>
+      <title>Data Visualization--Lineplot &amp; Violinplot</title>
+      <link>http://localhost:4321/post/2020/03/10/lineplot/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2020/03/10/lineplot/</guid>
+      <description>Examples : The weight of chicks from different months and feed diet.&#xA;Firstly, have a look at dataset. The structure of dataset is following:&#xA;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;# library&#xD;library(tidyverse)&#xD;library(ggplot2)&#xD;library(hrbrthemes)&#xD;Chick_data &amp;lt;- ChickWeight&#xD;str(Chick_data)&#xD;## Classes &amp;#39;nfnGroupedData&amp;#39;, &amp;#39;nfGroupedData&amp;#39;, &amp;#39;groupedData&amp;#39; and &amp;#39;data.frame&amp;#39;: 578 obs. of 4 variables:&#xD;## $ weight: num 42 51 59 64 76 93 106 125 149 171 ...&#xD;## $ Time : num 0 2 4 6 8 10 12 14 16 18 .</description>
+    </item>
+    <item>
+      <title>Insert Multiplication sign in word document</title>
+      <link>http://localhost:4321/post/2019/12/18/insert-multiplication-sign-in-word-document/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/12/18/insert-multiplication-sign-in-word-document/</guid>
+      <description>In the scientific manuscript writing, normall we need insert Mathematical operation symbol in word documents, following is the tips for this issue:&#xA;Insert&amp;mdash;&amp;ndash;Symbol&amp;mdash;-Subset:Latin-1 supplement&#xA;Then, you can find the Multiplication sign $$\times$$.</description>
+    </item>
+    <item>
+      <title>To draw map using R</title>
+      <link>http://localhost:4321/post/2019/12/01/rmap/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/12/01/rmap/</guid>
+      <description>Background&#xD;Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can install R and R maps have no copyright issues and are easy to use. The main R packages used are ggplot2, sf, rnaturalearth, rnaturalearthdata, etc. When you need to modify the picture, you only need to modify the code, which eliminates the cumbersome modification of the picture.</description>
+    </item>
+    <item>
+      <title>Basic course needed for data science</title>
+      <link>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</guid>
+      <description>All the course suggestion come from blog http://www.juyang.co/phd%e8%bd%ac%e8%a1%8c%e4%b9%8b%e8%b7%af/&#xA;Beginner: Intro to Computer Science Free&#xA;(https://www.udacity.com/course/intro-to-computer-science–cs101)&#xA;Programming Foundations with Python Free&#xA;(https://www.udacity.com/course/programming-foundations-with-python–ud036)&#xA;Design of Computer Programs&#xA;(https://www.udacity.com/course/design-of-computer-programs–cs212)&#xA;Essential Data Structures in C/C++&#xA;(http://www.cs.columbia.edu/~jae/3136/)&#xA;Introduction to Algorithms&#xA;(https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)&#xA;Data Analyst Nanodegree&#xA;(https://www.udacity.com/course/data-analyst-nanodegree–nd002)&#xA;Intro to Statistics&#xA;(https://www.udacity.com/course/intro-to-statistics–st101)&#xA;Intro to Descriptive Statistics&#xA;https://www.udacity.com/course/intro-to-descriptive-statistics–ud827&#xA;Intro to Inferential Statistics&#xA;https://www.udacity.com/course/intro-to-inferential-statistics–ud201&#xA;Time Series Forecasting&#xA;https://www.udacity.com/course/time-series-forecasting–ud980&#xA;https://www.udacity.com/course/intro-to-data-analysis–ud170&#xA;https://www.udacity.com/course/data-wrangling-with-mongodb–ud032&#xA;Intro to Machine Learning&#xA;https://www.udacity.com/course/intro-to-machine-learning–ud120&#xA;Machine Learning&#xA;https://www.coursera.org/learn/machine-learning</description>
+    </item>
+    <item>
+      <title>My first post</title>
+      <link>http://localhost:4321/post/2019/05/31/my-first-post/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/05/31/my-first-post/</guid>
+      <description>This is the first blog. I just want to say &amp;ldquo;Hello world&amp;rdquo; !</description>
+    </item>
+    <item>
+      <title>About this website</title>
+      <link>http://localhost:4321/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/home/</guid>
+      <description>This is the person blog of Zhijun. I am a postdoctoral researcher at UCD.\&#xA;My research interest is Food authenticity. The combination of Analysis technology (hyperspectral imaging, isotope analysis, gas mass spectrometry) and Machine learning based on R/Python/Matlab are used to evaluate the linkage of growing conditions and food quality. Here you can find my research papers.\&#xA;Data visualization, chemomentrics and application of R/Pthon are my inspiration and nice tool helpful for my PhD.</description>
+    </item>
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>http://localhost:4321/vitae/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/vitae/</guid>
+      <description>Is it possiable to decode an individual by the fewest lines? &amp;ndash; &amp;laquo;Westworld&amp;raquo;&#xA;Summary 🌾 PhD in Food Fraud and Authenticity.&#xA;👨‍💻 Experiences in lab work such as: spectral analysis, mass spectrometer and data analysis such as regression and classification models.&#xA;🌏 I believe that digital transformation is one of the trends in building sustainable agricultural systems.&#xA;Contact Information ✏️ Personal Homepage: https://zhijunwang.me&#xA;🏰 Google Scholar: Zhijun_Google Scholar&#xA;🙋‍♂️ Linkedin: Zhijun_Linkedin</description>
+    </item>
+    <item>
+      <title>Publications</title>
+      <link>http://localhost:4321/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/publications/</guid>
+      <description>You can check my whole Publications in Google Scholar:&#xA;Papers about food fraud: Wang, Z. et al.(2022). &amp;ldquo;Going bananas: from risky businesses to latest authentication technologies.&amp;rdquo; XXXI International Horticultural Congress (IHC2022): XII International Symposium on Banana: Celebrating Banana Organic 1367. 2022.&#xA;Wang, Z. et al.(2021). Preliminary Study on Tracing the Origin and Exploring the Relations between Growing Conditions and Isotopic and Elemental Fingerprints of Organic and Conventional Cavendish Bananas (Musa spp.</description>
+    </item>
+  </channel>
+</rss>

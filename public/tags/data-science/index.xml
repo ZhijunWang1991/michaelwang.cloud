@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Blog</title>
+    <link>http://localhost:4321/tags/data-science/</link>
+    <description>Recent content in Data Science on Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discrimination model (PLS-DA)</title>
+      <link>http://localhost:4321/post/2021/04/08/plsda/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/04/08/plsda/</guid>
+      <description>Discrimination analysis&#xD;Examples: Using PLS-DA for geographical origin of oils&#xA;Dataset: Mid-infrared spectroscopy of Extra Virgin Olive Oils for Geographical origin discrimination analysis (Quadram open dataset,2003).&#xA;Data preprocess&#xD;## Load date&#xD;setwd(&amp;quot;C:/blog/Dataset&amp;quot;)&#xD;oil &amp;lt;- read.csv(&amp;#39;FTIR_Spectra_olive_oils.csv&amp;#39;,header = F, stringsAsFactors = T)&#xD;print(oil[1:10,1:5])&#xD;## V1 V2 V3 V4 V5&#xD;## 1 Sample Number: 1 1 2 2&#xD;## 2 Group Code: 1 1 1 1&#xD;## 3 Wavenumbers Greece Greece Greece Greece&#xD;## 4 798.</description>
+    </item>
+    <item>
+      <title>Regression model</title>
+      <link>http://localhost:4321/post/2021/03/30/regression/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/30/regression/</guid>
+      <description>Regression model for prediction&#xD;In this part, the data set Orange is used to show how regression could be used for prediction in food science.&#xA;Load data&#xD;Have a look at dataset Orange:&#xA;library(datasets)&#xD;orange &amp;lt;- Orange&#xD;head(orange)&#xD;## Tree age circumference&#xD;## 1 1 118 30&#xD;## 2 1 484 58&#xD;## 3 1 664 87&#xD;## 4 1 1004 115&#xD;## 5 1 1231 120&#xD;## 6 1 1372 142&#xD;Linear regression model&#xD;To establish the relationship Linear regression model between the circumference and age.</description>
+    </item>
+    <item>
+      <title>One-way analysis of variance (ANOVA)</title>
+      <link>http://localhost:4321/post/2021/03/22/anova/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/03/22/anova/</guid>
+      <description>Defination of ANOVA&#xD;Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. Analysts use the ANOVA test to determine the influence that independent variables have on the dependent variable in a regression study– cited from WILL KENTON(https://www.</description>
+    </item>
+    <item>
+      <title>Normal distribution</title>
+      <link>http://localhost:4321/post/2021/01/22/normal-distribution/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2021/01/22/normal-distribution/</guid>
+      <description>The data of most food experiments will be analyzed for significance. In the writing method section of many articles, we will mention what method is used for significance analysis. If P is less than 0.05, the difference between variables is considered to be significant. However, before the significance analysis, some preprocessing shoule carried out to make sure Normal distribution, otherwise the result is inaccurate. The following summarizes the data preprocessing that can be performed in R to meet the requirements of saliency analysis.</description>
+    </item>
+    <item>
+      <title>To draw map using R</title>
+      <link>http://localhost:4321/post/2019/12/01/rmap/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/12/01/rmap/</guid>
+      <description>Background&#xD;Many articles need to use maps to display some data. Professional drawing software such as ARCGIS is more expensive and takes a long time to learn. The advantage of drawing with R is that everyone can install R and R maps have no copyright issues and are easy to use. The main R packages used are ggplot2, sf, rnaturalearth, rnaturalearthdata, etc. When you need to modify the picture, you only need to modify the code, which eliminates the cumbersome modification of the picture.</description>
+    </item>
+    <item>
+      <title>Basic course needed for data science</title>
+      <link>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2019/11/07/basic-course-needed-for-data-science/</guid>
+      <description>All the course suggestion come from blog http://www.juyang.co/phd%e8%bd%ac%e8%a1%8c%e4%b9%8b%e8%b7%af/&#xA;Beginner: Intro to Computer Science Free&#xA;(https://www.udacity.com/course/intro-to-computer-science–cs101)&#xA;Programming Foundations with Python Free&#xA;(https://www.udacity.com/course/programming-foundations-with-python–ud036)&#xA;Design of Computer Programs&#xA;(https://www.udacity.com/course/design-of-computer-programs–cs212)&#xA;Essential Data Structures in C/C++&#xA;(http://www.cs.columbia.edu/~jae/3136/)&#xA;Introduction to Algorithms&#xA;(https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)&#xA;Data Analyst Nanodegree&#xA;(https://www.udacity.com/course/data-analyst-nanodegree–nd002)&#xA;Intro to Statistics&#xA;(https://www.udacity.com/course/intro-to-statistics–st101)&#xA;Intro to Descriptive Statistics&#xA;https://www.udacity.com/course/intro-to-descriptive-statistics–ud827&#xA;Intro to Inferential Statistics&#xA;https://www.udacity.com/course/intro-to-inferential-statistics–ud201&#xA;Time Series Forecasting&#xA;https://www.udacity.com/course/time-series-forecasting–ud980&#xA;https://www.udacity.com/course/intro-to-data-analysis–ud170&#xA;https://www.udacity.com/course/data-wrangling-with-mongodb–ud032&#xA;Intro to Machine Learning&#xA;https://www.udacity.com/course/intro-to-machine-learning–ud120&#xA;Machine Learning&#xA;https://www.coursera.org/learn/machine-learning</description>
+    </item>
+  </channel>
+</rss>
