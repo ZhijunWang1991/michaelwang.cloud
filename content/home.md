@@ -25,4 +25,6 @@ Besides of research work, I also enjoyed in education activities for Undergradua
 
 I have been active as a teaching assistant for many years.\
 
+I am also a Social media manager for my personal channel [SCI_code], which has more than 30k followers.\
+
 
