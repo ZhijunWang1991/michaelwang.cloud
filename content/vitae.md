@@ -4,20 +4,10 @@ slug: "vitae"
 date: "`r Sys.Date()`"
 disable_comments: true
 ---
-> Is it possiable to decode an individual by the fewest lines? -- <<Westworld>>
-
-
-### Summary
-
-- 🌾 PhD in Food Fraud and Authenticity.
-
-- 👨‍💻 Experiences in lab work such as: spectral analysis, mass spectrometer and data analysis such as regression and classification models.
-
-- 🌏 I believe that digital transformation is one of the trends in building sustainable agricultural systems.
 
 ### Contact Information
 
-- ✏️ **Personal Homepage**: <https://zhijunwang.me>
+- ✏️ **Personal Homepage**: <https://michaelwang.cloud>
 
 - 🏰 **Google Scholar**: [Zhijun_Google Scholar](https://scholar.google.com/citations?user=9kfqtMwAAAAJ&hl=en)
 
@@ -31,35 +21,37 @@ disable_comments: true
 * Food quality and instrument analysis
 * chemomentrics
 
+### ☕Work experience
+
+* July 2023 - December 2024, Postdoc researcher in Food fraud and digital tech,  University College Dublin, Ireland
+
 ### 👩‍🏫Education Background
 
-* 2017-2022, PhD. in Food Fraud and Authentication, Wageningen University & Research, the Netherlands
+* 2017-2022, PhD. in Food Fraud, Wageningen University & Research, the Netherlands
 
 ### 💪Research experience
 
-* **Hyperspectral imaging (HSI)** and **Near infrared spectroscopy (NIR)** for geographical origin and organic certification of food
+* **Going bananas (Dutch Top sector Agri & Food project)**: This project aims to develop discrimination models for the geographical origin and organic production of Bananas. Different data sets including the chemical compositions, NIR spectral, stable isotope ratios, hyperspectral images of bananas and rainfall, temperature, and fertilization types of farms were collected and analyzed. The principal component analysis (PCA), partial least-squares discriminant analysis (PLS-DA) and other related Machine Learning algorithms were used to built predicted models. Correlation analysis were also used to build the relations between the chemical compositions and the growing conditions of bananas.
 
-* Multiple mass spectrometry techniques such as **GC-MS**, **ICP-MS**, **IR-MS**, **DART-HR-MS** to explore the compositional characteristics of agricultural products
+* **Watson Project (EU Horizon project)**: Project management, teamwork, data management; To access the food fraud vulnerability in six different supply chain and  data analysis using Multiple factor analysis (MFA);To build the food fraud early warning system using Use multiple data sources: Historical accident data, social media, and other open data sources;To identify the origin of honey and olive oil using NIR and HSI.
+
+* **Tea polysaccharides**: Extraction, isolation, purification of Tea polysaccharides, structural characterization such as molecular weight, monosaccharide composition, and antioxidant activity evaluation of polysaccharides.
 
 #### ⚒️Hand-in Data Science
 
-* Statistical analysis based on SAS and SPSS;
+* Proficient in Microsoft Office Suite, including Word, Excel, and PowerPoint.
 
-* Data visualization and modeling using Python and R;
+* Strong knowledge of, and experience with SQL 
 
-* Version control using Git. (https://github.com/ZhijunWang1991)
+* Data analyse and visualization using PowerBI.
 
-* *Data Visualization* with R/Python: Scatter plot, boxplot, heatmap, etc.
+* Statistical modelling based on R, Python, SAS and SPSS;
 
-* *Regression modelling*: Linear Regression, Multiple Linear Regression, prediction based on regression models.
-
-* *Principal component analysis* (PCA) from computing to visualizations.
-
-* *Classification model*: PLS-DA, ANN, random forest  and other Machine learning algorithms.
+* Version control using Git & Github. (https://github.com/ZhijunWang1991)
 
 * Developed a **R package** named *wagedown*, for writing a PhD thesis at Wageningen University and rendering those files in a PDF format.
 
-* Website design (https://zhijunwang.me/).
+* Website design (https://michaelwang.cloud).
 
 ### 📕Obtained certification in Data Science:
 
@@ -73,11 +65,20 @@ disable_comments: true
 
 ### 🌏 Conferences
 
-* The correlation analysis of banana composition and growing condition based on stable isotope and elemental analysis. **Oral presented** at china international food safety & quality conference 2020, Shanghai, China.
+* October 2024: The food fraud vulnerability assessment of EU supply chains. Oral presented at Watson workshop in “Synergy Days 2024”, Barcelona, Spain
+  
+* May 2024: The Watson approach to transparency and integrity. Oral presented at International Scientific Conference on “Global commodity chains from a risk assessment perspective”, Berlin, Germany
 
-* Banana provenance: Correlation of growing conditions, stable isotopes and elemental compositions of costa rican bananas. **Poster presented** at the 33rd the european federation of food science and technology (effost) international conference,2019, Rotterdam, the Netherlands.
+* May, 2024: A digital traceability framework in the agri-food supply chain. Oral presented at Food and Drink Science Member Interest Group Meeting, Online, UK
 
-* Geographical features of bananas in costa rica and their stable isotope ratios and elemental compositions. **Oral presented** at the benelux association of stable isotope scientists (basis) meeting, 2019, Texel, the Netherlands.
+* November, 2023: A digital technology-based framework for preventing fraud in agri-food supply chains. Oral presented at 51st Annual Food Science and Technology Conference, Dublin, Ireland
+
+* November,2020: The correlation analysis of banana composition and growing condition based on stable isotope and elemental analysis. Oral presented at china international food safety & quality conference 2020, Shanghai, China.
+
+* November, 2019: Banana provenance: Correlation of growing conditions, stable isotopes and elemental compositions of Costa Rican bananas. Poster presented at the 33rd the European Federation of Food Science and Technology (EFFOST) international conference, Rotterdam,the Netherlands.
+  
+* March, 2019: Geographical features of bananas in Costa Rica and their stable isotope ratios and elemental compositions. Oral presented at the Benelux association of stable isotope scientists (basis) meeting, Texel, the Netherlands.
+
 
 ### 📜 Publications
 
@@ -95,7 +96,9 @@ The Selected Papers as 1st author:
 
 ### 👨‍🏫Teaching experiences
 
-* 2017-2021, as course assistance in two difference courses WUR.
+* 2018-2023, **Teaching assistant** at Master Food fraud Course, Wageningen University, the Netherlands. 
+
+* 2023-2024, **Guest Lecture** at Master Food investigation Course, University College Dublin, Ireland
 
 ### 📅 Organization experiences
 
@@ -104,5 +107,3 @@ The Selected Papers as 1st author:
 * The **Course Assistant** for Virtual training course *Comprehension of food fraud vulnerability 2022* in Wageningen, the Netherlands
 
 ### End
-
-> Every piece of information in the world has been copied, backed up, except the human mind. The last analog device in a digital world.        -- <<Westworld>>

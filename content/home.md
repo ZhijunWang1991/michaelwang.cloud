@@ -7,8 +7,6 @@ This is the person blog of Zhijun. I am a postdoctoral researcher at [UCD](https
 
 My research interest is Food authenticity. The combination of Analysis technology (hyperspectral imaging, isotope analysis, gas mass spectrometry) and Machine learning based on R/Python/Matlab are used to evaluate the linkage of growing conditions and food quality. Here you can find my research [papers](https://www.researchgate.net/profile/Zhijun-Wang-18).\
 
-Data visualization, chemomentrics and application of R/Pthon are my inspiration and nice tool helpful for my PhD.
-
 Now I am looking for work opportunity in the Netherlands due to the family commitment.
 
 My research interest is Food Science, food fraud, data science. 
