@@ -17,7 +17,7 @@ My research interest is Food Science, food fraud, data science.
 - **Machine learning**: PCA, Random Forest, SVM, Neural Network, etc using Python, R
 - **Project management**: meeting, report, presentation, teamplayer
 
-Looking for: Data cisulization, analyst, research scientist, etc\
+Looking for: Data visualization, analyst, research scientist, etc\
 
 Besides of research work, I also enjoyed in education activities for Undergraduate and master courses.\
 
