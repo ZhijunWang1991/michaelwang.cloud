@@ -23,11 +23,11 @@
       <description>Data visualization&#xD;Examples : The weight of chicks from different months and feed diet&#xA;Import packages&#xD;import os as os&#xD;from stat import FILE_ATTRIBUTE_SPARSE_FILE&#xD;import pandas as pd&#xD;import numpy as np&#xD;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;Line plot&#xD;Chick_data.head()&#xD;## Unnamed: 0 weight Time Chick Diet&#xD;## 0 1 42 0 1 1&#xD;## 1 2 51 2 1 1&#xD;## 2 3 59 4 1 1&#xD;## 3 4 64 6 1 1&#xD;## 4 5 76 8 1 1&#xD;Chick_data = Chick_data.</description>
     </item>
     <item>
-      <title>Data visualization and modelling</title>
-      <link>http://localhost:4321/gallery/</link>
-      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/gallery/</guid>
-      <description>&#xD;</description>
+      <title>Creating a stacked bar chart in Python</title>
+      <link>http://localhost:4321/post/2022/09/16/creating-a-stacked-bar-chart-in-python/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/09/16/creating-a-stacked-bar-chart-in-python/</guid>
+      <description>Python Stacked Bar Chart Tutorial: A Complete Guide&#xD;In data visualization, a stacked bar chart is a versatile chart type that allows you to display both the total and individual components of each category. This article provides a comprehensive introduction to stacked bar charts, including their definition, benefits, differences from traditional bar charts, and potential challenges. We’ll also walk through a detailed Python example for creating a stacked bar chart.</description>
     </item>
     <item>
       <title>Principal component analysis (Python version)</title>
@@ -139,14 +139,21 @@
       <link>http://localhost:4321/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:4321/home/</guid>
-      <description>This is the person blog of Zhijun. I am a postdoctoral researcher at UCD.\&#xA;My research interest is Food authenticity. The combination of Analysis technology (hyperspectral imaging, isotope analysis, gas mass spectrometry) and Machine learning based on R/Python/Matlab are used to evaluate the linkage of growing conditions and food quality. Here you can find my research papers.\&#xA;Data visualization, chemomentrics and application of R/Pthon are my inspiration and nice tool helpful for my PhD.</description>
+      <description>This is the person blog of Zhijun. I am a postdoctoral researcher at UCD.\&#xA;My research interest is Food authenticity. The combination of Analysis technology (hyperspectral imaging, isotope analysis, gas mass spectrometry) and Machine learning based on R/Python/Matlab are used to evaluate the linkage of growing conditions and food quality. Here you can find my research papers.\&#xA;Now I am looking for work opportunity in the Netherlands due to the family commitment.</description>
     </item>
     <item>
       <title>Curriculum Vitae</title>
       <link>http://localhost:4321/vitae/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:4321/vitae/</guid>
-      <description>Is it possiable to decode an individual by the fewest lines? &amp;ndash; &amp;laquo;Westworld&amp;raquo;&#xA;Summary 🌾 PhD in Food Fraud and Authenticity.&#xA;👨‍💻 Experiences in lab work such as: spectral analysis, mass spectrometer and data analysis such as regression and classification models.&#xA;🌏 I believe that digital transformation is one of the trends in building sustainable agricultural systems.&#xA;Contact Information ✏️ Personal Homepage: https://zhijunwang.me&#xA;🏰 Google Scholar: Zhijun_Google Scholar&#xA;🙋‍♂️ Linkedin: Zhijun_Linkedin</description>
+      <description>Contact Information ✏️ Personal Homepage: https://michaelwang.cloud&#xA;🏰 Google Scholar: Zhijun_Google Scholar&#xA;🙋‍♂️ Linkedin: Zhijun_Linkedin&#xA;📝 Github ZhijunWang&#xA;🍌Research Interest Food fraud, food authenticity and safety Food quality and instrument analysis chemomentrics ☕Work experience July 2023 - December 2024, Postdoc researcher in Food fraud and digital tech, University College Dublin, Ireland 👩‍🏫Education Background 2017-2022, PhD. in Food Fraud, Wageningen University &amp;amp; Research, the Netherlands 💪Research experience Going bananas (Dutch Top sector Agri &amp;amp; Food project): This project aims to develop discrimination models for the geographical origin and organic production of Bananas.</description>
+    </item>
+    <item>
+      <title>Data visualization work by Zhijun Wang (Michael)</title>
+      <link>http://localhost:4321/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/gallery/</guid>
+      <description>&#xD;</description>
     </item>
     <item>
       <title>Publications</title>

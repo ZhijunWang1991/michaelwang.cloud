@@ -1,0 +1,153 @@
+---
+title: Creating a stacked bar chart in Python
+author: Michael Wang
+date: '2022-09-16'
+slug: creating-a-stacked-bar-chart-in-python
+categories:
+  - Python
+tags:
+  - data science
+  - Data Visualization
+  - Python
+---
+
+
+
+<div id="python-stacked-bar-chart-tutorial-a-complete-guide" class="section level3">
+<h3>Python Stacked Bar Chart Tutorial: A Complete Guide</h3>
+<p>In data visualization, a stacked bar chart is a versatile chart type that allows you to display both the total and individual components of each category. This article provides a comprehensive introduction to stacked bar charts, including their definition, benefits, differences from traditional bar charts, and potential challenges. We’ll also walk through a detailed Python example for creating a stacked bar chart.</p>
+<div id="what-is-a-stacked-bar-chart" class="section level4">
+<h4>What is a Stacked Bar Chart?</h4>
+<p>A stacked bar chart is a type of bar chart where each bar is divided into multiple sections, with each section representing a different category. These sections are stacked on top of one another, making it easy to see the proportion each category contributes to the total. Stacked bar charts are especially useful for displaying breakdowns within categories.</p>
+<div id="benefits-of-stacked-bar-charts" class="section level5">
+<h5>Benefits of Stacked Bar Charts</h5>
+<ul>
+<li><strong>Rich Information</strong>: Stacked bar charts allow you to display more details within a single chart compared to traditional bar charts.</li>
+<li><strong>Easy Comparison</strong>: They provide a clear comparison of both the overall total and the distribution of subcategories within each main category.</li>
+<li><strong>Space Efficiency</strong>: Stacked bar charts consolidate more information in a single figure, making them ideal for compact layouts.</li>
+</ul>
+</div>
+<div id="differences-from-traditional-bar-charts" class="section level5">
+<h5>Differences from Traditional Bar Charts</h5>
+<ul>
+<li><strong>Multiple Variables</strong>: Traditional bar charts usually display a single variable, whereas stacked bar charts display multiple variables simultaneously.</li>
+<li><strong>Direct Comparisons</strong>: Stacked bar charts allow you to directly compare proportions within each category, which would require multiple charts in a traditional setup.</li>
+<li><strong>Interpretation Complexity</strong>: Stacked bar charts can become harder to interpret as the number of subcategories increases.</li>
+</ul>
+</div>
+</div>
+<div id="challenges-of-creating-stacked-bar-charts" class="section level4">
+<h4>Challenges of Creating Stacked Bar Charts</h4>
+<ul>
+<li><strong>Data Formatting</strong>: Ensuring that data aligns correctly when stacked is crucial for accuracy.</li>
+<li><strong>Color Choices</strong>: Distinct colors are needed to differentiate each category.</li>
+<li><strong>Labeling</strong>: Properly labeling each subcategory within the bar can be challenging but is essential for clarity.</li>
+</ul>
+</div>
+</div>
+<div id="creating-a-stacked-bar-chart-in-python" class="section level3">
+<h3>Creating a Stacked Bar Chart in Python</h3>
+<p>Below is a step-by-step guide to creating a stacked bar chart in Python using the <code>Matplotlib</code> and <code>Pandas</code> libraries. We’ll use a sample dataset of quarterly sales data for different product categories to illustrate the process.</p>
+<div id="step-1-import-required-libraries" class="section level4">
+<h4>Step 1: Import Required Libraries</h4>
+<pre class="python"><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt</code></pre>
+</div>
+<div id="step-2-create-the-dataset" class="section level4">
+<h4>Step 2: Create the Dataset</h4>
+<p>Let’s create a dataset representing quarterly sales for three different product categories.</p>
+<pre class="python"><code># Sample data
+data = {
+    &#39;Quarter&#39;: [&#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;Q4&#39;],
+    &#39;Product_A&#39;: [150, 200, 300, 250],
+    &#39;Product_B&#39;: [180, 210, 320, 220],
+    &#39;Product_C&#39;: [100, 130, 250, 280]
+}
+df = pd.DataFrame(data)</code></pre>
+</div>
+<div id="step-3-define-colors-and-chart-style" class="section level4">
+<h4>Step 3: Define Colors and Chart Style</h4>
+<p>To make each product category distinct, choose a set of colors that work well together.</p>
+<pre class="python"><code># Define colors for each category
+colors = [&#39;#FFA07A&#39;, &#39;#20B2AA&#39;, &#39;#778899&#39;]  # Colors for Product A, B, C</code></pre>
+</div>
+<div id="step-4-plot-the-stacked-bar-chart" class="section level4">
+<h4>Step 4: Plot the Stacked Bar Chart</h4>
+<p>Using <code>plt.bar()</code>, we plot each product category as a separate bar layer and stack them.</p>
+<pre class="python"><code># Set the figure size
+plt.figure(figsize=(10, 6))
+
+# Calculate the bottom positions for each layer
+bar_width = 0.6  # Set bar width
+bottoms = np.zeros(len(df))  # Initialize the bottom positions at zero
+
+# Loop through each product category and stack the bars
+for idx, product in enumerate([&#39;Product_A&#39;, &#39;Product_B&#39;, &#39;Product_C&#39;]):
+    plt.bar(df[&#39;Quarter&#39;], df[product], bottom=bottoms, color=colors[idx], label=product, width=bar_width)
+    bottoms += df[product]  # Update the bottom position for stacking
+
+# Add legend, labels, and title
+plt.xlabel(&#39;Quarter&#39;)
+plt.ylabel(&#39;Sales&#39;)
+plt.title(&#39;Quarterly Sales by Product Category&#39;)
+plt.legend(title=&#39;Product Category&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
+</div>
+<div id="step-5-add-data-labels" class="section level4">
+<h4>Step 5: Add Data Labels</h4>
+<p>Adding data labels above each section of the stacked bar makes it easier to see exact values at a glance.</p>
+<pre class="python"><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data
+data = {
+    &#39;Quarter&#39;: [&#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;Q4&#39;],
+    &#39;Product_A&#39;: [150, 200, 300, 250],
+    &#39;Product_B&#39;: [180, 210, 320, 220],
+    &#39;Product_C&#39;: [100, 130, 250, 280]
+}
+df = pd.DataFrame(data)
+
+# Define colors
+colors = [&#39;#FFA07A&#39;, &#39;#20B2AA&#39;, &#39;#778899&#39;]
+
+# Plot the stacked bar chart
+plt.figure(figsize=(10, 6))
+bar_width = 0.6
+bottoms = np.zeros(len(df))  # Initialize bottom positions for stacking
+
+# Loop through each product category, stack the bars, and add data labels
+for idx, product in enumerate([&#39;Product_A&#39;, &#39;Product_B&#39;, &#39;Product_C&#39;]):
+    bars = plt.bar(
+        df[&#39;Quarter&#39;], df[product], bottom=bottoms, 
+        color=colors[idx], label=product, width=bar_width
+    )
+
+    # Add data labels to the bars
+    for bar in bars:
+        height = bar.get_height()  # Get the height of the bar
+        label_y = bar.get_y() + height / 2  # Compute y position for label
+        plt.text(
+            bar.get_x() + bar.get_width() / 2, label_y, 
+            f&#39;{int(height)}&#39;, ha=&#39;center&#39;, va=&#39;center&#39;, color=&#39;white&#39;, fontsize=10
+        )
+
+    # Update the bottom position for stacking
+    bottoms += df[product]
+
+# Add legend and titles
+plt.xlabel(&#39;Quarter&#39;)
+plt.ylabel(&#39;Sales&#39;)
+plt.title(&#39;Quarterly Sales by Product Category&#39;)
+plt.legend(title=&#39;Product Category&#39;)
+plt.show()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-3.png" width="960" /></p>
+</div>
+</div>
+<div id="conclusion" class="section level3">
+<h3>Conclusion</h3>
+<p>In this tutorial, we covered the basics of creating a stacked bar chart in Python, discussing its benefits and challenges. Stacked bar charts are a powerful way to visualize breakdowns within categories and can be applied in various data analysis scenarios. Hopefully, this guide helps you integrate stacked bar charts effectively into your projects.</p>
+</div>

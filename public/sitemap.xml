@@ -29,9 +29,6 @@
     <loc>http://localhost:4321/post/2022/11/05/data-visualization-with-seaborn-matplotlib-in-python/</loc>
     <lastmod>2022-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/gallery/</loc>
-    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:4321/tags/pca/</loc>
     <lastmod>2022-03-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -110,9 +107,13 @@
     <loc>http://localhost:4321/post/2019/05/31/my-first-post/</loc>
     <lastmod>2019-05-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4321/post/1/01/01/</loc>
+  </url><url>
     <loc>http://localhost:4321/home/</loc>
   </url><url>
     <loc>http://localhost:4321/vitae/</loc>
+  </url><url>
+    <loc>http://localhost:4321/gallery/</loc>
   </url><url>
     <loc>http://localhost:4321/publications/</loc>
   </url>

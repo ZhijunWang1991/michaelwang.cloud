@@ -23,6 +23,13 @@
       <description>Data visualization&#xD;Examples : The weight of chicks from different months and feed diet&#xA;Import packages&#xD;import os as os&#xD;from stat import FILE_ATTRIBUTE_SPARSE_FILE&#xD;import pandas as pd&#xD;import numpy as np&#xD;import seaborn as sns&#xD;import matplotlib.pyplot as plt&#xD;Line plot&#xD;Chick_data.head()&#xD;## Unnamed: 0 weight Time Chick Diet&#xD;## 0 1 42 0 1 1&#xD;## 1 2 51 2 1 1&#xD;## 2 3 59 4 1 1&#xD;## 3 4 64 6 1 1&#xD;## 4 5 76 8 1 1&#xD;Chick_data = Chick_data.</description>
     </item>
     <item>
+      <title>Creating a stacked bar chart in Python</title>
+      <link>http://localhost:4321/post/2022/09/16/creating-a-stacked-bar-chart-in-python/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2022/09/16/creating-a-stacked-bar-chart-in-python/</guid>
+      <description>Python Stacked Bar Chart Tutorial: A Complete Guide&#xD;In data visualization, a stacked bar chart is a versatile chart type that allows you to display both the total and individual components of each category. This article provides a comprehensive introduction to stacked bar charts, including their definition, benefits, differences from traditional bar charts, and potential challenges. We’ll also walk through a detailed Python example for creating a stacked bar chart.</description>
+    </item>
+    <item>
       <title>Principal component analysis (Python version)</title>
       <link>http://localhost:4321/post/2022/03/14/principal-component-analysis-python-version/</link>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
